@@ -258,7 +258,7 @@ class _MovieDetails extends Component {
                 <div className='reviews-count' >({movie.reviews ? movie.reviews.length : 0} Reviews)</div>
              </div>
                 <div className="number-style avg-number">
-                <span role="img" aria-label="Panda">⭐</span>
+                ⭐
                 {this.avgReview()}/10
                 </div>
                
@@ -313,7 +313,7 @@ class _MovieDetails extends Component {
                        <div>
                           <span className='reviews-th-name'>{review.byUser?review.byUser: "Guest"}</span>
                           <span>
-                            <span role="img" aria-label="Panda">⭐</span>
+                            ⭐
                             {review.rating}/10
                           </span>
 
