@@ -1,0 +1,73 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(20, 20, 20);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  &:hover {
+    color: #f1f1f1;
+  }
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+  background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+}
+
+.hamburger {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  // text-shadow: 0 0 15px 0 crimson,
+  // 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.closebtn {
+  cursor: pointer;
+}
+.openNav {
+  width: 250px;
+}
+.closeNav {
+  width: 0;
+}
+
+.side-nav-main {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(43, 43, 43);
+}

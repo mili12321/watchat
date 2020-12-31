@@ -1,0 +1,64 @@
+.movie-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  z-index: 100;
+  width: 40%;
+  height: 40%;
+
+  .red-spinner {
+    display: inline-block;
+    width: 150px;
+    height: 140px;
+  }
+
+  .phrases {
+    color: #ffffff;
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+      #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+      #ff2d95 0px 0px 50px, #ff2d95 0px 0px 75px;
+    font-size: 2rem;
+  }
+
+  .large-text {
+    font-size: 4rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .phrase-enter {
+    opacity: 0;
+  }
+  .phrase-enter-active {
+    opacity: 1;
+  }
+  .phrase-exit {
+    opacity: 1;
+  }
+  .phrase-exit-active {
+    opacity: 0;
+  }
+  .phrase-enter-active,
+  .phrase-exit-active {
+    transition: opacity 600ms;
+  }
+}
+
+
+@media screen and (max-width:415px) {
+  .movie-loader {
+    .phrases { 
+      font-size: 18px;
+    }
+    .large-text {
+      font-size: 18px;
+    }
+  }
+}
+

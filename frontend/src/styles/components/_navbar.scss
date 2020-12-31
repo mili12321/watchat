@@ -1,0 +1,221 @@
+.main-nav {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.466);
+  height: 5.5vh;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 50;
+}
+.nav-container {
+  height: 5.5vh;
+  align-self: center;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 5vw;
+  grid-gap: 10px;
+  position: fixed;
+}
+
+.main-title, .login-and-serach-section, .links-container{
+  display: flex;
+  justify-content: space-between;
+}
+.login-and-serach-section, .links-container{
+  flex-grow: 1;
+  max-width: 40%;
+}
+.links-container{
+  justify-content: start;
+  position: relative;
+  >.nav-column{
+    margin-right: 20px;
+  }
+}
+
+.login-and-serach-section{
+  justify-content: flex-end;
+  position: relative;
+}
+
+
+.nav-column {
+  align-self: center;
+  justify-self: center;
+  & .navlink-btn {
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+  }
+  &:hover .navlink-btn {
+    background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    border-bottom: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(
+      left,
+      rgb(209, 0, 157),
+      rgb(209, 0, 0)
+    );
+    -webkit-border-image: -webkit-linear-gradient(
+      left,
+      rgb(209, 0, 157),
+      rgb(209, 0, 0)
+    );
+    border-image: linear-gradient(to right, rgb(209, 0, 157), rgb(209, 0, 0));
+
+    border-image-slice: 1;
+  }
+}
+.nav-column .navlink-btn .dark {
+  color: rgb(37, 37, 37);
+}
+.nav-column .navlink-btn .light {
+  color: rgb(255, 255, 255);
+}
+
+.home {
+  grid-column: 1 /2;
+}
+.navlink-btn {
+  border-radius: 0;
+}
+.about {
+  grid-column: 2 / 3;
+}
+.movies {
+  grid-column: 3 / 4;
+}
+.main-title {
+  grid-column: 6 / 7;
+  font-size: 24px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  height: 4vh;
+  align-self: start;
+  position: relative;
+}
+
+.logo:link {
+  text-decoration: none;
+  background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  text-shadow: 0 0 15px 0 crimson, 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+}
+.logo:visited {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.toolbar-search>.navlink-search {
+  grid-column: 9 / 10;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 137px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.active-navLink{
+    background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  
+}
+.user-container {
+  grid-column: 10 /11;
+  justify-items: center;
+}
+.user-login {
+  margin: auto;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  color: $clr9;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-image: linear-gradient(111deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  box-shadow: 0 0 15px 0 crimson, 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: $clr6;
+  }
+  position: relative;
+  left: 50px;
+  top: -1px;
+  z-index: 50;
+  box-shadow: 0 0 15px 0 crimson, 0 10px 15px 0 rgba(0, 0, 0, 0.2);
+}
+input[type='search'] {
+  align-self: center;
+  border: rem(1px) solid rgba(26, 26, 26, 0.692);
+  background-color: rgba(0, 0, 0, 0.425);
+  border-radius: rem(4px);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(48, 48, 48);
+  width: 100%;
+}
+
+.example {
+  position: absolute !important;
+  z-index: 90;
+}
+.WatChat-logo {
+}
+.under-logo {
+  font-size: 10px;
+  color: rgb(206, 206, 206);
+  text-align: center;
+  position: absolute;
+  top: 27px;
+  left: 19px;
+  font-family: 'Courgette', cursive;
+}
+@media screen and (max-width:414px) {
+  .main-nav{
+    height: 41px;
+    .nav-container {
+      height: 41px;
+    }
+    .home, .about, .movies, .navlink-search, .SideNavigation, .links-container{
+      display: none;
+    }
+    .user-container {
+      grid-column: 8 / 9;
+      justify-items: center;
+
+    }
+    .main-title{
+      grid-column:2 / 2;
+    }
+  }
+}
+@media screen and (max-height:415px) {
+  .main-nav {
+    height: 41px;
+    .nav-container {
+      height: 41px;
+    }
+    .main-title{
+      font-size: 21px;
+    }
+    .under-logo {
+        font-size: 9px;
+        top: 25px;
+        left: 14px;
+    }
+  }
+}

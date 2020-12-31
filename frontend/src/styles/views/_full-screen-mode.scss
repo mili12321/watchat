@@ -1,0 +1,90 @@
+
+///full screen mode styles:
+.fullScreen-watch-room{
+    position: absolute;
+    top:0; 
+    left:0; 
+    width: 100vw  !important;
+    height: 100vh   !important;
+    z-index: 51;
+}
+
+.fullScreen-chat{
+    background: transparent;
+    z-index: 600;
+    position: absolute;
+    height: 100%;
+  }
+  .fullScreen-msg{
+    display: flex;
+    justify-content: flex-end;
+    place-items: flex-end;
+  }
+  .fullScreen-chat-input{
+    display: flex;
+      justify-self: flex-end;
+      background: transparent;
+      border-radius: 10px;
+      padding: 5px;
+      justify-content: space-around;
+      width: 95%;
+      input {
+        background-color: rgba(255,255,255,0.2);
+        backdrop-filter: blur(30px);
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46,54,68,0.03);
+        position: relative;
+        right: 0px;
+        z-index: 1;
+        width: 100%;
+        margin-left: 0px;
+        color: rgb(255, 255, 255);
+      }
+  }
+  .fullScreen-room-window{
+      margin-top: 0; 
+      width: 100vw;
+      height: 100vh;
+      background: rgba(143, 141, 136, 0.1);
+      display: flex;
+      overflow: hidden;
+  }
+  .fullScreen-frame{
+    width: 100%;
+  }
+  .fullScreen-iframe{
+    position: absolute;
+    top:0; 
+    left:0; 
+    width: 100vw  !important;
+    height: 100vh   !important;
+  }
+.fullScreen-message-me{
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.671);
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46,54,68,0.03);
+    position: relative;
+    z-index: 1;
+    color: black;
+    border-radius: 15px 15px 15px 0;
+}
+.fullScreen-message-user{
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46,54,68,0.03);
+    position: relative;
+    z-index: 1;
+    color: rgb(224, 224, 224);
+    border-radius: 15px 15px 15px 0;
+}
+
+.fullScreen-control-panel{
+    justify-content: flex-end;
+}

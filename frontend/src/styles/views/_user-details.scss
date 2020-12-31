@@ -1,0 +1,273 @@
+@media screen and (max-width:500px) {
+    .main-content-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        place-items: center;
+        position: relative;
+        .details-section{
+            display: flex;
+            .name{
+                margin-top: 5px;
+                margin-left: 5px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+        .user-movies-list{
+            height: 100%;
+            width: 300px;
+            flex: 0 1  auto;
+            
+            background-color: rgba(18, 13, 51, 0.788);
+            background-color: rgb(32, 7, 46);
+            // background-color: rgba(32, 7, 46, 0.788);
+            -moz-box-shadow: 0 0 3px rgb(3, 0, 0);
+            -webkit-box-shadow: 0 0 3px rgb(156, 156, 156);
+            box-shadow: 0 0 3px rgb(156, 156, 156);
+            color: black;
+            transition: 0.5s width;
+            // white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            // margin-top: 25px;
+            border-radius: 4px;
+            .user-movies-title{
+                text-align: center;
+                font-size: 20px;
+                color: rgb(252, 191, 249);
+                padding: 10px;
+                border-radius: 4px 0 0 4px;
+                background-color: rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+                border: 2px solid transparent;
+                background-clip: padding-box;
+                box-shadow: 10px 10px 10px rgba(46,54,68,0.03);
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                border-radius: 4px;
+            }
+            .container{
+                padding: 10px;
+                a{
+                    text-decoration: none;
+                    color: black; 
+                }
+                .empty-msg{
+                  color: #807e7e;
+                  text-align: center;
+                }
+            }
+        }
+    }
+  }
+  
+@media screen and (min-width:501px) {
+    .main-content-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        min-height:500px;
+        width: 90%;
+        align-self: flex-end;
+        position: relative;
+        flex: 1 0 auto;
+        .details-section{
+            display: flex;
+            .name{
+                margin-top: 5px;
+                margin-left: 5px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+        .user-movies-list{
+            height: 100%;
+            min-height: 570px;
+            width: 300px;
+            flex: 0 1  auto;
+            
+            background-color: rgba(18, 13, 51, 0.788);
+            background-color: rgb(32, 7, 46);
+            -moz-box-shadow: 0 0 3px rgb(3, 0, 0);
+            -webkit-box-shadow: 0 0 3px rgb(156, 156, 156);
+            box-shadow: 0 0 3px rgb(156, 156, 156);
+            color: black;
+            transition: 0.5s width;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            .user-movies-title{
+                text-align: center;
+                font-size: 20px;
+                color: rgb(252, 191, 249);
+                padding: 10px;
+                border-radius: 4px 0 0 4px;
+                background-color: rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+                border: 2px solid transparent;
+                background-clip: padding-box;
+                box-shadow: 10px 10px 10px rgba(46,54,68,0.03);
+                position: relative;
+                z-index: 1;
+                margin-top: -25px;
+                width: 100%;
+            }
+            .container{
+                padding: 10px;
+                a{
+                    text-decoration: none;
+                    color: black; 
+                }
+                .empty-msg{
+                  color: #807e7e;
+                  text-align: center;
+                }
+            }
+        }
+    }
+}
+.user-details-page{
+    color: rgb(228, 228, 228);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    .header-img{
+        background-image: url("../img/futuristic-wavy-dots.jpg");
+        background-size:100% 100%;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 150px;
+        width: 100%;
+    }
+}
+.user-details-form{
+    width: 100%;
+    height: 284px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border: 1px solid #2b2b2b;
+    border-radius: 4px;
+    color: rgb(226, 226, 226);
+    background-color: rgba(90, 90, 90, 0.322);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border: 2px solid  rgb(160, 3, 50);
+    position: relative;
+    z-index: 999;
+    .greeting-title{
+        margin-bottom: 25px;
+    }
+    .username{
+        margin: 100px 0;
+        margin-bottom: 10px;
+        >div{
+            margin-bottom: 5px;
+        }
+        >input{
+            border: 1px solid rgb(160, 3, 50);
+            color: rgb(209, 209, 209);
+        }
+    }
+    .user-avatar{
+        margin: 20px 0;
+        margin: -70px;
+        @include flexCenter(column);
+        >div{
+            width: 120px;
+            height: 120px;
+            background-size:100% 100%;
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 50%;
+            background-color: rgb(160, 3, 50);
+            border: 4px solid rgb(218, 218, 218);
+            margin-bottom: 10px;
+        }
+        .custom-file-upload {
+            display: inline-block;
+            padding: 3px 6px;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: rgb(255, 0, 76);
+            background-image: linear-gradient(111deg, #b91c6b, #b40000, #3a0000);
+            color: rgb(201, 201, 201);
+            font-size: 12px;
+        }
+        border-radius: 4px;
+    }
+    >button{
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-top: 20px;
+        background-image: linear-gradient(111deg, #b91c6b, #b40000, #3a0000);
+    }
+}
+input[type="file"] {
+    display: none;
+}
+
+.avatar{
+    width: 120px;
+    height: 120px;
+    background-size:100% 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    background: transparent;
+    border: 4px solid rgb(218, 218, 218);
+    margin-top: -60px;
+}
+.user-modal-content{
+    background: transparent;
+    max-width: 700px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+@media screen and (max-height: 415px){
+    .user-modal-content {
+        max-width: 500px;
+        width: 80%;
+        max-height: 10px;
+        min-height: 248px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        position: relative;
+        left: 0px;
+        top: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 414px){
+    .user-modal-content{
+        max-width: 300px;
+        width: 80%;
+        min-height: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        position: relative;
+        left: 0px;
+        top: -105px;
+        display: flex;
+        justify-content: center;
+    }
+}

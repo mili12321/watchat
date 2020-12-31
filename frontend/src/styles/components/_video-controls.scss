@@ -1,0 +1,232 @@
+.control-panel {
+  position: absolute;
+  align-self: flex-end;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+
+  .reactions-container {
+    position: relative;
+    top: -120px;
+    left: -10px;
+  }
+  .reactions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgray;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    pointer-events: auto;
+    transition: 0.3s;
+
+
+    &:hover {
+      color: maroon;
+      cursor: pointer;
+      background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(89, 89, 89, 1) 100%
+      );
+    }
+  }
+
+  .volume {
+    position: relative;
+    color: darkgray;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+
+    #volume {
+      background: maroon;
+      position: absolute;
+      transform: rotate(270deg);
+      margin: 0 auto;
+      top: -75px;
+      left: -50px;
+      z-index: 999;
+    }
+
+    &:hover {
+      color: maroon;
+      cursor: pointer;
+      background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(89, 89, 89, 1) 100%
+      );
+    }
+  }
+  .like {
+    background: url('../../img/fb-like.png') center/cover no-repeat;
+  }
+
+  .heart {
+    background: url('../../img/fb-heart.png') center/cover no-repeat;
+  }
+
+  .wow {
+    background: url('../../img/fb-wow.jpg') center/cover no-repeat;
+  }
+
+  .sad {
+    background: url('../../img/fb-sad.png') center/cover no-repeat;
+  }
+
+  .lol {
+    background: url('../../img/fb-lol.png') center/cover no-repeat;
+  }
+
+  .angry {
+    background: url('../../img/fb-angry.png') center/cover no-repeat;
+  }
+
+  .reaction-animation {
+    position: absolute;
+    top: max;
+    border-radius: 50%;
+    transition: 0.5s;
+    animation-duration: 2s;
+    animation-name: example;
+    animation-iteration-count: infinite;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.fullScreen-control-panel{
+  justify-content: flex-end;
+}
+
+
+.full-sceen-btn, .movie-play-btn{
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 800;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  color: darkgray;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  pointer-events: auto;
+  transition: 0.3s;
+
+
+  &:hover {
+    color: maroon;
+    cursor: pointer;
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(89, 89, 89, 1) 100%
+    );
+  }
+}
+.control-panel {
+  .volume, .movie-play-btn, .reactions{
+    margin: 10px;
+  }
+  .reactions{
+    margin-left: 20px;
+  }
+}
+
+
+@media screen and (max-width: 414px) {
+  .reaction-animation {
+    width: 20px;
+    height: 20px;
+    animation-name: example;
+    @keyframes example {
+      0% {
+        top: calc(100% - 30px);
+        opacity: 30%;
+        animation-timing-function: ease-in;
+      }
+      50% {
+        top: calc(100% - 150px);
+        opacity: 70%;
+        animation-timing-function: ease-out;
+      }
+      100% {
+        top: calc(100% - 250px);
+        opacity: 0%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 414px) {
+  .reaction-animation {
+    width: 30px;
+    height: 30px;
+    animation-name: example;
+    @keyframes example {
+      0% {
+        top: calc(100% - 80px);
+        opacity: 30%;
+        animation-timing-function: ease-in;
+      }
+      50% {
+        top: calc(100% - 180px);
+        opacity: 70%;
+        animation-timing-function: ease-out;
+      }
+      100% {
+        top: calc(100% - 300px);
+        opacity: 0%;
+      }
+    }
+  }
+}
+@media screen and (max-height: 415px) {
+  .control-panel {
+    .movie-play-btn{
+      margin: 5px 0;
+    }
+    .reactions {
+      margin: 5px 20px;
+    }
+    .volume {
+      margin: 5px 0px 5px 20px;
+    }
+  }
+ 
+  .reaction-animation {
+    width: 20px;
+    height: 20px;
+    animation-name: example;
+    @keyframes example {
+      0% {
+        top: calc(100% - 70px);
+        opacity: 30%;
+        animation-timing-function: ease-in;
+      }
+      50% {
+        top: calc(100% - 150px);
+        opacity: 70%;
+        animation-timing-function: ease-out;
+      }
+      100% {
+        top: calc(100% - 250px);
+        opacity: 0%;
+      }
+    }
+  }
+}

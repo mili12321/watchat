@@ -1,0 +1,56 @@
+.logo-nav {
+  width: rem(150px);
+}
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
+.main-title {
+  font-size: rem(30px);
+  color: rgb(182, 0, 0);
+  font-weight: bolder;
+}
+.main-title:visited {
+  font-size: rem(30px);
+  color: rgb(182, 0, 0);
+  font-weight: bolder;
+}
+.links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: rem(350px);
+  position: relative;
+  z-index: 1;
+}
+.main-nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: rem(20px);
+  background-color: rgb(26, 26, 26);
+  margin: 5px;
+  position: relative;
+  z-index: 1;
+}
+.nav-contaier {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95vw;
+  line-height: rem(20px);
+}
+.right-nav-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20vw;
+  max-width: 250px;
+}
+.example {
+  position: absolute !important;
+  z-index: 90;
+}

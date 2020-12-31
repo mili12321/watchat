@@ -1,0 +1,32 @@
+.navlink-btn{
+    background-color: transparent;
+    color: $clr9;
+    /* border: 1px solid; */
+    padding: rem(5px);
+    border-radius: rem(5px);
+    margin: rem(5px);
+    transition: 0.3s;
+}
+.navlink-btn:visited {
+    color: $clr9;
+}
+.navlink-btn:hover{
+    background-color:transparent;
+    color: $clr9;
+}
+a:link {
+    text-decoration: none;
+    color:$clr9;
+ 
+}
+a:visited {
+    text-decoration: none;
+    color:$clr9;
+
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}

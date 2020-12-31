@@ -1,0 +1,75 @@
+.user-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  margin: 0;
+  width:150px;
+  height: 100%;
+}
+.user-login {
+  width: 90%;
+  text-align: center;
+  padding: 5px 5px 0 5px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 21px;
+  font-size: 11px;
+
+}
+.user-details-btn {
+  margin: 0;
+  cursor: pointer;
+}
+#logout-btn {
+  margin: 0;
+  border-top: 1px solid $clr4;
+  background-color: transparent;
+  color: $clr9;
+  align-self: center;
+  transition: 0.2s;
+  font-size: 11px;
+  &:hover {
+    color: $clr4;
+  }
+  position: relative;
+  z-index: 2;
+}
+.user-name {
+  margin: 0;
+  color: $clr4;
+  font-size: 13px;
+}
+.user-img {
+  width: 30px;
+  height: 30px;
+  background-size:100% 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.4s;
+  &:hover {
+    background-color: $clr4;
+  }
+  position: relative;
+  z-index: 2;
+}
+.user-details-container {
+  width: 80px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.userImg {
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    border-radius: 50%;
+  }
+  background: linear-gradient(315deg , #d57c3a, #d53a9d);
+}

@@ -1,0 +1,135 @@
+.movies-main-section {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: space-between;
+}
+.movies-side-nav {
+  width: 15%;
+}
+
+
+
+.genres-movie-img-container {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+.info-continer-movie-card {
+  background-image: url(../../styles/img/black-back3.jpg);
+  background-size: cover;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+  > .title {
+    padding: 0 10px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    align-self: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+}
+.genres-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  > .genre {
+    color: rgb(236, 236, 236);
+    background-color: rgb(68, 68, 68);
+    margin: 2px;
+    border-radius: 2px;
+    padding: 1px 3px;
+    font-size: 9px;
+  }
+}
+.rate-container {
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: rgb(194, 194, 194);
+  > .faRegEye {
+    align-self: center;
+    color: rgb(233, 233, 233);
+  }
+  > div {
+    > .fa-eye {
+      margin-right: 3px;
+      font-size: 8px;
+    }
+  }
+}
+.btns-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: -webkit-linear-gradient(
+    111deg,
+    rgb(230, 47, 108),
+    rgb(243, 61, 29)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: gray;
+  font-size: 15px;
+  > span {
+    margin: 5px;
+    &:hover .btns-container {
+      background: -webkit-linear-gradient(
+        111deg,
+        rgb(141, 0, 47),
+        rgb(122, 19, 1)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.movies-sidenav {
+  height: 100%;
+  width: 170px;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(20, 20, 20);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.movies-sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  &:hover {
+    color: #f1f1f1;
+  }
+}
+
+.movies-sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+  background: -webkit-linear-gradient(0deg, rgb(209, 0, 157), rgb(209, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+}
+

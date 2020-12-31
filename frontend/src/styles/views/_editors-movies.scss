@@ -1,0 +1,350 @@
+@media screen and (max-width:900px) {
+    .editors-movies-page{
+        color: rgb(221, 221, 221);
+        display: table;
+        min-height: 100vh;
+        width: 100%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .container{
+            width: 100%;
+        min-height: 100px;
+        border: 1px solid rgb(175, 12, 12);
+        @include flexNoAlign(column, space-between);
+            margin: 20px 0;
+            box-shadow: inset -1px 3px 8px 5px rgb(160, 15, 63), 2px 5px 16px 0px #460202, inset 0px 0px 47px 16px rgba(0,0,0,0.8);
+            .img-container{
+                height: 100%;
+                position: relative;
+                z-index: -1;
+                width:100%;
+                .before-img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(to right, transparent, transparent, rgb(22, 16, 16));
+                    top: 0;
+                    left: 0;
+    
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .movie-details{
+                background-image: linear-gradient(to right, transparent ,rgb(160, 15, 63), rgb(207, 25, 56));
+                background-image: linear-gradient(to right, transparent ,rgb(59, 18, 32), rgb(156, 5, 28));
+                background-image: linear-gradient(to right, transparent, rgb(156, 5, 28));
+                width:100%;
+                // border: 1px solid violet;
+                margin-left: 0px;
+                > .title{
+                    font-size: 3.2em;
+                    font-weight: bold;
+                    text-align: center;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: black;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+                > .description, .genres, .year, .trailer-btn{
+                    margin-left: 50px;
+                    font-size: 14px;
+                    
+                }
+                > .genres, .year{
+                    font-size: 11px;
+                }
+                > .description{
+                    margin: 20px 0;
+                    margin-left: 50px;
+                    max-width: 300px;
+                    display: block;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    max-height: 4em;
+                    line-height: 1em;
+                    display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 4; 
+                }
+                .trailer-btn{
+                    margin: auto;
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border: 1px solid rgb(43, 43, 43);
+                    border-radius: 4px ;
+                    width: 150px;
+                    text-align: center;
+                    color: rgb(43, 43, 43);;
+                    font-size: 18px;
+                    font-weight: bolder;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    transition: transform .2s;
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .trailer{
+                max-width: 350px;
+                max-height: 200px;
+                position: absolute;
+                top: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .direction-r, .direction-l{
+            width: 80vw;
+        }
+        .direction-r{
+            @include flexNoAlign(row, flex-end);
+        }
+        .direction-l{
+            @include flexNoAlign(row, start);
+        }
+    }
+
+}
+@media screen and (min-width:900px) and (max-width: 1500px){
+    .editors-movies-page{
+        color: rgb(221, 221, 221);
+        display: table;
+        min-height: 100vh;
+        width: 100%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .container{
+            margin: 20px 0;
+            width: 900px;
+            height: 300px;
+            box-shadow: inset -1px 3px 8px 5px rgb(160, 15, 63), 2px 5px 16px 0px #460202, inset 0px 0px 47px 16px rgba(0,0,0,0.8);
+            @include flexNoAlign(row, space-between);
+            .img-container{
+                width:800px;
+                height: 100%;
+                position: relative;
+                z-index: -1;
+                .before-img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(to right, transparent, transparent, rgb(22, 16, 16));
+                    top: 0;
+                    left: 0;
+    
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .movie-details{
+                background-image: linear-gradient(to right, transparent ,rgb(160, 15, 63), rgb(207, 25, 56));
+                background-image: linear-gradient(to right, transparent ,rgb(59, 18, 32), rgb(156, 5, 28));
+                background-image: linear-gradient(to right, transparent, rgb(156, 5, 28));
+                width:90%;
+                margin-left: -120px;
+                > .title{
+                    font-size: 3.2em;
+                    font-weight: bold;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: black;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+                > .description, .genres, .year, .trailer-btn{
+                    margin-left: 50px;
+                    font-size: 14px;
+                    
+                }
+                > .genres, .year{
+                    font-size: 11px;
+                }
+                > .description{
+                    margin: 20px 0;
+                    margin-left: 50px;
+                    max-width: 300px;
+                    display: block;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    max-height: 4em;
+                    line-height: 1em;
+                    display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 4; 
+                }
+                .trailer-btn{
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border: 1px solid rgb(43, 43, 43);
+                    border-radius: 4px ;
+                    width: 150px;
+                    text-align: center;
+                    color: rgb(43, 43, 43);;
+                    font-size: 18px;
+                    font-weight: bolder;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    transition: transform .2s;
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .trailer{
+                max-width: 350px;
+                max-height: 200px;
+                position: absolute;
+                top: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .direction-r, .direction-l{
+            width: 80vw;
+        }
+        .direction-r{
+            @include flexNoAlign(row, flex-end);
+        }
+        .direction-l{
+            @include flexNoAlign(row, start);
+        }
+    }
+}
+@media screen and (min-width: 1500px) {
+    .editors-movies-page{
+        color: rgb(221, 221, 221);
+        display: table;
+        min-height: 100vh;
+        width: 100%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .container{
+            width:100%;
+            height:400px;
+
+        @include flexNoAlign(row, space-between);
+            margin: 20px 0;
+            box-shadow: inset -1px 3px 8px 5px rgb(160, 15, 63), 2px 5px 16px 0px #460202, inset 0px 0px 47px 16px rgba(0,0,0,0.8);
+            @include flexNoAlign(row, space-between);
+            .img-container{
+                width:1200px;
+                height: 100%;
+                position: relative;
+                z-index: -1;
+                .before-img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(to right, transparent, transparent, rgb(22, 16, 16));
+                    top: 0;
+                    left: 0;
+    
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .movie-details{
+                background-image: linear-gradient(to right, transparent ,rgb(160, 15, 63), rgb(207, 25, 56));
+                background-image: linear-gradient(to right, transparent ,rgb(59, 18, 32), rgb(156, 5, 28));
+                background-image: linear-gradient(to right, transparent, rgb(156, 5, 28));
+                width:90%;
+                margin-left: -120px;
+                > .title{
+                    margin-top: 20px;
+                    font-size: 3.5em;
+                    font-weight: bold;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: black;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+                > .description, .genres, .year, .trailer-btn{
+                    margin-left: 50px;
+                    font-size: 14px;
+                    
+                }
+                > .genres, .year{
+                    font-size: 11px;
+                }
+                > .description{
+                    margin: 20px 0;
+                    margin-left: 50px;
+                    max-width: 500px;
+                    display: block;
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    max-height: 4em;
+                    line-height: 1em;
+                    display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 4; 
+                }
+                .trailer-btn{
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border: 1px solid rgb(43, 43, 43);
+                    border-radius: 4px ;
+                    width: 150px;
+                    text-align: center;
+                    color: rgb(43, 43, 43);;
+                    font-size: 18px;
+                    font-weight: bolder;
+                    background-image: url(../../styles/img/gold-back5.jpg);
+                    background-size: cover;
+                    transition: transform .2s;
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .trailer{
+                max-width: 350px;
+                max-height: 200px;
+                position: absolute;
+                top: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .direction-r, .direction-l{
+            width: 80vw;
+        }
+        .direction-r{
+            @include flexNoAlign(row, flex-end);
+        }
+        .direction-l{
+            @include flexNoAlign(row, start);
+        }
+    }
+}

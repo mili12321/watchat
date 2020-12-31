@@ -1,0 +1,19 @@
+.about {
+  height: 100vh;
+}
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fa-store {
+  font-size: rem(30px);
+  align-self: center;
+  color: $clr1;
+}
+.store-InfoWindow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

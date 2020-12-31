@@ -1,0 +1,46 @@
+.toolbar {
+  display: flex;
+  background: black;
+  align-self: center;
+  align-items: center;
+  justify-content: start;
+  width: 95%;
+  height: 25%;
+  border-bottom: deeppink 1px solid;
+
+  .toolbar-icon {
+    color: white;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.226);
+    transition: 0.3s;
+    margin-right: 10px;
+
+    &:hover {
+      color: deeppink;
+      cursor: pointer;
+    }
+    >a{
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        color: deeppink;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.fa-arrow-circle-left{
+  font-size: 20px;
+}
+.exit-door{
+  &:hover {
+    fill: deeppink;
+  }
+}

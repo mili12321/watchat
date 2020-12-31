@@ -1,0 +1,61 @@
+.mobile-toolbar{
+    width: 95vw;
+    margin:0 auto;
+    height: 40px;
+    margin-bottom: 5px;
+    position: relative;
+    .toolbar-search{
+        width: 200px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        display: flex;
+        place-items: center;
+
+    }
+    .toolbar-btns{
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+        height: 100%;
+    }
+    .toolbar-btn{
+        font-size: 25px;
+        margin-left:10px;
+    }
+    .total-users-mobile{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        color: deeppink;
+        font-size: 0.7rem;
+        top: 7.5px;
+        right:10px;
+        transition: 0.5s; 
+    }
+}
+.watch-room-users-container{
+    flex: 1 1 auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    >.user-container{
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: 0.4s;
+        position: relative;
+        z-index: 2;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+}
+.exit > svg{
+    color: #f52156;
+    font-weight: bold;
+    cursor: pointer;
+}

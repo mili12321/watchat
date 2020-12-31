@@ -1,0 +1,36 @@
+.card-cat {
+    @include aspect-ratio(1, 1);
+
+    font-family: caveat;
+    font-size: rem(50px);
+    color: $clr6;
+
+    background-color: $clr1;
+
+    .cat-tag {
+        z-index: 1;
+    }
+
+    .cat-image {
+        mix-blend-mode: multiply;
+        filter: grayscale(1);
+    }
+
+    @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+            background-color: adjust-hue($clr1, $i*4deg );
+        }
+    }
+
+    // SCREEN FOR HIGHLIGHTING TEXT ON IMAGE
+
+    // &::after {
+    //     content: "";
+    //     background-color: rgba($clr1, .7);
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    // }
+}

@@ -1,0 +1,156 @@
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-number-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.price-middle-line {
+  align-self: center;
+  position: absolute;
+  top: rem(12px);
+}
+.Min-Price-container,
+.Max-Price-container {
+  position: relative;
+  margin-left: rem(5px);
+  margin-right: rem(5px);
+}
+.Min-Price-title,
+.Max-Price-title {
+  position: absolute;
+  top: rem(-9px);
+  left: rem(15px);
+  font-size: rem(18px);
+  font-weight: bolder;
+  color: darken($clr8, 20%);
+  font-family: 'Italianno', cursive;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='search'] {
+  align-self: center;
+  border: rem(2px) solid rgba(26, 26, 26, 0.692);
+  background-color: rgba(0, 0, 0, 0.425);
+  border-radius: rem(4px);
+  padding: 5px rem(20px);
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(48, 48, 48);
+}
+
+input[type='number'] {
+  width: rem(90px);
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.input-icons i {
+  position: absolute;
+  color: rgb(32, 32, 32);
+}
+
+.icon {
+  padding: rem(15px);
+  min-width: rem(20px);
+  color: rgb(48, 48, 48);
+}
+
+.input-field {
+  padding: rem(10px);
+  text-align: center;
+}
+.input-icons {
+  margin-right: rem(18px);
+}
+.input-type {
+  width: 150px;
+  margin-right: rem(20px);
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 2px solid;
+  background-color: gray;
+  background-image: none;
+  &::-ms-expand {
+    display: none;
+  }
+  height: 30px;
+  border-radius: 5px;
+}
+.input-type-container {
+  margin-right: 15px;
+  position: relative;
+  display: flex;
+  width: rem(135px);
+  height: 3em;
+  line-height: 3;
+  background: $clr2;
+  color: $clr3;
+  overflow: hidden;
+  border-radius: 0.25em;
+  height: 30px;
+  border: 2px solid $clr6;
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: -9px;
+    right: 0;
+    padding: 0 1em;
+    background: $clr2;
+    border-left: 2px solid $clr6;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+  }
+  &:hover::after {
+    color: $clr6;
+  }
+}
+select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: $clr6;
+  cursor: pointer;
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-stock {
+  text-align: center;
+}
+#edit-price {
+  width: rem(200px);
+}
+.toy-edit {
+  height: 100vh;
+}
+.edit-btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100px;
+  align-items: center;
+}

@@ -1,0 +1,235 @@
+.user-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 25%;
+  transition: 0.5s;
+  margin: auto;
+  position: relative;
+  justify-self: center;
+
+  .user-menu-icons {
+    position: absolute;
+    transition: 0.4s;
+    top: -30%;
+    width: calc(100% + 10px);
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 150;
+    animation-duration: 0.5s;
+    animation-name: user-action;
+
+
+    @keyframes user-action {
+      0% {
+        top: 30%;
+        opacity: 30%;
+        width: 20%;
+      }
+
+      100% {
+        top: -30%;
+        opacity: 100%;
+        width: calc(100% + 10px);
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+
+    .user-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      overflow-x: visible;
+      border: 1px solid darkgray;
+      transition: 0.3s;
+
+      &:hover {
+        border: 1px solid white;
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+
+    .small-popcorn {
+      background: url('../../img/popcorn.png') center/cover no-repeat;
+      position: relative;
+    }
+
+    .drink {
+      background: url('../../img/drink.png') center/cover no-repeat;
+      position: relative;
+    }
+    .follow {
+      background: url('../../img/follow.png') center/cover no-repeat;
+      position: relative;
+    }
+    .kiss {
+      background: url('../../img/kiss.png') center/cover no-repeat;
+      position: relative;
+    }
+  }
+
+  .default-avatar {
+    background: url('../../img/default-avatar.png') center/cover no-repeat;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.4s;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+    border: 2px solid white;
+    background: linear-gradient(315deg , #d57c3a, #d53a9d);
+background: linear-gradient(315deg , #d57c3a, #d53a9d);
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .user-name {
+    color: deeppink;
+    align-self: center;
+    margin-top: 10px;
+    height: 20%;
+    font-size: 0.7rem;
+    transition: 0.3s;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .user-preview {
+    height:auto;
+    width: 25%;
+  }
+  .user-preview .user-menu-icons {
+    width: 25vw;
+    top: -37%;
+    animation-name: mobile-user-action;
+  }
+  @keyframes mobile-user-action {
+    0% {
+      top: 30%;
+      opacity: 30%;
+      width: 20%;
+    }
+
+    100% {
+      top:  -37%;
+      opacity: 100%;
+      width: calc(100% + 10px);
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .user-preview .user-menu-icons .user-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+@media screen and (min-width:414px) and (max-width:813px) {
+  .user-preview {
+    height:auto;
+    width: 14%;
+  }
+  .user-preview .user-menu-icons {
+    width: 18vw;
+    top: -37%;
+    animation-name: mobile-user-action;
+  }
+  @keyframes mobile-user-action {
+    0% {
+      top: 30%;
+      opacity: 30%;
+      width: 20%;
+    }
+
+    100% {
+      top:  -37%;
+      opacity: 100%;
+      width: calc(100% + 10px);
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .user-preview .user-menu-icons .user-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+@media screen and (max-height: 415px) {
+  .watch-room-users-container {
+    min-height: 100px;
+  }
+  .user-preview {
+    height:auto;
+    width: 13%;
+    top: 20px;
+  }
+  .user-preview .user-menu-icons {
+    width: 12vw;
+    top: -37%;
+    animation-name: mobile-user-action;
+  }
+  @keyframes mobile-user-action {
+    0% {
+      top: 30%;
+      opacity: 30%;
+      width: 20%;
+    }
+
+    100% {
+      top:  -37%;
+      opacity: 100%;
+      width: calc(100% + 10px);
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .user-preview .user-menu-icons .user-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .user-preview .user-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .user-preview .user-name {
+    margin-top: 4px;
+  }
+}
+@media screen and (max-width:414px) {
+  .reactions-menu {
+    top: -84px;
+    .reaction {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

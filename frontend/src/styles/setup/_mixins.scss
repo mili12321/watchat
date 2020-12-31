@@ -1,0 +1,107 @@
+/* Breakpoint mixins */
+
+@mixin for-mobile-layout {
+  @media (max-width: $mobile-breakpoint + 40) {
+    @content;
+  }
+}
+
+@mixin for-narrow-layout {
+  @media (min-width: $mobile-breakpoint + 40) {
+    @content;
+  }
+}
+
+@mixin for-normal-layout {
+  @media (min-width: $narrow-breakpoint + 40) {
+    @content;
+  }
+}
+
+@mixin for-wide-layout {
+  @media (min-width: $normal-breakpoint + 40) {
+    @content;
+  }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+
+@mixin flexCenter($direction){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flexCenterNoAlign($direction){
+  display: flex;
+  justify-content: center;
+  flex-direction: $direction;
+}
+@mixin flex($direction,$content){
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flexNoAlign($direction,$content){
+  display: flex;
+  justify-content: $content;
+  flex-direction: $direction;
+}

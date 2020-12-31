@@ -1,0 +1,31 @@
+.navlink-btn {
+  color: $clr9;
+  padding: rem(5px);
+  border-radius: rem(5px);
+  margin: rem(5px);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.navlink-btn:visited {
+  color: $clr9;
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+  color: $clr9;
+}
+a:visited {
+  text-decoration: none;
+  color: $clr9;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+Link {
+  position: relative;
+  z-index: 5;
+}

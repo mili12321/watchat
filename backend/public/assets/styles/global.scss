@@ -1,0 +1,22 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+@import "setup/typography.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+@import "basics/links.scss";
+@import "basics/buttons.scss";
+@import "basics/inputs.scss";
+
+// Components
+@import "components/main-header.scss";
+@import "views/about-page.scss";
+@import "views/toy-page.scss";
+@import "views/home-page.scss";
+@import "views/details-page.scss";
+
+// @import "components/cat-card.scss";

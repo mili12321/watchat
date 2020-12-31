@@ -1,0 +1,119 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #d8d8d8; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150); 
+    border: 1px solid rgb(46, 46, 46);
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(121, 121, 121); 
+  }
+.favorite-movies-section{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index:900;
+}
+.favorite-movies-list{
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(32, 7, 46, 0.788);
+    background-color: rgba(0, 0, 0, 0.86);
+    -moz-box-shadow: 0 0 3px rgb(156, 156, 156);
+    -webkit-box-shadow: 0 0 3px rgb(156, 156, 156);
+    box-shadow: 0 0 3px rgb(156, 156, 156);
+    color: black;
+    transition: 0.5s width;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* Chrome/Safari/Webkit */
+    }
+    .container{
+        padding: 10px;
+        .empty-msg{
+          color: #807e7e;
+          text-align: center;
+        }
+    }
+    div{
+        padding: 5px 0;
+    }
+    &:hover{
+        width: 250px;
+    }
+}
+
+.open-nav-style{
+  background-color: rgba(0, 0, 0, 0.479);
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.open-list {
+    width: 250px;
+  }
+  .close-list {
+    width: 0;
+}
+
+.fav-list-btn{
+    cursor: pointer;
+    height:80px;
+    width: 25px;
+    position: relative;
+    border-radius: 7px 0 0 7px;
+    div{
+        transform: rotate(90deg);
+        position: absolute;
+        top: 30px;
+        right: -15px;
+        white-space: nowrap;
+       font-family: 'Signika', sans-serif;
+    }
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(128, 128, 128);
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+    &:hover ~ .favorite-movies-list{
+        width: 250px;
+    }
+}
+.fav-btn-open{
+  background-color: #42526d;
+  color: #e5e5e5;
+}
+.close-list-msg{
+  position: absolute;
+    top: -4px;
+    left: 6px;
+    font-size: 11px;
+    color: #e6e6e6;
+}
+.hide-closing-msg{
+  display: none;
+}
+@media screen and (max-height:414px) {
+  .favorite-movies-list{
+    max-height: 300px;
+  }
+}

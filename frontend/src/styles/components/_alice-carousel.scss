@@ -1,0 +1,101 @@
+.top-movies{
+    margin-bottom: 80px;
+}
+.alice-carousel{
+    .carousel-card{
+        padding: 5px;
+        display: flex;
+        height:270px;
+        position: relative;
+
+        &:hover .top-number {
+            background: -webkit-linear-gradient(
+              #ffffff 0%,
+              #ffffac 8%,
+              #d1b464 25%,
+              #5d4a1f 62.5%,
+              #5d4a1f 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:hover .movie-img-container {
+            box-shadow: 0 0 10px #d1b464;
+            -moz-box-shadow: 0 0 10px #d1b464;
+            -webkit-box-shadow: 0 0 10px #d1b464;
+            -o-box-shadow: 0 0 10px #d1b464;
+            overflow: hidden;
+            border-radius: 5px;
+          }
+        .movie-img-container{
+            width: 60%;
+            width: 150px;
+            height: 100%;
+          }
+        .movie-img{
+            width: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .top-number{
+            height: 250px;
+            flex-grow: 1;
+            font-size: 20rem;
+            line-height:80%;
+            display: inline-block;
+            padding: 0;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            align-self: center;
+            position: absolute;
+            
+            text-align: end;
+            right: -10px;
+            -webkit-text-stroke-width: 4px;
+            -webkit-text-stroke-color: rgb(110, 109, 109);
+            
+        }
+        .last-child {
+            font-size: 200px;
+            letter-spacing: -40px;
+            padding-right: 40px;
+            line-height:1.2;
+        }
+    }
+
+}
+@media screen and (max-width: 414px) {
+    .alice-carousel .carousel-card .top-number{
+        height: 100%;
+        flex-grow: 1;
+        font-size: 12rem;
+        line-height: 80%;
+        display: inline-block;
+        padding: 0;
+        color: black;
+        font-weight: bold;
+        align-self: center;
+        position: absolute;
+        text-align: end;
+        right: -12px;
+        top: 98px;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: #6e6d6d;
+    }
+    .top-movies {
+       margin-bottom:0px;
+    }
+}
+@media screen and (max-height: 415px){
+    .alice-carousel {
+        overflow-x: hidden;
+        min-height: 68px;
+    }
+}
