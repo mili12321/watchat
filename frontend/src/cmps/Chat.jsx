@@ -318,7 +318,7 @@ class _Chat extends Component {
   {msgForUser.sendedMsg&&
       <div className="old-msg">
           <span>About:</span>
-          <span dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.sendedMsg.slice(msgForUser.to.length+1)),}}></span>
+          <span dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.sendedMsg.slice(msgForUser.to.length+1)),}} className="gif-img"></span>
       </div>
   }
 
