@@ -189,6 +189,14 @@
         .msg-content {
           font-weight: 500;
           font-size: 11px;
+          img{
+            width: 20px;
+            height: auto;
+          }
+          span{
+            color: #e4e4e4;
+            font-family: 'Viga', sans-serif;
+          }
         }
 
         .gif-img {
