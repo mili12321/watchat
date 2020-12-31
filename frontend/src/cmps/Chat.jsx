@@ -318,7 +318,7 @@ class _Chat extends Component {
   {msgForUser.sendedMsg&&
       <div className="old-msg">
           <span>About:</span>
-          <span dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.sendedMsg.slice(msgForUser.to.length+1)),}} className="gif-img"></span>
+          <span dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.sendedMsg.slice(msgForUser.to.length+1)),}} style={{width: "20px"}}></span>
       </div>
   }
 
@@ -330,7 +330,7 @@ class _Chat extends Component {
     </div>
     <div className="sender-msg-container">
         <div className="sender-msg-name">{msgForUser.from.username}</div>
-        <div className="sender-msg-txt" dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.txt.slice(msgForUser.to.length+1)),}}></div>
+        <div className="sender-msg-txt" dangerouslySetInnerHTML={{__html: this.replaceWithGif(msgForUser.txt.slice(msgForUser.to.length+1)),}} style={{width: "20px"}}></div>
     </div>
   </div>
 
@@ -431,7 +431,7 @@ class _Chat extends Component {
                       className='msg-content'
                       dangerouslySetInnerHTML={{
                         __html: this.replaceWithGif(msg.txt),
-                      }}
+                      }} style={{width: "20px"}}
                     />
                   </div>
                 </div>
