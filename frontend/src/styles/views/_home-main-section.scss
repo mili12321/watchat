@@ -529,7 +529,7 @@
 
 .movies-title {
   font-family: 'PT Sans Narrow', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: rgb(230, 230, 230);
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -538,7 +538,8 @@
   max-width: 1400px;
   font-family: 'Fira Sans Condensed', sans-serif;
   height:400px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   > .home-new-movies-container {
@@ -674,7 +675,8 @@
   }
   > .home-top-movies-container {
     width: 100%;
-    height: 100%;
+    // height: 100%;
+    height: 400px;
     display: flex;
     > .top-container {
       width: 100%;
