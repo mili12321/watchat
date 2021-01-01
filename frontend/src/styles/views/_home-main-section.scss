@@ -666,7 +666,6 @@
 .top-movies {
   max-width: 1400px;
   width: 100%;
-  height: 39vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
@@ -675,8 +674,6 @@
   }
   > .home-top-movies-container {
     width: 100%;
-    // height: 100%;
-    height: 400px;
     display: flex;
     > .top-container {
       width: 100%;
@@ -753,7 +750,6 @@
 }
 .editors-movies {
   border-radius: 5px;
-  margin-top: 70px;
   width: 100%;
   max-width: 1400px;
   font-family: 'Fira Sans Condensed', sans-serif;
