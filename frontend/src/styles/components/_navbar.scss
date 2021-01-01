@@ -173,9 +173,9 @@ input[type='search'] {
   position: absolute !important;
   z-index: 90;
 }
-.WatChat-logo {
-}
+
 .under-logo {
+  white-space: nowrap;
   font-size: 10px;
   color: rgb(206, 206, 206);
   text-align: center;
@@ -213,6 +213,7 @@ input[type='search'] {
       font-size: 21px;
     }
     .under-logo {
+        white-space: nowrap;
         font-size: 9px;
         top: 25px;
         left: 14px;
