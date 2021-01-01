@@ -1,3 +1,10 @@
+@media screen and (max-width:415px) {
+    .editors-movies-page .container .movie-details > .description{
+        margin: 20px auto;
+        width: 70%;
+    }
+}
+
 @media screen and (max-width:900px) {
     .editors-movies-page{
         color: rgb(221, 221, 221);
@@ -347,4 +354,7 @@
             @include flexNoAlign(row, start);
         }
     }
+}
+.movie-card:last-child {
+    margin-bottom: 10vh;
 }

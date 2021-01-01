@@ -71,7 +71,7 @@ export class _EditorsMovies extends Component{
             <div className="editors-movies-page" id='top'>
                 <div>
                     {movies.map((movie,idx)=>
-                    <div  className={`${'direction-'+(idx%2 ? 'r':'l')}`}>
+                    <div  className={`movie-card ${'direction-'+(idx%2 ? 'r':'l')}`}>
                         <div className={`container `}>
                             <div className="img-container">
                                 <img src={`${movie.wideCoverUrl}`} alt=""/>

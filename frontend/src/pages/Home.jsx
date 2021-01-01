@@ -329,7 +329,7 @@ class _Home extends Component {
                   <div className='info-container'>
                     <Link to={`/editor-movies/editors-adventure/#top`} >
                     <div>
-                      SEE ALL <span className='number-style'>14</span>
+                      SEE ALL <span className='number-style'>6</span>
                     </div>
                     </Link>
                     <Link to={`/movies/Adventure`} >
@@ -388,7 +388,7 @@ class _Home extends Component {
                   <div className='info-container'>
                   <Link to={`/editor-movies/editors-action/#top`} >
                   <div>
-                      SEE ALL <span className='number-style'>22</span>
+                      SEE ALL <span className='number-style'>6</span>
                     </div>
                   </Link>
                   <Link to={`/movies/Action`} >
@@ -449,7 +449,7 @@ class _Home extends Component {
                   <div className='info-container'>
                   <Link to={`/editor-movies/editors-horror/#top`} >
                   <div>
-                      SEE ALL <span className='number-style'>17</span>
+                      SEE ALL <span className='number-style'>6</span>
                     </div>
                   </Link>
 
