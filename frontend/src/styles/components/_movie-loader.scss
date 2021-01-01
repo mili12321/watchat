@@ -17,6 +17,7 @@
   }
 
   .phrases {
+    white-space: nowrap;
     color: #ffffff;
     text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
       #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
@@ -55,6 +56,7 @@
   .movie-loader {
     .phrases { 
       font-size: 18px;
+      white-space: nowrap;
     }
     .large-text {
       font-size: 18px;
