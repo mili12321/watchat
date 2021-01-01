@@ -50,7 +50,6 @@
   background: white;
   max-width: 600px;
   width: 80%;
-  // min-width: 80%;
   min-height: 450px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   position: relative;
@@ -75,10 +74,8 @@
     min-height: 350px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     position: relative;
-    // left: 50%;
-    // transform: translateX(-50%);
     left: 0px;
-    top: -105px;
+    top: -50px;
     display: flex;
     justify-content: center;
   }
