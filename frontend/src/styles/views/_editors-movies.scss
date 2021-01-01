@@ -3,6 +3,16 @@
         margin: 20px auto;
         width: 70%;
     }
+    .editors-movies-page .container .movie-details > .title{
+        margin:auto;
+        font-size: 2.2em;
+        width: 90%;
+    }
+}
+@media screen and (min-width:415px) and (max-width: 900px){
+    .editors-movies-page .container .movie-details > .title{
+        font-size: 3.2em;
+    }
 }
 
 @media screen and (max-width:900px) {
@@ -49,7 +59,6 @@
                 // border: 1px solid violet;
                 margin-left: 0px;
                 > .title{
-                    font-size: 3.2em;
                     font-weight: bold;
                     text-align: center;
                     -webkit-text-stroke-width: 1px;
