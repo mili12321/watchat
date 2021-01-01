@@ -11,6 +11,7 @@ const io = require('socket.io')(http)
 require('dotenv').config()
 // Express App Config
 app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(
