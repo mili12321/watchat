@@ -43,8 +43,8 @@ export class _MobileToolbar extends Component {
             <div className='add-user toolbar-icon' onClick={this.props.onShare}>
                 <div style={{color:white}}>{this.state.location}</div>
                 <a
-                href={`whatsapp://send?text=${this.state.location} 
-                Watch ${this.props.movie.title} Together With Friends!
+                href={`whatsapp://send?text=${window.location.href} 
+                Watch ${this.props.movie.title} Together With Friends! ${this.state.location}
                 `}
                 data-action='share/whatsapp/share'
                 // target='_blank'
