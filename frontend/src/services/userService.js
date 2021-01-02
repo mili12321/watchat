@@ -53,6 +53,8 @@ function _handleLogin(user) {
 }
 
 async function addFavMovie(user,movie){
+  console.log("fav movie:",movie)
+  console.log("the user:",user)
   user.favMovies = [movie, ...user.favMovies]
   const newUser = await httpService.put(`user/${user._id}`, user)
   return _handleLogin(newUser)

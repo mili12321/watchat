@@ -457,6 +457,10 @@
     font-family: 'Handlee', cursive;
     word-break: break-all;
     padding-right: 20px;
+    img{
+      width: 20px;
+      height: auto;
+    }
   }
 }
 .new-msg{
@@ -497,6 +501,10 @@
     font-family: 'Just Another Hand', cursive;
     font-family: 'Handlee', cursive;
     word-break: break-all;
+    img{
+      width: 20px;
+      height: auto;
+    }
   }
 }
 .reply-btn{

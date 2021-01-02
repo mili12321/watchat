@@ -133,7 +133,6 @@ class _Chat extends Component {
           const newGifts = this.state.gifts.filter(_gift=>_gift.id!==gift.id)
           this.setState({ gifts:newGifts})
         }, 5500)
-        console.log('this.state.gifts-->',this.state.gifts)
       })
     })
 
