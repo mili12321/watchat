@@ -165,6 +165,7 @@ body {
   display: grid;
   grid-template-columns: 70% auto 20%;
   grid-template-rows: repeat(2, 40px);
+  margin-bottom: 20px;
 }
 .overview-title,
 .genres-title,
@@ -173,6 +174,7 @@ body {
   font-weight: bold;
   color: white;
   font-size: clamp(16px, 1vw, 20px);
+  margin-bottom: 20px;
 }
 .reviews-title {
   margin-top: 100px;
@@ -212,15 +214,17 @@ body {
 }
 .cast-continer {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: 50px 100px;
+  display: flex;
+  flex-direction: column;
   color: white;
-  grid-gap: 1px 9px;
+}
+.actors{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .cast-title {
   grid-row: 1;
-  align-self: end;
 }
 .actor-1 {
   grid-column: 1;
@@ -247,16 +251,15 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-inline-end: 10px;
+  &:last-child{
+    margin-inline-end: 0px;
+  }
 }
 @media only screen and (max-width: 1062px) {
   .cast-continer {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: 50px 100px;
     color: white;
-    grid-gap: 1px 9px;
-    margin: 10px;
   }
   .actor-container {
     justify-self: start;
@@ -267,7 +270,6 @@ body {
   .cast-title {
     font-weight: bold;
     grid-row: 1;
-    align-self: center;
   }
 }
 .actor-img {
@@ -275,7 +277,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-inline-end: 10px;
+  // margin-inline-end: 10px;
 }
 .actor-info-container {
   align-self: center;
@@ -286,6 +288,11 @@ body {
 .actor-name {
   font-size: 11px;
   font-weight: bold;
+}
+@media only screen and (min-width: 1062px) {
+  .actor-img {
+    margin-inline-end: 10px;
+  }
 }
 @media only screen and (max-width: 514px) {
   .actor-name {
@@ -365,9 +372,6 @@ body {
   background-color: transparent;
   border-bottom: none;
 }
-.th-name {
-}
-
 
 .review-form {
   background: linear-gradient(111deg, #940d3a, #a0250f);
@@ -455,11 +459,7 @@ button:focus {
 @media only screen and (max-width: 605px) {
   .cast-continer {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: 50px 100px;
     color: white;
-    grid-gap: 1px 9px;
     margin: auto;
     margin-bottom: 15px;
   }

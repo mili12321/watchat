@@ -236,6 +236,7 @@ class _MovieDetails extends Component {
 
             <div className='cast-continer'>
               <div className='cast-title'>Cast</div>
+              <div className="actors">
               {movie.cast.map((actor, idx) => (
                 <div className={`actor-container actor-${idx + 1}`}>
                   <img className='actor-img' src={`${actor.img}`} alt='' />
@@ -248,6 +249,7 @@ class _MovieDetails extends Component {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </section>
           <section className='reviews-container'>
