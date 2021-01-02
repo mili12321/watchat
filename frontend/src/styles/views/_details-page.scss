@@ -333,7 +333,6 @@ body {
 
   .td-txt{
     margin-left: 10px;
-    word-break: break-all;
   }
 }
 .reviews-th {
@@ -350,6 +349,7 @@ body {
     &:last-child{
       position: absolute;
       right: 0;
+      top: -3px;
     }
   }
 }
