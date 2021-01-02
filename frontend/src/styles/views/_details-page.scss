@@ -122,9 +122,9 @@ body {
   }
   >.list-btn-symble{
     padding-right: 5px;
-  }
-  .fa-check{
-    font-size: 1.3vw;
+    .fa-check{
+      margin-inline-end:0;
+    }
   }
 }
 
@@ -301,6 +301,8 @@ body {
     flex-direction: column;
   }
 }
+
+
 .actor-character {
   font-size: 9px;
   color: gray;
@@ -1068,9 +1070,13 @@ html {
 @media screen and (max-width:414px){
   .my-list-btn, .details-hero-btn{
     height: 20px;
+    place-items: center;
   }
   .scenes-container {
     max-height: 38px;
+  }
+  .details-hero-title{
+    font-size: 20px;
   }
 }
 @media screen and (max-width:463px){
