@@ -6,17 +6,20 @@ import {
   IoMdShare,
   IoIosPerson,
 } from 'react-icons/io'
+import { white } from 'material-ui/styles/colors';
 
 
 export class _MobileToolbar extends Component {
     state ={
         showComponent: false,
         color: '',
-        active: ""
+        active: '',
+        location:''
     }
     
     componentDidMount() {
         this.setState({ active: 'home' })
+        this.setState({ location: window.location.href })
     }
     componentWillUnmount(){
         this.setState({ active: '' })
@@ -38,8 +41,9 @@ export class _MobileToolbar extends Component {
             </div>
 
             <div className='add-user toolbar-icon' onClick={this.props.onShare}>
+                <div style={{color:white}}>{this.state.location}</div>
                 <a
-                href={`whatsapp://send?text=${window.location.href} 
+                href={`whatsapp://send?text=${this.state.location} 
                 Watch ${this.props.movie.title} Together With Friends!
                 `}
                 data-action='share/whatsapp/share'
