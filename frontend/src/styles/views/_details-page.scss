@@ -266,6 +266,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    width: calc(90vw / 5 - 10px);
   }
   .cast-title {
     font-weight: bold;
