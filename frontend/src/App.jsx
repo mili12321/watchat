@@ -14,7 +14,8 @@ class _App extends React.Component{
     currView: 'main',
     currCmp: 'navFilter',
     appCondition: true,
-    isClose:true
+    isClose:true,
+    active: ''
   }
   removeFromFavList=(ev,movie)=>{
     ev.stopPropagation()
@@ -27,6 +28,10 @@ class _App extends React.Component{
     this.setState({ currView: newView })
   }
 
+  changeAppActiveName = (name) => {
+    this.setState({ active: name })
+  }
+
   onToggleList = ()=>{
     this.setState({isClose:!this.state.isClose})
   }
@@ -37,7 +42,7 @@ class _App extends React.Component{
     return (
       <div className='App'>
         <header>
-          <Navbar toggleView={this.toggleView}/>
+          <Navbar toggleView={this.toggleView} changeAppActiveName={this.changeAppActiveName}/>
         </header>
        { currView==="FilteredMovie"&&
           <FilteredMovie movies={movies} currCmp={this.state.currCmp} toggleView={this.toggleView} appCondition={appCondition}/>
@@ -58,7 +63,7 @@ class _App extends React.Component{
         </React.Fragment>
         </main>}
         <FavoriteList removeFromFavList={this.removeFromFavList} loggedInUser={loggedInUser} onToggleList={this.onToggleList} isClose={this.state.isClose}/>
-        <MobileNavbar  toggleView={this.toggleView}/>
+        <MobileNavbar  toggleView={this.toggleView} active={this.state.active} changeAppActiveName={this.changeAppActiveName}/>
 
       </div>
     )

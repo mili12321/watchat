@@ -22,6 +22,7 @@ class _MobileNavbar extends Component {
     changeToActiveBtn(name) {
         this.setState({ active: name })
         this.props.toggleView('main')
+        this.props.changeAppActiveName('')
     }
     hideNavbar=()=>{
         if(this.props.history.location.pathname.includes('/room')){
@@ -37,9 +38,9 @@ class _MobileNavbar extends Component {
             <div className={`mobile-navbar ${this.hideNavbar()}`}>
 
           <div className="navbar-btns">
-          <div className={`home nav-column ${this.state.active === 'home' ? 'active-navLink' : ''}` }><NavLink className={`navlink-btn  `}  to="/" onClick={()=>{this.changeToActiveBtn('home') }}><i className="fas fa-home"></i>Home</NavLink></div>
-            <div className={`about nav-column ${this.state.active === 'about' ? 'active-navLink' : ''}`}><NavLink className="navlink-btn" to="/about" onClick={()=>{this.changeToActiveBtn('about') }}><i className="fas fa-info-circle"></i>About</NavLink></div>
-            <div className={`movies nav-column ${this.state.active === 'movie' ? 'active-navLink' : ''}`}><NavLink className="navlink-btn" to="/movies" onClick={()=>{this.changeToActiveBtn('movie') }}><i className="fas fa-film"></i>Movies</NavLink></div>
+          <div className={`home nav-column ${this.state.active === 'home'|| this.props.active ? 'active-navLink' : ''}` }><NavLink className={`navlink-btn  `}  to="/" onClick={()=>{this.changeToActiveBtn('home') }}><i className="fas fa-home"></i>Home</NavLink></div>
+            <div className={`about nav-column ${this.state.active === 'about'&&this.props.active!=='home' ? 'active-navLink' : ''}`}><NavLink className="navlink-btn" to="/about" onClick={()=>{this.changeToActiveBtn('about') }}><i className="fas fa-info-circle"></i>About</NavLink></div>
+            <div className={`movies nav-column ${this.state.active === 'movie'&&this.props.active!=='home' ? 'active-navLink' : ''}`}><NavLink className="navlink-btn" to="/movies" onClick={()=>{this.changeToActiveBtn('movie') }}><i className="fas fa-film"></i>Movies</NavLink></div>
           </div>
 
           <Search className="navlink-search nav-column" toggleView={this.props.toggleView} searchingValue={"movie"}/>

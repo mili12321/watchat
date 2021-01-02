@@ -86,19 +86,13 @@
 .navlink-btn {
   border-radius: 0;
 }
-.about {
-  grid-column: 2 / 3;
-}
-.movies {
-  grid-column: 3 / 4;
-}
+
 .main-title {
-  grid-column: 6 / 7;
   font-size: 24px;
   font-weight: bolder;
   display: flex;
   flex-direction: column;
-  height: 4vh;
+  height: 100%;
   align-self: start;
   position: relative;
 }
@@ -194,12 +188,8 @@ input[type='search'] {
       display: none;
     }
     .user-container {
-      grid-column: 8 / 9;
       justify-items: center;
 
-    }
-    .main-title{
-      grid-column:2 / 2;
     }
   }
 }
