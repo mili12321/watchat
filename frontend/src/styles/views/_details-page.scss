@@ -1104,6 +1104,12 @@ html {
   .rating-star{
     font-size: 14px;
   }
+  .actors {
+    width: 90vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .rate-msg{
   color: rgb(141, 19, 35);
@@ -1127,3 +1133,4 @@ html {
 .img-position{
   background-position-y: 16%;
 }
+
