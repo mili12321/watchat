@@ -158,17 +158,17 @@
     @keyframes example {
       0% {
         top: calc(100% - 30px);
-        // opacity: 30%;
+        opacity: 0.3;
         animation-timing-function: ease-in;
       }
       50% {
         top: calc(100% - 150px);
-        // opacity: 70%;
+        opacity: 0.7;
         animation-timing-function: ease-out;
       }
       100% {
         top: calc(100% - 250px);
-        // opacity: 0%;
+        opacity: 0;
       }
     }
   }
@@ -181,17 +181,17 @@
     @keyframes example {
       0% {
         top: calc(100% - 80px);
-        // opacity: 30%;
+        opacity: 0.3;
         animation-timing-function: ease-in;
       }
       50% {
         top: calc(100% - 180px);
-        // opacity: 70%;
+        opacity:0.7;
         animation-timing-function: ease-out;
       }
       100% {
         top: calc(100% - 300px);
-        // opacity: 0%;
+        opacity: 0;
       }
     }
   }
@@ -216,17 +216,17 @@
     @keyframes example {
       0% {
         top: calc(100% - 70px);
-        // opacity: 30%;
+        opacity: 0.3;
         animation-timing-function: ease-in;
       }
       50% {
         top: calc(100% - 150px);
-        // opacity: 70%;
+        opacity: 0.7;
         animation-timing-function: ease-out;
       }
       100% {
         top: calc(100% - 250px);
-        // opacity: 0%;
+        opacity: 0;
       }
     }
   }
