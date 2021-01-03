@@ -6,7 +6,7 @@ import {
   IoMdShare,
   IoIosPerson,
 } from 'react-icons/io'
-import { white } from 'material-ui/styles/colors';
+
 
 
 export class _MobileToolbar extends Component {
@@ -41,13 +41,11 @@ export class _MobileToolbar extends Component {
             </div>
 
             <div className='add-user toolbar-icon' onClick={this.props.onShare}>
-                <div style={{color:white}}>{this.state.location}</div>
+                {/* <div style={{color:white}}>{this.state.location}</div> */}
                 <a
-                href={`whatsapp://send?text=${window.location.href} 
-                Watch ${this.props.movie.title} Together With Friends! ${this.state.location}
-                `}
-                data-action='share/whatsapp/share'
-                // target='_blank'
+                href={'https://wa.me/?text='+encodeURIComponent(window.location.href)
+                } 
+                
                 >
                     <IoMdShare size='25px' />
                 </a>
