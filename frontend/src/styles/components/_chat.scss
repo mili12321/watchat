@@ -768,6 +768,9 @@
     z-index: 997;
     background-color: transparent;
   }
+  .chat-msg {
+   max-width: 230px;
+  }
 }
 @media screen and (min-width:414px) and (max-width:813px) and (min-height:415px){
   .chat .chat-window .chat-box {
