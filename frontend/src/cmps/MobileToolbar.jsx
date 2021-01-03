@@ -43,7 +43,8 @@ export class _MobileToolbar extends Component {
             <div className='add-user toolbar-icon' onClick={this.props.onShare}>
                 {/* <div style={{color:white}}>{this.state.location}</div> */}
                 <a
-                href={'https://wa.me/?text='+encodeURIComponent(window.location.href)
+                // href={'https://wa.me/?text='+encodeURIComponent(window.location.href)
+                href={'whatsapp://send?text='+encodeURIComponent(window.location.href)
                 } 
                 
                 >
