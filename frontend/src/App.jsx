@@ -21,7 +21,7 @@ class _App extends React.Component{
   favListRef = React.createRef()
 
   handleClickOutside = e => {
-    if (window.screen.width <= 415 && !this.favListRef.current.contains(e.target)) {
+    if ((window.screen.width <= 415 && !this.favListRef.current.contains(e.target)) ||  (window.screen.height <= 415 && !this.favListRef.current.contains(e.target))) {
       this.setState({ clickedOutside:true });
     } 
   };

@@ -125,3 +125,11 @@
     display: none;
   }
 }
+@media screen and (min-width:414px) and (max-width:813px) and (min-height:414px) {
+  .favorite-movies-section {
+    top: 124px;
+  }
+  .favorite-movies-list {
+    max-height: 500px;
+  }
+}

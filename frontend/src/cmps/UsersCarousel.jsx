@@ -21,7 +21,7 @@ export class UsersCarousel extends Component {
             <React.Fragment>
             <AliceCarousel
             mouseTracking
-            infinite
+            // infinite
             responsive={responsive}
             >
             { users.map((user, idx)=>

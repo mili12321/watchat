@@ -345,7 +345,6 @@ class _Home extends Component {
                     <Link to={`/movies/Adventure`} >
                     <div>Adventure</div> 
                     </Link>
-                    {/* <div>Adventure</div> */}
                   </div>
                 </div>
                 {movies.slice(8, 12).map((movie) => (
