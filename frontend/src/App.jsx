@@ -14,9 +14,28 @@ class _App extends React.Component{
     currView: 'main',
     currCmp: 'navFilter',
     appCondition: true,
-    isClose:true,
-    active: ''
+    active: '',
+    clickedOutside: true
   }
+
+  favListRef = React.createRef()
+
+  handleClickOutside = e => {
+    if (window.screen.width <= 415 && !this.favListRef.current.contains(e.target)) {
+      this.setState({ clickedOutside:true });
+    } 
+  };
+
+  handleClickInside = () => this.setState({ clickedOutside:!this.state.clickedOutside });
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  } 
+
+  componentWillUnmount(){
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
   removeFromFavList=(ev,movie)=>{
     ev.stopPropagation()
     if(this.props.loggedInUser){
@@ -32,9 +51,6 @@ class _App extends React.Component{
     this.setState({ active: name })
   }
 
-  onToggleList = ()=>{
-    this.setState({isClose:!this.state.isClose})
-  }
 
   render() {
     const { currView, appCondition } = this.state
@@ -62,7 +78,7 @@ class _App extends React.Component{
           </Switch>
         </React.Fragment>
         </main>}
-        <FavoriteList removeFromFavList={this.removeFromFavList} loggedInUser={loggedInUser} onToggleList={this.onToggleList} isClose={this.state.isClose}/>
+        <FavoriteList removeFromFavList={this.removeFromFavList} loggedInUser={loggedInUser} clickedOutside={this.state.clickedOutside} handleClickInside={this.handleClickInside} favListRef={this.favListRef}/>
         <MobileNavbar  toggleView={this.toggleView} active={this.state.active} changeAppActiveName={this.changeAppActiveName}/>
 
       </div>

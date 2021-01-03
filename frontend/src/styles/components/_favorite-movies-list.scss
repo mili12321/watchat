@@ -116,4 +116,12 @@
   .favorite-movies-list{
     max-height: 300px;
   }
+  .close-list-msg{
+   display: none;
+  }
+}
+@media screen and (max-width:414px) {
+  .close-list-msg{
+    display: none;
+  }
 }

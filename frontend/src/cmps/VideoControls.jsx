@@ -10,7 +10,18 @@ export class VideoControls extends React.Component {
     showReactions: false,
     reactions: [],
     reactionIds: [],
+    clickedOutsideVolume: false,
   }
+
+  volumeRef = React.createRef()
+
+  handleClickOutside = e => {
+    if (!this.volumeRef.current.contains(e.target)) {
+      this.setState({ clickedOutsideVolume:false });
+    } 
+  };
+
+  handleClickInsideVolume = () => this.setState({ clickedOutsideVolume:!this.state.clickedOutsideVolume });
 
   componentDidMount() {
     socketService.on('reactions', (reaction) => {
@@ -19,10 +30,12 @@ export class VideoControls extends React.Component {
     socketService.on('reaction-delete', (id) => {
       this.removeReaction(id)
     })
+    document.addEventListener("mousedown", this.handleClickOutside);
   } 
 
   componentWillUnmount(){
     this.setState({ reactions:[] })
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   onSelectReaction = (type) => {
@@ -70,16 +83,18 @@ export class VideoControls extends React.Component {
       <div className={`control-panel ${this.props.fullScreenControlPanel()}`}>
         <div className='reactions' onClick={this.onToggleReactions}>
           <div
-            className={`reactions-container ${
-              this.state.showReactions ? '' : 'hidden'
-            }`}>
+            className={`reactions-container
+            ${this.state.showReactions ? '' : 'hidden'}
+             `}>
             <ReactionPicker
               hideReactions={this.hideReactions}
               onSelectReaction={this.onSelectReaction}
             />
           </div>
 
-          <IoIosThumbsUp style={{ width: '70%', height: '70%' }} />
+          <IoIosThumbsUp style={{ width: '70%', height: '70%' }} 
+          onClick={this.onToggleReactions}
+          />
         </div>
 
        
@@ -87,17 +102,19 @@ export class VideoControls extends React.Component {
         {this.props.isPlaying?<i className="fas fa-grip-lines-vertical"></i>:<i className="fas fa-play"></i>}
         </div>
 
-        <div className='volume' onClick={this.onVolumeToggle}>
-          <input
+        <div className='volume' 
+        ref={this.volumeRef} 
+        onClick={this.handleClickInsideVolume}
+        >
+          { this.state.clickedOutsideVolume  &&<input
             type='range'
             id='volume'
-            className={this.state.showVolume ? '' : 'hidden'}
             name='volume'
             min='0'
             max='1'
             step='0.01'
             value={this.props.volume}
-            onChange={this.changeVolume}></input>
+            onChange={this.changeVolume}></input>}
           <IoIosVolumeLow style={{ width: '100%', height: '100%' }} />
         </div>
         

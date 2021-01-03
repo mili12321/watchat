@@ -61,7 +61,7 @@ class _Chat extends Component {
     if (this.node.contains(e.target)) {
       return;
     }
-    
+
     this.handleClick();
   }
 
@@ -87,6 +87,7 @@ class _Chat extends Component {
     if (this.props.currUser) this.setState({ currUser: this.props.currUser })
     this.setupSockets()
     this.setState({ msgList: msgList1 })
+    
   }
 
   componentWillUnmount() {
