@@ -14,7 +14,8 @@ export class _Room extends Component {
   state = {
     movie: null,
     showVideo: false,
-    volume: 0.2,
+    volume: 0,
+    // volume: 0.2,
     currTime: 1,
     timeSet: false,
     currUser: null,
@@ -290,23 +291,23 @@ export class _Room extends Component {
 
   handleTouchEnd=()=>{
     const {startX, startY, endX, endY} = this.state
-    if (startX - endX > 150) {
+    if (startX - endX > 300) {
       if(window.innerWidth>414){
         this.setState({isChatVisible:false})
       }
     }
 
-    if (startX - endX < -150) {
+    if (startX - endX < -300) {
       this.setState({isChatVisible:true})
     }
 
-    if (startY - endY > 150) {
+    if (startY - endY > 300) {
       if(window.innerWidth>414){
          this.setState({isVisible:false})
       }
     }
 
-    if (startY - endY < -150) {
+    if (startY - endY < -300) {
       this.setState({isVisible:true})
     }
   }

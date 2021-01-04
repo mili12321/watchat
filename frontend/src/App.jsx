@@ -7,7 +7,7 @@ import { FavoriteList } from './cmps/FavoriteList'
 import { MobileNavbar } from './cmps/MobileNavbar'
 import { connect } from 'react-redux'
 import { toggleFavUserList } from './store/actions/userActions'
-import  ScrollToTop  from './cmps/ScrollToTop'
+
 
 class _App extends React.Component{
   state = {
@@ -65,7 +65,6 @@ class _App extends React.Component{
        }
         {currView==="main"&&<main>
         <React.Fragment>
-          <ScrollToTop />
           <Switch>
           {routes.map((route) => (
             <Route

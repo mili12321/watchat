@@ -86,6 +86,7 @@ class _Navbar extends Component {
         this.props.toggleView('main') 
         this.changeToActiveBtn('home')
         this.props.changeAppActiveName('home')
+        window.scrollTo(0, 0);
    }
 
 

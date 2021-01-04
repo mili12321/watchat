@@ -47,6 +47,7 @@ class _Movie extends Component {
         if(currCategory){
             this.toggleView('FilteredMovie')
         }
+        window.scrollTo(0, 0);
     }
 
     currGenre=(name)=>{

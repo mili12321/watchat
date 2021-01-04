@@ -35,6 +35,7 @@ class _Home extends Component {
       // initialise with other settings
       // duration : 2000
     })
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
@@ -103,15 +104,7 @@ class _Home extends Component {
       this.onOpenModal()
     }
   }
-  toggleFavoriteListAndPreventScrll=(ev, movie)=>{
-    this.toggleFavoriteList(movie)
-    this.getMousePos(ev)
-  }
-  getMousePos(e) {
-    const cursorX = e.pageX;
-    const cursorY = e.pageY;
-    window.scrollTo(cursorX , cursorY);
-  }
+
 
 
   isFavoriteMovie=(movie)=>{
@@ -299,7 +292,7 @@ class _Home extends Component {
                             <i className='far fa-play-circle'></i>
                           </Link>
                         </span>
-                        <span className='movie-btn' onClick={(ev)=>{this.toggleFavoriteListAndPreventScrll(ev,movie)}}>
+                        <span className='movie-btn' onClick={()=>{this.toggleFavoriteList(movie)}}>
                         {this.isFavoriteMovie(movie)!=="favoriteBtnStyle"?
                           <Link><i className="fas fa-plus"></i></Link>:
                           <Link><i className="fas fa-check"></i></Link>

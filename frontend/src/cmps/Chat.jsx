@@ -87,6 +87,7 @@ class _Chat extends Component {
     if (this.props.currUser) this.setState({ currUser: this.props.currUser })
     this.setupSockets()
     this.setState({ msgList: msgList1 })
+    this.scrollDown()
     
   }
 

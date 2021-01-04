@@ -15,7 +15,6 @@ export class MovieFilter extends Component {
         'Drama',
         'Fantasy',
         'Adventure',
-        'Romance',
         'Sci-Fi',
         'Thriller',
         'Horror',

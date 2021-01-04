@@ -26,6 +26,7 @@ class _MovieDetails extends Component {
 
   componentDidMount() {
     this.loadMovie()
+    window.scrollTo(0, 0);
   }
 
   async loadMovie() {
