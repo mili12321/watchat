@@ -99,7 +99,13 @@
     animation-duration: 2s;
     animation-name: example;
     animation-iteration-count: infinite;
-    z-index: 999;
+  }
+  .my-reaction{
+    background-color: rgb(192, 143, 7);
+    border: 1px solid rgb(192, 143, 7);
+    box-shadow: 0 0 13px rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
   }
 
   .hidden {

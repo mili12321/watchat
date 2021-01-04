@@ -786,3 +786,13 @@
     margin-bottom: 12px;
   }
 }
+.emoji-mart-search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 11px;
+  z-index: 2;
+  padding: 2px 5px 1px;
+  border: none;
+  background: none;
+}

@@ -14,8 +14,7 @@ export class _Room extends Component {
   state = {
     movie: null,
     showVideo: false,
-    volume: 0,
-    // volume: 0.2,
+    volume: 0.2,
     currTime: 1,
     timeSet: false,
     currUser: null,
@@ -37,7 +36,9 @@ export class _Room extends Component {
     request:false,
     isFirstUser:false,
     firstUser:{},
-    isPlaying:true
+    isPlaying:true,
+    disableToggleUserList:false,
+    stopToggleUserList:false
 
   }
 
@@ -140,8 +141,9 @@ export class _Room extends Component {
   }
 
   componentWillUnmount() {
+    console.log("222")
     this.setState({ currTime: 1 })
-    this.setState({ interval: null })
+    // this.setState({ interval: null })
   }
 
   async loadMovie() {
@@ -290,38 +292,50 @@ export class _Room extends Component {
 
 
   handleTouchEnd=()=>{
-    const {startX, startY, endX, endY} = this.state
+    const {startX,endX} = this.state
     if (window.screen.width>415&&startX - endX > 250) {
         this.setState({isChatVisible:false})
     }
 
-    if (startX - endX < -250) {
+    if (startX - endX < -200) {
       this.setState({isChatVisible:true})
     }
+  }
 
-    // if (startY - endY > 300) {
-    //   if(window.innerWidth>414){
-    //      this.setState({isVisible:false})
-    //   }
-    // }
+  //double press
+  // onToggleUserList=()=>{
+  //   if(window.screen.width<415)return
+  //   const time = new Date().getTime();
+  //   const delta = time - lastPress;
 
-    // if (startY - endY < -300) {
-    //   this.setState({isVisible:true})
-    // }
+  //   const DOUBLE_PRESS_DELAY = 200;
+  //   if (delta < DOUBLE_PRESS_DELAY) {
+  //     // Success double press
+  //     this.setState({isVisible:!this.state.isVisible})
+  //   }
+  //   lastPress = time;
+  // }
+
+
+  onToggleDisableToggleUserList=()=>{
+    this.setState({disableToggleUserList:!this.state.disableToggleUserList})
+  }
+  onDisableToggleUserList=()=>{
+    this.setState({stopToggleUserList:true})
+  }
+  onAnabelToggleUserList=()=>{
+    setTimeout(()=>{this.setState({stopToggleUserList:false}) }, 500);
+  }
+  onChangeDisableToggleUserList=()=>{
+    setTimeout(()=>{this.setState({disableToggleUserList:false}) }, 500);
   }
 
   onToggleUserList=()=>{
-    if(window.screen.width<415)return
-    const time = new Date().getTime();
-    const delta = time - lastPress;
-
-    const DOUBLE_PRESS_DELAY = 200;
-    if (delta < DOUBLE_PRESS_DELAY) {
-      // Success double press
-      console.log('double press');
+    if(this.state.stopToggleUserList||window.screen.width<415||this.state.disableToggleUserList){
+       return
+    }else{
       this.setState({isVisible:!this.state.isVisible})
     }
-    lastPress = time;
   }
 
   render() {
@@ -359,6 +373,10 @@ export class _Room extends Component {
             onAddNewUser={this.onAddNewUser}
             onUpdateFirstUser={this.onUpdateFirstUser}
             onToggleUserList={this.onToggleUserList}
+            onChangeDisableToggleUserList={this.onChangeDisableToggleUserList}
+            onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
+            onDisableToggleUserList={this.onDisableToggleUserList}
+            onAnabelToggleUserList={this.onAnabelToggleUserList}
           />
      
           <section className={`frame ${this.fullScreenFrame()}`} >
@@ -388,6 +406,8 @@ export class _Room extends Component {
               fullScreenControlPanel={this.fullScreenControlPanel}
               onTogglePlay={this.onTogglePlay}
               isPlaying={this.state.isPlaying}
+              onChangeDisableToggleUserList={this.onChangeDisableToggleUserList}
+              onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
             />
             <div className='reaction'></div>
           </section>

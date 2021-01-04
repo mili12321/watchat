@@ -18,10 +18,14 @@ export class VideoControls extends React.Component {
   handleClickOutside = e => {
     if (!this.volumeRef.current.contains(e.target)) {
       this.setState({ clickedOutsideVolume:false });
+      this.props.onChangeDisableToggleUserList()
     } 
   };
 
-  handleClickInsideVolume = () => this.setState({ clickedOutsideVolume:!this.state.clickedOutsideVolume });
+  handleClickInsideVolume = () => {
+    this.setState({ clickedOutsideVolume:!this.state.clickedOutsideVolume })
+    this.props.onToggleDisableToggleUserList()
+  };
 
   componentDidMount() {
     socketService.on('reactions', (reaction) => {
@@ -39,7 +43,7 @@ export class VideoControls extends React.Component {
   }
 
   onSelectReaction = (type) => {
-    const newReaction = { id: uuid(), type, posX:this.getRandomNum(5, 8)}
+    const newReaction = { id: uuid(), type, posX:this.getRandomNum(5, 8), myReaction:true}
     this.setState({ reactions: [...this.state.reactions, newReaction] })
     socketService.emit('reactions', newReaction)
     setTimeout(() => {
@@ -127,7 +131,7 @@ export class VideoControls extends React.Component {
           <div
             style={{ right: `${reaction.posX}%` }}
             key={reaction.id}
-            className={`reaction-animation ${reaction.type}`}></div>
+            className={`reaction-animation ${reaction.type} ${reaction.myReaction?'my-reaction':''}`}></div>
         ))}
       </div>
     )

@@ -36,7 +36,7 @@ class _Chat extends Component {
     gifts:[],
     msgForUser:{},
     msgsFromUsers:[],
-    popupVisible: false,
+    popupVisible: false
   }
 
   inputRef = React.createRef()
@@ -47,8 +47,10 @@ class _Chat extends Component {
     if (!this.state.popupVisible) {
       // attach/remove emojies picker
       document.addEventListener('click', this.handleOutsideClick, false);
+      this.props.onDisableToggleUserList()
     } else {
       document.removeEventListener('click', this.handleOutsideClick, false);
+      this.props.onAnabelToggleUserList()
     }
 
     this.setState(prevState => ({
@@ -59,6 +61,7 @@ class _Chat extends Component {
   handleOutsideClick=(e)=> {
     // ignore clicks on the component itself( the emojies picker )
     if (this.node.contains(e.target)) {
+      this.props.onDisableToggleUserList()
       return;
     }
 
@@ -216,6 +219,7 @@ class _Chat extends Component {
         msg,
       })
     }
+    this.props.onDisableToggleUserList()
   }
 
   onUsernameSelect = (user) => {
@@ -368,7 +372,7 @@ class _Chat extends Component {
 </div>:''
         )}
 
-      <section className={`chat ${this.props.fullScreenChat()}`} onClick={this.props.onToggleUserList}>
+      <section className={`chat ${this.props.fullScreenChat()}`} >
         {(this.props.isVisible||window.screen.width<415)&&
         <UserList
           socketInfo={this.state.socketInfo}
@@ -394,14 +398,15 @@ class _Chat extends Component {
           }
 
 
-          <div className='chat-box' ref={node => { this.node = node; }} >
+          <div className='chat-box'
+           ref={node => { this.node = node; }} 
+           onClick={this.props.onToggleUserList}>
             {this.props.isChatVisible&&<RSC
               ref={this.scrollBarRef}
-              // className='chat-box'
               style={{ color: 'red', 
               direction:'rtl' }}>
               {this.state.msgList.map((msg) => (
-                <div
+                <div 
                   key={uuid()} 
                   style={{ direction:'ltr' }}
                   className={`msg-container ${
