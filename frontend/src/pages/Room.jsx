@@ -291,11 +291,11 @@ export class _Room extends Component {
 
   handleTouchEnd=()=>{
     const {startX, startY, endX, endY} = this.state
-    if (window.screen.width>415&&startX - endX > 300) {
+    if (window.screen.width>415&&startX - endX > 250) {
         this.setState({isChatVisible:false})
     }
 
-    if (startX - endX < -300) {
+    if (startX - endX < -250) {
       this.setState({isChatVisible:true})
     }
 
