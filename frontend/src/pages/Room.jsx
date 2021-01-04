@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 
 
-
+let lastPress = 0;
 export class _Room extends Component {
   state = {
     movie: null,
@@ -207,14 +207,14 @@ export class _Room extends Component {
   }
 
   fullScreenInput=()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-chat-input" 
     }else{
         return "" 
     }
   }
   fullScreenChatBackground =()=>{//.user-list-container, .chat <div className="">     </div>chat-window
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         this.setState({showParticles:false})
         return "chat-background" 
     }else{
@@ -223,7 +223,7 @@ export class _Room extends Component {
     }
   }
   fullScreenRoomWindow=()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-room-window" 
     }else{
         return "" 
@@ -231,7 +231,7 @@ export class _Room extends Component {
   }    
 
   fullScreenFrame =()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-frame" 
     }else{
         return "" 
@@ -239,7 +239,7 @@ export class _Room extends Component {
   }
 
   fullScreenIframe =()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-iframe" 
     }else{
         return "" 
@@ -247,7 +247,7 @@ export class _Room extends Component {
   }
 
   fullScreenControlPanel =()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-control-panel" 
     }else{
         return "" 
@@ -255,14 +255,14 @@ export class _Room extends Component {
   }
 
   fullScreenMessageMe =()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-message-me" 
     }else{
         return "" 
     }
   }
   fullScreenMessageUser =()=>{
-    if(this.state.isFullScreen&&window.innerWidth>813){
+    if(window.innerWidth>813&&this.state.isFullScreen){
         return "fullScreen-message-user" 
     }else{
         return "" 
@@ -291,27 +291,38 @@ export class _Room extends Component {
 
   handleTouchEnd=()=>{
     const {startX, startY, endX, endY} = this.state
-    if (startX - endX > 300) {
-      if(window.innerWidth>414){
+    if (window.screen.width>415&&startX - endX > 300) {
         this.setState({isChatVisible:false})
-      }
     }
 
     if (startX - endX < -300) {
       this.setState({isChatVisible:true})
     }
 
-    if (startY - endY > 300) {
-      if(window.innerWidth>414){
-         this.setState({isVisible:false})
-      }
-    }
+    // if (startY - endY > 300) {
+    //   if(window.innerWidth>414){
+    //      this.setState({isVisible:false})
+    //   }
+    // }
 
-    if (startY - endY < -300) {
-      this.setState({isVisible:true})
-    }
+    // if (startY - endY < -300) {
+    //   this.setState({isVisible:true})
+    // }
   }
 
+  onToggleUserList=()=>{
+    if(window.screen.width<415)return
+    const time = new Date().getTime();
+    const delta = time - lastPress;
+
+    const DOUBLE_PRESS_DELAY = 200;
+    if (delta < DOUBLE_PRESS_DELAY) {
+      // Success double press
+      console.log('double press');
+      this.setState({isVisible:!this.state.isVisible})
+    }
+    lastPress = time;
+  }
 
   render() {
     if (!this.state.movie) return <div>Loading....</div>
@@ -347,6 +358,7 @@ export class _Room extends Component {
             showEmojis={this.state.showEmojis}
             onAddNewUser={this.onAddNewUser}
             onUpdateFirstUser={this.onUpdateFirstUser}
+            onToggleUserList={this.onToggleUserList}
           />
      
           <section className={`frame ${this.fullScreenFrame()}`} >

@@ -368,8 +368,8 @@ class _Chat extends Component {
 </div>:''
         )}
 
-      <section className={`chat ${this.props.fullScreenChat()}`}>
-        {this.props.isVisible&&
+      <section className={`chat ${this.props.fullScreenChat()}`} onClick={this.props.onToggleUserList}>
+        {(this.props.isVisible||window.screen.width<415)&&
         <UserList
           socketInfo={this.state.socketInfo}
           msgForUser={this.state.msgForUser}
