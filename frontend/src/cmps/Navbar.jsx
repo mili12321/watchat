@@ -110,12 +110,16 @@ class _Navbar extends Component {
                 </div>
            </div>
 
-            <span className="main-title nav-column">
+           <Link className="main-title nav-column logo" to={`/`} onClick={()=>{this.onActiveBtnAndToggleView() }}>
+                <div className="WatChat-logo">WatChat</div>
+                <div className="under-logo">- online cinema -</div>
+            </Link>
+            {/* <span className="main-title nav-column">
                 <Link className="logo" to={`/`} onClick={()=>{this.onActiveBtnAndToggleView() }}>
                     <div className="WatChat-logo">WatChat</div>
                 </Link>
                 <div className="under-logo">- online cinema -</div>
-            </span>
+            </span> */}
 
            <div className="login-and-serach-section">
                 <Search className="navlink-search nav-column" toggleView={this.props.toggleView} searchingValue={"movie"}/>
