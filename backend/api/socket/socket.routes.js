@@ -164,12 +164,10 @@ function connectSockets(io) {
 
 
     socket.on('reactions', (data) => {
-      console.log("reaction5",data.newReaction)
-      console.log("user5",data.user)
       const myReaction = {...data.newReaction, myReaction:true}
-      const notMyReaction = {...data.newReaction, notMyReaction:true}
-      // io.to(socket.roomId).emit('reactions', reaction)
-      socket.to(socket.roomId).emit('reactions', notMyReaction);
+      //sending to all clients except sender
+      socket.to(socket.roomId).emit('reactions', data.newReaction);
+      //sending to the sender
       socket.emit('reactions', myReaction);
     })
 
