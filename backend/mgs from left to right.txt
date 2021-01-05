@@ -1,9 +1,0 @@
-mgs from left to right
-from left to right {
-fullScreen-msg 
-בפונקציה בעמוד של הoom 
-room
-
-.fullScreen-room-window{
-   flex-direction: row-reverse;
-  }
