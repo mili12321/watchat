@@ -134,7 +134,7 @@ export class VideoControls extends React.Component {
           <div
             style={{ right: `${reaction.posX}%` }}
             key={reaction.id}
-            className={`reaction-animation ${reaction.type} ${reaction.myReaction?"my-reaction":''} ${reaction.notMyReaction?"notMyReaction":''}`}></div>
+            className={`reaction-animation ${reaction.type} ${reaction.myReaction?"my-reaction":''}`}></div>
         ))}
       </div>
     )
