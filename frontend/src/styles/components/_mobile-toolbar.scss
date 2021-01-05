@@ -59,3 +59,14 @@
     font-weight: bold;
     cursor: pointer;
 }
+@media screen and (max-height:415px){
+    .mobile-toolbar .total-users-mobile {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    
+      .mobile-toolbar {
+        height: 100%;
+        position: absolute;
+      }
+}

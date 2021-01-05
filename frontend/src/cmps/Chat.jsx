@@ -401,7 +401,8 @@ class _Chat extends Component {
           <div className='chat-box'
            ref={node => { this.node = node; }} 
            onClick={this.props.onToggleUserList}>
-            {this.props.isChatVisible&&<RSC
+            {this.props.isChatVisible&&
+            <RSC
               ref={this.scrollBarRef}
               style={{ color: 'red', 
               direction:'rtl' }}>
@@ -416,7 +417,7 @@ class _Chat extends Component {
                       : 'right'
                   }-msg ${this.props.fullScreenMsg()}`}>
                   <div
-                    className={`chat-msg from-${
+                    className={` chat-msg from-${
                       this.state.currUser &&
                       msg.senderId === this.state.currUser._id
                         ? 'me'

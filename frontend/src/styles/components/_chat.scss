@@ -733,10 +733,14 @@
     }
   }
   .user-list-container {
+    place-items: center;
     .watch-room-users-container{
       position:relative;
       z-index: 100;
       min-height: 67px;
+
+      width: 66%;
+      margin: auto;
     }
   }
   .chat .chat-window .chat-box {
