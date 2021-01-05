@@ -38,7 +38,8 @@ export class _Room extends Component {
     firstUser:{},
     isPlaying:true,
     disableToggleUserList:false,
-    stopToggleUserList:false
+    stopToggleUserList:false,
+    newUserFromBackend:{}
 
   }
 
@@ -72,6 +73,12 @@ export class _Room extends Component {
       this.setState({ allowedToJoin: true })
       this.setState({firstUser:firstUser})
       this.setState({isFirstUser:true})
+
+      this.setState({newUserFromBackend:newUser})
+      this.setState({currUser:newUser},()=>{
+        console.log("newUserInRoom/:",newUser)
+      })
+      
     }else{
       this.setState({isFirstUser:false})
       this.setState({ allowedToJoin: false })
@@ -398,7 +405,7 @@ export class _Room extends Component {
                 onProgress={this.onProgress}
               />
             </div>
-            <VideoControls
+            {this.state.newUserFromBackend&&<VideoControls
               onVolumeChange={this.onVolumeChange}
               volume={this.state.volume}
               toggleFullScreen={this.toggleFullScreen}
@@ -408,7 +415,8 @@ export class _Room extends Component {
               isPlaying={this.state.isPlaying}
               onChangeDisableToggleUserList={this.onChangeDisableToggleUserList}
               onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
-            />
+              newUser={this.state.newUserFromBackend}
+            />}
             <div className='reaction'></div>
           </section>
         </div>

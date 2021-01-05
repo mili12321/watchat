@@ -11,6 +11,7 @@ export class VideoControls extends React.Component {
     reactions: [],
     reactionIds: [],
     clickedOutsideVolume: false,
+    myReaction:false
   }
 
   volumeRef = React.createRef()
@@ -29,6 +30,7 @@ export class VideoControls extends React.Component {
 
   componentDidMount() {
     socketService.on('reactions', (reaction) => {
+      console.log("reaction",reaction)
       this.setState({ reactions: [...this.state.reactions, reaction] })
     })
     socketService.on('reaction-delete', (id) => {
@@ -43,12 +45,13 @@ export class VideoControls extends React.Component {
   }
 
   onSelectReaction = (type) => {
-    const newReaction = { id: uuid(), type, posX:this.getRandomNum(5, 8), myReaction:true}
+    const newReaction = { id: uuid(), type, posX:this.getRandomNum(5, 8)}
     this.setState({ reactions: [...this.state.reactions, newReaction] })
-    socketService.emit('reactions', newReaction)
+    const user = this.props.newUser 
+    socketService.emit('reactions', {newReaction, user})
     setTimeout(() => {
       socketService.emit('reaction-delete', newReaction.id)
-    }, 2000)
+    }, 2000) 
     this.removeReaction(newReaction.id)
   }
 
@@ -131,7 +134,7 @@ export class VideoControls extends React.Component {
           <div
             style={{ right: `${reaction.posX}%` }}
             key={reaction.id}
-            className={`reaction-animation ${reaction.type} ${reaction.myReaction?'my-reaction':''}`}></div>
+            className={`reaction-animation ${reaction.type} ${reaction.myReaction?"my-reaction":''} ${reaction.notMyReaction?"notMyReaction":''}`}></div>
         ))}
       </div>
     )
