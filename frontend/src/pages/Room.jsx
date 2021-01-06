@@ -58,14 +58,21 @@ export class _Room extends Component {
     socketService.on('toggle-play-btn', (isPlaying) => {
       this.setState({isPlaying})
     })
+    if (!this.state.showVideo) {
+      setTimeout(() => {
+        this.setState({ showVideo: true })
+      }, 6500)
+    }
   }
 
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
       socketService.emit('toggle-play-btn', this.state.isPlaying)
     })
+  }
 
-    
+  getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
   onAddNewUser=(users, newUser, firstUser)=>{
@@ -99,11 +106,11 @@ export class _Room extends Component {
 
   onProgress=(progress)=>{
     if(!this.state.isPlaying)return
-    if (!this.state.showVideo) {
-          setTimeout(() => {
-            this.setState({ showVideo: true })
-          }, 6500)
-        }
+    // if (!this.state.showVideo) {
+    //       setTimeout(() => {
+    //         this.setState({ showVideo: true })
+    //       }, 6500)
+    //     }
     if(this.state.isFirstUser){
       console.log("this.state.currTime",this.state.currTime)
       let player = this.playerRef.current
@@ -391,7 +398,8 @@ export class _Room extends Component {
                 this.state.showVideo ? '' : 'hide-video'
               }`}>
               <ReactPlayer
-               className='react-player'
+                key={this.getRandomNumber()}
+                className='react-player'
                 ref={this.playerRef}
                 url={this.state.movie.videoUrl}
                 width='100%'
