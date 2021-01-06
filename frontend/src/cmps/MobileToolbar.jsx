@@ -40,7 +40,9 @@ export class _MobileToolbar extends Component {
                 </NavLink>
             </div>
 
-            <div className='add-user toolbar-icon' onClick={this.props.onShare}>
+            <div className='add-user toolbar-icon' onClick={()=>{
+                window.location.reload(true);
+            }}>
                 <a
                 // href={'https://wa.me/?text='+encodeURIComponent(window.location.href)
                 href={'whatsapp://send?text='+encodeURIComponent(window.location.href)

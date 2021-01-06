@@ -67,12 +67,8 @@ export class _Room extends Component {
 
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
-      socketService.emit('toggle-play-btn', this.state.isPlaying)
+      socketService.emit('toggle-play-btn', this.state.isPlaying) 
     })
-  }
-
-  getRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
   onAddNewUser=(users, newUser, firstUser)=>{
@@ -398,7 +394,6 @@ export class _Room extends Component {
                 this.state.showVideo ? '' : 'hide-video'
               }`}>
               <ReactPlayer
-                key={this.getRandomNumber()}
                 className='react-player'
                 ref={this.playerRef}
                 url={this.state.movie.videoUrl}
