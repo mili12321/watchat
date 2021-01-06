@@ -98,7 +98,8 @@ export class _UserList extends Component {
         users={users} 
         handleInput={this.handleInput} 
         onClearInput={this.onClearInput}
-        onGoBack={this.props.onGoBack}/>
+        onGoBack={this.props.onGoBack}
+        />
         <Toolbar 
         onShare={this.props.onShare} 
         movie={this.props.movie} 

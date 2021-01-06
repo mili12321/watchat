@@ -165,7 +165,7 @@ class _Chat extends Component {
 
 
   cleanUp = () => {
-    if (this.state.currUser&&this.state.currUser.userId&&this.state.currUser.userRoom)
+    if (this.state.currUser)
       socketService.emit('remove-user', {
         userId: this.state.currUser._id,
         userRoom: this.props.roomId,

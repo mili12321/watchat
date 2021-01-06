@@ -71,6 +71,7 @@ export class _Room extends Component {
     })
   }
 
+
   onAddNewUser=(users, newUser, firstUser)=>{
     if(newUser._id===firstUser._id){
       this.setState({ allowedToJoin: true })
@@ -390,6 +391,7 @@ export class _Room extends Component {
             onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
             onDisableToggleUserList={this.onDisableToggleUserList}
             onAnabelToggleUserList={this.onAnabelToggleUserList}
+            stopMovie = {this.stopMovie}
           />
      
           <section className={`frame ${this.fullScreenFrame()}`} >
