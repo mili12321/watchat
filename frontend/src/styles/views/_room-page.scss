@@ -638,6 +638,11 @@
   .reply-btn {
     font-size: 12px;
   }
+  .middle-play-btn{
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 @media screen and (min-height:415px) {
   .player-wrapper {
@@ -649,6 +654,9 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .middle-play-btn{
+    display: none;
   }
 }
 @media screen and (min-width:414px) and (max-width:813px) {
@@ -673,9 +681,17 @@
   .reply-btn {
     font-size: 12px;
   }
-
+  .middle-play-btn{
+    display: none;
+  }
 }
 @media screen and (max-height:415px){
+  .middle-play-btn{
+    // top: 50%;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+  }
   .msgForUser{
     top: 240px;
     right: -84px;
@@ -716,10 +732,7 @@
 
 .middle-play-btn{
   position: absolute;
-  top: 50%;
-  left: 50%;
   z-index: 999;
-  transform: translate(-50% , -50%);
   width: 84px;
   height: 64px;
   background-color: #ff003f;
@@ -729,8 +742,10 @@
   place-items: center;
   justify-content: center;
   border-radius: 15px;
+  cursor: pointer;
   .fa-play{
     color: white;
     font-size: 25px;
   }
 }
+
