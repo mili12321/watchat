@@ -639,7 +639,9 @@
     font-size: 12px;
   }
   .middle-play-btn{
-    top: 15vh;
+    width: 74px;
+    height: 54px;
+    top: 13vh;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -687,6 +689,8 @@
 }
 @media screen and (max-height:415px){
   .middle-play-btn{
+    width: 84px;
+    height: 64px;
     // top: 50%;
     top: 48%;
     left: 50%;
@@ -733,8 +737,6 @@
 .middle-play-btn{
   position: absolute;
   z-index: 999;
-  width: 84px;
-  height: 64px;
   background-color: #ff003f;
   // background-color: rgb(196, 0, 26);
   // background: -webkit-linear-gradient(0deg, #d1009d, #d10000);
