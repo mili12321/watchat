@@ -108,6 +108,9 @@ export class _Room extends Component {
       console.log("this.state.currTime",this.state.currTime)
       let player = this.playerRef.current
         if (player && !this.state.timeSet&&this.state.allowedToJoin ) {
+          if(this.state.currTime===0){
+            this.setState({ currTime: 1 })
+          }
           player.seekTo(this.state.currTime, 'seconds')
           this.setState({ timeSet: true })
       }
@@ -148,9 +151,7 @@ export class _Room extends Component {
   }
 
   componentWillUnmount() {
-    console.log("222")
     this.setState({ currTime: 1 })
-    // this.setState({ interval: null })
   }
 
   async loadMovie() {
@@ -168,10 +169,6 @@ export class _Room extends Component {
     if(player && this.state.allowedToJoin){
       player.seekTo(this.state.currTime)
     }
-  }
-
-  updateCurrTime = () => {
-    socketService.emit('timestamp', 0)
   }
 
   toggleEmojis = () => {
@@ -399,7 +396,7 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                muted={!this.state.showVideo}
+                // muted={!this.state.showVideo}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
