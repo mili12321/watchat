@@ -713,3 +713,24 @@
     z-index: 999;
     color: white;
 }
+
+.middle-play-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-50% , -50%);
+  width: 70px;
+  height: 54px;
+  background-color: #ff003f;
+  // background-color: rgb(196, 0, 26);
+  // background: -webkit-linear-gradient(0deg, #d1009d, #d10000);
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  .fa-play{
+    color: white;
+    font-size: 25px;
+  }
+}

@@ -335,16 +335,21 @@ export class _Room extends Component {
   }
 
   onToggleUserList=()=>{
-    if(this.state.stopToggleUserList||window.screen.height>415||this.state.disableToggleUserList){
+    if(window.screen.height>415&&window.screen.width<415){
+      this.setState({isVisible:true})
+    }else if(this.state.stopToggleUserList||window.screen.height>415||this.state.disableToggleUserList){
        return
     }else{
       this.setState({isVisible:!this.state.isVisible})
     }
   }
 
+
+
   render() {
     if (!this.state.movie) return <div>Loading....</div>
     return (
+      <React.Fragment>
       <div 
       className={`watch-room ${this.fullScreenWatchRoom()}`} 
       ref={node => { this.node = node; }}
@@ -417,6 +422,11 @@ export class _Room extends Component {
           </section>
         </div>
       </div>
+
+      {!this.state.isPlaying&&<div onClick={this.onTogglePlay} className="middle-play-btn">
+        <i className="fas fa-play"></i>
+      </div>}
+      </React.Fragment>
     )
   }
 }
