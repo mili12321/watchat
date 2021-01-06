@@ -155,6 +155,11 @@ export class _Room extends Component {
 
   componentWillUnmount() {
     this.setState({ currTime: 1 })
+    this.setState({ timeSet: false,})
+    this.setState({ duration: null, })
+    this.setState({ played: null })
+    this.setState({ secondsElapsed: null })
+    this.setState({ isPlaying: true})
   }
 
   async loadMovie() {
