@@ -9,12 +9,13 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 
 
-let lastPress = 0;
+// let lastPress = 0;
 export class _Room extends Component {
   state = {
     movie: null,
     showVideo: false,
-    volume: 0.2,
+    volume: 0,
+    // volume: 0.2,
     currTime: 1,
     timeSet: false,
     currUser: null,
@@ -40,7 +41,6 @@ export class _Room extends Component {
     disableToggleUserList:false,
     stopToggleUserList:false,
     newUserFromBackend:{}
-
   }
 
   playerRef = React.createRef()
@@ -295,16 +295,13 @@ export class _Room extends Component {
     const y = ev.targetTouches[0].clientY
     this.setState({endX:x})
     this.setState({endY:y})
-  }
 
-
-  handleTouchEnd=()=>{
-    const {startX,endX} = this.state
-    if (window.screen.width>415&&startX - endX > 150) {
+    const {startX,endX,startY,endY} = this.state
+    if (window.screen.width>415&&startX - endX > 150&&endY-startY<10) {
         this.setState({isChatVisible:false})
     }
 
-    if (startX - endX < -150) {
+    if (startX - endX < -150&&endY-startY<10) {
       this.setState({isChatVisible:true})
     }
   }
@@ -338,7 +335,7 @@ export class _Room extends Component {
   }
 
   onToggleUserList=()=>{
-    if(this.state.stopToggleUserList||window.screen.width<415||this.state.disableToggleUserList){
+    if(this.state.stopToggleUserList||window.screen.height>415||this.state.disableToggleUserList){
        return
     }else{
       this.setState({isVisible:!this.state.isVisible})
@@ -356,7 +353,6 @@ export class _Room extends Component {
         <div className={`room-window ${this.fullScreenRoomWindow()}`}
             onTouchStart={touchStartEvent => this.handleTouchStart(touchStartEvent)}
             onTouchMove={touchMoveEvent => this.handleTouchMove(touchMoveEvent)}
-            onTouchEnd={() => this.handleTouchEnd()}
         >
           <Chat
             roomId={this.state.movie._id}

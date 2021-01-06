@@ -76,7 +76,11 @@ export class _UserList extends Component {
   render() {
     const users = this.getFileredUsersForDisplay()
     return (
-      <div className={`user-list-container ${window.innerWidth>813?this.props.fullScreenChatBackground():""}`}>
+      <div className={`
+      user-list-container 
+      ${window.innerWidth>813?this.props.fullScreenChatBackground():""}
+      ${this.props.isVisible?"show-user-list-animation":"hide-user-list-animation"}
+      `}>
         <div className="watch-room-users-container">
           <UsersCarousel 
           users={users}

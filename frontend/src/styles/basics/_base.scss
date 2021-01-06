@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  overscroll-behavior: contain;
   font-size: rem(16px);
   margin: 0;
   width: 100%;

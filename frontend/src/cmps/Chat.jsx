@@ -85,6 +85,7 @@ class _Chat extends Component {
     }
   }
 
+
   componentDidMount() {
     window.addEventListener('beforeunload', this.cleanUp)
     if (this.props.currUser) this.setState({ currUser: this.props.currUser })
@@ -373,7 +374,6 @@ class _Chat extends Component {
         )}
 
       <section className={`chat ${this.props.fullScreenChat()}`} >
-        {(this.props.isVisible||window.screen.width<415)&&
         <UserList
           socketInfo={this.state.socketInfo}
           msgForUser={this.state.msgForUser}
@@ -386,7 +386,8 @@ class _Chat extends Component {
           isFullScreen={this.props.isFullScreen}
           toggleFullScreen={this.props.toggleFullScreen}
           onGoBack={this.props.onGoBack}
-        />}
+          isVisible={this.props.isVisible}
+        />
         <div className={`chat-window ${window.innerWidth>813?this.props.fullScreenChatBackground():""}`}>
 
         {this.props.showParticles&&<Particles 
@@ -398,14 +399,15 @@ class _Chat extends Component {
           }
 
 
-          <div className='chat-box'
+          <div
+           className={`chat-box ${this.props.isVisible?'':'expand-chat-box'}`}
            ref={node => { this.node = node; }} 
            onClick={this.props.onToggleUserList}>
-            {this.props.isChatVisible&&
             <RSC
+            className={`${this.props.isChatVisible?'show-chat-animation':'hide-chat-animation'}`}
               ref={this.scrollBarRef}
               style={{ color: 'red', 
-              direction:'rtl' }}>
+              direction:'rtl'}}>
               {this.state.msgList.map((msg) => (
                 <div 
                   key={uuid()} 
@@ -443,7 +445,7 @@ class _Chat extends Component {
                   </div>
                 </div>
               ))}
-            </RSC>}
+            </RSC>
             <div
               className={`gift ${
                 !this.state.showGift ? 'hidden' : this.state.giftName
@@ -478,7 +480,11 @@ class _Chat extends Component {
             </div>}
           </div>
 
-          {this.props.isChatVisible&&<div className={`chat-input ${this.props.fullScreenInput()}`}>
+          <div className={`
+              chat-input 
+              ${this.props.fullScreenInput()}
+              ${this.props.isChatVisible?'show-input-animation':'hide-input-animation'}
+          `}>
             <input
               ref={this.inputRef}
               type='text'
@@ -502,7 +508,7 @@ class _Chat extends Component {
               >
               <IoIosHappy size='20px' />
             </div>
-          </div>}
+          </div>
         </div>
 
 

@@ -23,6 +23,7 @@
       width: 95%;
       
       &::-webkit-scrollbar {
+        display: none !important;
         width: 0px;
         background: transparent; /* Chrome/Safari/Webkit */
       }
@@ -744,7 +745,13 @@
     }
   }
   .chat .chat-window .chat-box {
-    height: 99%;
+    height: 88%;
+  }
+  .chat .chat-window .chat-box.expand-chat-box{
+    transition: 0.1s;
+    height: 106%;
+    position: absolute;
+    bottom: 14%;
   }
   .from-user{
     color: #f1f1f1;
@@ -799,4 +806,45 @@
   padding: 2px 5px 1px;
   border: none;
   background: none;
+}
+.show-chat-animation{
+  transition: 0.5s;
+  left:0;
+}
+.hide-chat-animation{
+  transition: 0.5s;
+  left:-30%;
+}
+.show-input-animation{
+  transition: 0.2s;
+  opacity: 100%;
+  visibility: visible;
+}
+.hide-input-animation{
+  transition: 0.2s;
+  opacity: 0%;
+  visibility: hidden;
+}
+
+.show-user-list-animation{
+  transition: opacity .5s;
+  opacity: 100%;
+  visibility: visible;
+}
+
+.hide-user-list-animation{
+  visibility: hidden;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.expand-chat-box{
+    transition: 0.5s;
+    height: 106%;
+    position: absolute;
+    bottom: 13%;
+}
+
+.ScrollbarsCustom> .ScrollbarsCustom-Wrapper >.ScrollbarsCustom-Scroller{
+  overflow: hidden;
 }

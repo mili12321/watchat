@@ -30,7 +30,6 @@ export class VideoControls extends React.Component {
 
   componentDidMount() {
     socketService.on('reactions', (reaction) => {
-      console.log("reaction",reaction)
       this.setState({ reactions: [...this.state.reactions, reaction] })
     })
     socketService.on('reaction-delete', (id) => {
