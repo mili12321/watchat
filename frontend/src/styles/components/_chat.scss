@@ -817,18 +817,18 @@
 }
 .show-input-animation{
   transition: 0.2s;
-  opacity: 100%;
+  opacity: 1;
   visibility: visible;
 }
 .hide-input-animation{
   transition: 0.2s;
-  opacity: 0%;
+  opacity: 0;
   visibility: hidden;
 }
 
 .show-user-list-animation{
   transition: opacity .5s;
-  opacity: 100%;
+  opacity: 1;
   visibility: visible;
 }
 
