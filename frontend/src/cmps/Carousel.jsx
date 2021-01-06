@@ -23,7 +23,7 @@ export class Carousel extends Component{
           items: 1
         },
         350: {
-          items: 2
+          items: 3
         },
         720: {
           items: 3
@@ -40,14 +40,14 @@ export class Carousel extends Component{
         <React.Fragment>
         <AliceCarousel
         duration={400}
-        autoPlay={true}
+        // autoPlay={true}
         startIndex = {1}
         fadeOutAnimation={true}
         mouseDragEnabled={true}
         playButtonEnabled={true}
         responsive={responsive}
         autoPlayInterval={2000}
-        autoPlayDirection="rtl"
+        autoPlayDirection="ltr"
         autoPlayActionDisabled={true}
         onSlideChange={this.onSlideChange}
         onSlideChanged={this.onSlideChanged}

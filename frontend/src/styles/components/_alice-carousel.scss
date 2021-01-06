@@ -70,10 +70,15 @@
 
 }
 @media screen and (max-width: 414px) {
+    .alice-carousel .carousel-card .movie-img-container{
+        -webkit-box-shadow: -12px 2px 11px 0px#141414;
+        -moz-box-shadow:    -12px 2px 11px 0px#141414;
+        box-shadow:         -12px 2px 11px 0px#141414;
+    }
     .alice-carousel .carousel-card .top-number{
-        height: 100%;
+        text-shadow: -5px -2px 5px rgba(0,0,0,0.6);
+        text-shadow: -6px -3px 5px rgba(0,0,0,0.7);
         flex-grow: 1;
-        font-size: 12rem;
         line-height: 80%;
         display: inline-block;
         padding: 0;
@@ -82,10 +87,28 @@
         align-self: center;
         position: absolute;
         text-align: end;
-        right: -12px;
-        top: 98px;
-        -webkit-text-stroke-width: 4px;
-        -webkit-text-stroke-color: #6e6d6d;
+        font-size: 7rem;
+        right: -13px;
+        // top: 84px;
+        top: 67px;
+        height: 57%;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #e0e0e0;
+    }
+    .alice-carousel .carousel-card .last-child{
+        letter-spacing: -22px;
+    }
+    .alice-carousel .carousel-card .movie-img-container {
+        width: 90px;
+    }
+    .alice-carousel .carousel-card {
+        // height: 174px;
+        height: 156px;
+    }
+    .home-top-movies-container>.alice-carousel{
+        .alice-carousel__dots, .alice-carousel__prev-btn-item, .alice-carousel__next-btn-item{
+            display: none;
+        }
     }
 }
 @media screen and (max-height: 415px){
