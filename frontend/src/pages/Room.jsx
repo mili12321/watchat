@@ -297,11 +297,11 @@ export class _Room extends Component {
     this.setState({endY:y})
 
     const {startX,endX,startY,endY} = this.state
-    if (window.screen.width>415&&startX - endX > 150&&endY-startY<10) {
+    if (window.screen.width>415&&startX - endX > 75&&endY-startY<10) {
         this.setState({isChatVisible:false})
     }
 
-    if (startX - endX < -150&&endY-startY<10) {
+    if (startX - endX < -75&&endY-startY<10) {
       this.setState({isChatVisible:true})
     }
   }
