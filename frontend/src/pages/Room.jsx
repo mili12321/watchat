@@ -419,6 +419,7 @@ export class _Room extends Component {
               fullScreenControlPanel={this.fullScreenControlPanel}
               onTogglePlay={this.onTogglePlay}
               isPlaying={this.state.isPlaying}
+              currTime={this.state.currTime}
               onChangeDisableToggleUserList={this.onChangeDisableToggleUserList}
               onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
               newUser={this.state.newUserFromBackend}
@@ -428,7 +429,7 @@ export class _Room extends Component {
         </div>
       </div>
 
-      {!this.state.isPlaying&&<div onClick={this.onTogglePlay} className="middle-play-btn">
+      {(!this.state.isPlaying||!this.state.currTime)&&<div onClick={this.onTogglePlay} className="middle-play-btn">
         <i className="fas fa-play"></i>
       </div>}
       </React.Fragment>

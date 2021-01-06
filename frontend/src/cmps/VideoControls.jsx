@@ -105,7 +105,12 @@ export class VideoControls extends React.Component {
 
        
         <div onClick={this.props.onTogglePlay} className="movie-play-btn">
-        {this.props.isPlaying?<i className="fas fa-grip-lines-vertical"></i>:<i className="fas fa-play"></i>}
+        {/* {this.props.isPlaying?<i className="fas fa-grip-lines-vertical"></i>:<i className="fas fa-play"></i>} */}
+        {(!this.props.isPlaying||!this.props.currTime)?
+        <i className="fas fa-play"></i>
+        :
+        <i className="fas fa-grip-lines-vertical"></i>
+        }
         </div>
 
         <div className='volume' 
