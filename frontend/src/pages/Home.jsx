@@ -12,6 +12,7 @@ import { toggleFavUserList } from '../store/actions/userActions'
 import { HeroCarousel } from "../cmps/HeroCarousel";
 import { Carousel } from "../cmps/Carousel";
 import { LoginModal } from '../cmps/LoginModal';
+import { NewMoviesCarousel } from '../cmps/NewMoviesCarousel';
 
 import { HashLink as Link } from 'react-router-hash-link'
 
@@ -256,8 +257,10 @@ class _Home extends Component {
             {/* end of live cinema section */}
 
             <div className='new-movies'>
-              <div className='movies-title'>New Movies in WatChat</div>
-              <div className='home-new-movies-container'>
+              <div className='movies-title'>
+                New Movies in WatChat
+              </div>
+              {/* <div className='home-new-movies-container'>
                 {movies.slice(0,11).map((movie) => (
                   <div key={movie._id} className={`home-new-movie-container`}>
 
@@ -312,9 +315,17 @@ class _Home extends Component {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
+              </div> */}
 
+              {/* new movies carousel */}
+              <NewMoviesCarousel 
+              movies={movies}
+              toggleFavoriteList={this.toggleFavoriteList} 
+              isFavoriteMovie={this.isFavoriteMovie} 
+              avgReview={this.avgReview}
+              />
+
+            </div>{/* end of new-movies */}
             <div className='top-movies'>
               <div className='movies-title'>TOP 10</div>
               <div className='home-top-movies-container'>

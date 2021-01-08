@@ -1264,4 +1264,28 @@
       }
     }
   }
+
+  .example-imgs > div {
+    align-self: start;
+    justify-content: start;
+    width: 100%;
+    position: relative;	
+    top: -37px;              
+  }
+  .example-imgs > div > .example-img {
+    height: 54px;
+  }
+  .example-imgs > div div {
+     min-height: 0px;
+  }
+}
+@media screen and (max-height: 414px) {
+  .example-imgs > div {
+    position: relative;	
+    top: -20px;              
+  }
+  
+  .example-imgs {
+    height: 102px;
+  }
 }
