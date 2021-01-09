@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { FilteredMovieList } from '../cmps/FilteredMovieList'
 
 export class FilteredMovie extends Component {
+    componentDidMount(){
+        console.log("this.props.currGenre",this.props.currGenre)
+    }
     getMoviesForDisplay() {
         const moviesByGenres = this.props.movies.filter(movie => movie.genres.includes(this.props.currGenre))
         let movies;
