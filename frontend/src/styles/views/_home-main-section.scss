@@ -393,6 +393,9 @@
     font-weight: bold;
     margin-bottom: 10px;
   }
+  .live-movie-example > .movie-example > .main-title{
+    margin: 10px 0;
+  }
 }
 @media screen and (min-width:414px) {  
   .live-rooms-container > .watch-container {
@@ -450,7 +453,7 @@
 @media screen and (max-width: 414px) {
   .live-rooms-container {
     .watch-container{
-      grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     }
   }
   .example-imgs {
