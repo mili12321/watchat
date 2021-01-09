@@ -65,3 +65,63 @@
 .alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
     background-color: rgb(255, 40, 104);
 }
+
+@media screen and (max-width:414px) {
+    .hero-slider>.alice-carousel{ 
+        .alice-carousel__next-btn{
+            right: 0px;
+        }
+        .alice-carousel__prev-btn, .alice-carousel__next-btn{
+            font-size: 20px;
+        }
+    }
+    
+}
+@media screen and (min-width:414px) {
+    .hero-slider>.alice-carousel{ 
+        .alice-carousel__next-btn{
+            right: 8px;
+        }
+        .alice-carousel__prev-btn, .alice-carousel__next-btn{
+            font-size: 30px;
+        }
+    }
+}
+    .hero-slider>.alice-carousel>{
+        .alice-carousel__prev-btn, .alice-carousel__next-btn{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+            [data-area] {
+                &::after {
+                  font-family: FontAwesome;
+                  font-style: normal;
+                  font-weight: bold;
+                  text-decoration: inherit;
+                  text-transform: capitalize;
+                  color: rgba(255, 255, 255, 0.767);
+                }
+            }
+            &:hover [data-area]::after{
+                color: rgb(255, 255, 255);
+            }
+        }   
+        .alice-carousel__prev-btn{
+            left: 0;
+            [data-area] {
+                &::after {
+                    content:"\f0a8";
+                }
+            }
+        }
+        .alice-carousel__next-btn{
+            [data-area] {
+                &::after {
+                    content:"\f0a9";
+                }
+            }
+        }
+    }

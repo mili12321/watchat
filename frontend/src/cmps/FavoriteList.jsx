@@ -4,17 +4,22 @@ import { Link } from "react-router-dom"
 
 export function FavoriteList({ loggedInUser, removeFromFavList, favListRef, clickedOutside, handleClickInside }) {
         return (
+            <div className="fav-list-continer">
+
+            <div 
+            className={`fav-list-btn ${clickedOutside? "":"fav-btn-open"}`} 
+            ref={favListRef} 
+            onClick={handleClickInside}
+            >
+                <div>
+                    My List
+                </div>
+            </div>
+
             <div className="favorite-movies-section"
             ref={favListRef} 
             onClick={handleClickInside}
             >
-                <div className={`fav-list-btn ${clickedOutside? "":"fav-btn-open"}`} 
-                >
-                    <div>
-                    My List
-                    </div>
-                </div>
-
                 <div className={`favorite-movies-list ${clickedOutside? "closeNav":"openNav open-nav-style"}`}
                 >
                     <div className={`close-list-msg  ${clickedOutside? "hide-closing-msg":""}`}>
@@ -27,7 +32,8 @@ export function FavoriteList({ loggedInUser, removeFromFavList, favListRef, clic
                         <div className="empty-msg"><i>The List is Empty</i></div>}
                     </div>
                 </div>
-
             </div>
+
+        </div>
     )
 }

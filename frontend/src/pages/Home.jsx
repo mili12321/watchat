@@ -25,11 +25,8 @@ class _Home extends Component {
       type: 'All',
     },
     showComponent: false,
+    innerWidth:null
   }
-  heroMovie1
-  heroMovie2
-  heroMovie3
-  heroMovie4
   componentDidMount() {
     this.props.loadMovies(this.state.filterBy)
     AOS.init({
@@ -37,6 +34,7 @@ class _Home extends Component {
       // duration : 2000
     })
     window.scrollTo(0, 0);
+    window.addEventListener('resize', this.handleResize)
   }
 
   componentWillUnmount() {
@@ -46,8 +44,12 @@ class _Home extends Component {
       maxYear: Infinity,
       type: 'All',
     }
-
     this.setState({ filterBy })
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize=()=>{
+    this.setState({innerWidth: window.innerWidth})
   }
 
   toggleFavoriteList=(movie)=>{
@@ -132,6 +134,13 @@ class _Home extends Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.innerWidth !== this.state.innerWidth) {
+      this.setState({innerWidth:window.innerWidth})
+    }
+  }
+
+
 
   render() {
     const { movies } = this.props
@@ -177,7 +186,7 @@ class _Home extends Component {
             </div>
 
             <div className='live-cinema-section'>
-              <div className='live-movie-example'>
+         {this.state.innerWidth>414&&<div className='live-movie-example'>
                 <div className='img-example'>
                   <img
                     className='laptop-blank'
@@ -207,7 +216,10 @@ class _Home extends Component {
                     <i> Streaming Live Now</i>
                   </div>
                 </div>
-              </div>
+              </div>}
+               {this.state.innerWidth<414&&<div className='live-section-title'>
+                    <i> Streaming Live Now</i>
+              </div>}
               <div className='live-rooms-container'>
                 <div className='watch-container'>
                   {watchRoomMovies.map((movie,idx) => (
@@ -514,6 +526,47 @@ class _Home extends Component {
               </div>
             </div>
             {/* end of editors part 3 */}
+
+
+
+
+
+
+           { this.state.innerWidth<414&&<div className='live-movie-example'>
+                <div className='img-example'>
+                  <img
+                    className='laptop-blank'
+                    src='assets/img/laptop-blank.png'
+                    alt=''
+                  />
+                  <video className='home-video' loop autoPlay muted>
+                    <source src='assets/img/video.mp4' type='video/mp4' />
+                  </video>
+                  <img
+                    className='chat-img2'
+                    src='assets/img/chat-img2.png'
+                    alt=''
+                  />
+                </div>
+                <div className='movie-example'>
+                  <div className='main-title'>
+                    <div>WATCH WHATEVER, TOGETHER</div>
+                  </div>
+                  <div className='main-title2'>
+                    Connect with others who are as obsessed with your favorite
+                    movies as you are. Come together for watch parties, chat
+                    about your favorite shows and movies, and discover your next
+                    binge.
+                  </div>
+                </div>
+              </div>}
+
+
+
+
+
+
+
 
             <div>
               <div className='example-imgs' id='example'>
