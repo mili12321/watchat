@@ -10,11 +10,11 @@
   }
   .category-movies {
     align-self: center;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill,  minmax(140px,1fr)); grid-template-rows: 300px;
-    grid-auto-rows:300px;
+    grid-template-columns: repeat(auto-fill,  minmax(116px,1fr)); grid-template-rows: 264px;
+    grid-auto-rows:264px;
   }
   .movie-container {
     display: flex;
@@ -50,6 +50,21 @@
   padding: 20px;
   padding-top: 50px;
 }
+.filtered-movie-list{
+  .category-movies{
+    grid-gap:12px
+  }
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 264px;
+    min-width: 111px;
+    width: 111px;
+    margin: 0px;
+  } 
+}
 
 @media screen and (max-height:414px) {
   .no-movies-container{
@@ -68,5 +83,18 @@
     place-items: center;
     font-weight: 500;
     color: gray;
+  }
+  .filtered-movie-list .category-movies {
+    grid-template-columns: repeat(auto-fill, minmax(102px, 1fr));
+    grid-template-rows: 260px;
+    grid-auto-rows: 260px;
+  }
+  .movies-page .genres-container > .genre, .info-continer-movie-card .genres-container > .genre {
+    font-size: 6px;
+  }
+  .filtered-movie-list{
+    .category-movies{
+      grid-gap:8px
+    }
   }
 }

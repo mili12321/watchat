@@ -15,59 +15,75 @@
   background-repeat: no-repeat;
   text-align: center;
   width: 100%;
-  height: 80%;
+  // height: 80%;
+  height: 61%;
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
 }
-.info-continer-movie-card {
-  background-image: url(../../styles/img/black-back3.jpg);
-  background-size: cover;
-  border-radius: 0 0 5px 5px;
-  padding: 5px;
-  > .title {
-    padding: 0 10px;
-    font-size: 16px;
-    margin-bottom: 2px;
-    align-self: center;
-    text-align: center;
-    color: rgb(255, 255, 255);
-  }
-}
-.genres-container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  align-self: center;
-  justify-content: center;
-  margin-bottom: 5px;
-  > .genre {
-    color: rgb(236, 236, 236);
-    background-color: rgb(68, 68, 68);
-    margin: 2px;
-    border-radius: 2px;
-    padding: 1px 3px;
-    font-size: 9px;
-  }
-}
-.rate-container {
-  font-size: 10px;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  color: rgb(194, 194, 194);
-  > .faRegEye {
-    align-self: center;
-    color: rgb(233, 233, 233);
-  }
-  > div {
-    > .fa-eye {
-      margin-right: 3px;
-      font-size: 8px;
+.movies-page, .filtered-movie-list {
+  .info-continer-movie-card {
+    background-image: url(../../styles/img/black-back3.jpg);
+    background-size: cover;
+    border-radius: 0 0 5px 5px;
+    padding: 5px;
+    max-height: 39%;
+    .ellipsis{
+      width: 100%;
+    }
+
+    > .title {
+      padding: 0 10px;
+      font-size: 12px;
+      margin-bottom: 5px;
+      align-self: center;
+      text-align: center;
+      color: rgb(255, 255, 255);
     }
   }
 }
+
+.movies-page, .info-continer-movie-card{
+  .genres-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    > .genre {
+      color: rgb(236, 236, 236);
+      background-color: rgb(68, 68, 68);
+      margin: 2px;
+      border-radius: 2px;
+      padding: 1px 3px;
+      font-size: 7px;
+    }
+  }
+}
+.movies-page, .info-continer-movie-card{
+  .rate-container {
+    font-size: 9px;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    text-align: center;
+    color: rgb(194, 194, 194);
+    > .faRegEye {
+      align-self: center;
+      color: rgb(233, 233, 233);
+    }
+    > div {
+      > .fa-eye {
+        margin-right: 3px;
+        font-size: 8px;
+      }
+    }
+  }
+}
+
 .btns-container {
   display: flex;
   justify-content: center;
