@@ -12,7 +12,6 @@
             z-index: 1;
             top: 50%;
             transform: translateY(-50%);
-            height: 100%;
             text-align: center;
             cursor: pointer;
         }
@@ -91,10 +90,11 @@
     }
     .slick-arrow{
         width: 25px;
-        height: 89%;
+        height: 88%;
     }
     .slick-next-btn-style, .slick-prev-btn-style{
         background-color:#1a1a1ac4 ;
+
     }
     .slick-list 
     .slick-track {
@@ -128,6 +128,7 @@
     }
     .slick-arrow{
         width: 50px;
+        height: 100%;
     }
     .slick-next-btn-style{
         background-image: linear-gradient(to left, rgb(26, 26, 26), rgba(26, 26, 26, 0.95) ,#1a1a1a60);

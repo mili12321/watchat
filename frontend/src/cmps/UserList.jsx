@@ -12,7 +12,8 @@ import {
 export class _UserList extends Component {
   state = {
     currPage: 0,
-    currSearch:''
+    currSearch:'',
+    innerWidth:null
   }
 
 
@@ -72,15 +73,35 @@ export class _UserList extends Component {
   }
 
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.innerWidth !== this.state.innerWidth) {
+      this.props.onChangeUserListAndChatToVisible()
+    }
+  }
+
+  componentDidMount(){
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize=()=>{
+    this.setState({innerWidth: window.innerWidth})
+  }
+
+
 
   render() {
     const users = this.getFileredUsersForDisplay()
     return (
       <div className={`
       user-list-container 
-      ${window.innerWidth>813?this.props.fullScreenChatBackground():""}
+      ${this.state.innerWidth>813?this.props.fullScreenChatBackground():""}
       ${this.props.isVisible?"show-user-list-animation":"hide-user-list-animation"}
-      `}>
+      `}
+      >
         <div className="watch-room-users-container">
           <UsersCarousel 
           users={users}

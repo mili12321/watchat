@@ -387,6 +387,7 @@ class _Chat extends Component {
           toggleFullScreen={this.props.toggleFullScreen}
           onGoBack={this.props.onGoBack}
           isVisible={this.props.isVisible}
+          onChangeUserListAndChatToVisible={this.props.onChangeUserListAndChatToVisible}
         />
         <div className={`chat-window ${window.innerWidth>813?this.props.fullScreenChatBackground():""}`}>
 

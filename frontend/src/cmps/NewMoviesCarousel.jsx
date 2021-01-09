@@ -34,14 +34,14 @@ export class NewMoviesCarousel extends Component{
         infinite: true,
         speed: 500,
         slidesToShow: 8,
-        slidesToScroll: 8,
+        slidesToScroll: 3,
         initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1160,
                 settings: {
                   slidesToShow: 8,
-                  slidesToScroll: 8,
+                  slidesToScroll: 3,
                   infinite: true,
                 }
             },
@@ -49,7 +49,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 1024,
             settings: {
               slidesToShow: 7,
-              slidesToScroll: 7,
+              slidesToScroll: 3,
               infinite: true,
             }
           },
@@ -57,7 +57,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 990,
             settings: {
               slidesToShow: 6,
-              slidesToScroll: 6,
+              slidesToScroll: 2,
               infinite: true,
             }
           },
@@ -65,7 +65,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 870,
             settings: {
               slidesToShow: 5,
-              slidesToScroll: 5,
+              slidesToScroll: 2,
               initialSlide: 0
             }
           },
@@ -73,7 +73,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 730,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 4,
+              slidesToScroll: 1,
               initialSlide: 0
             }
           },
@@ -81,7 +81,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 600,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               initialSlide: 0
             }
           },
@@ -89,7 +89,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 420,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
             }
           }
         ]

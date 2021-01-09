@@ -11,7 +11,7 @@ export const msgList1 = [
     type: '',
     from: 'David Bowie',
     to: '',
-    txt: 'lets rock!! :aww-yeah: :headbanging_parrot:',
+    txt: 'lets rock!! :headbanging_parrot:',
     nameColor: 'red',
     senderId: '10002',
   },

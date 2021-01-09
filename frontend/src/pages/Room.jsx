@@ -341,13 +341,18 @@ export class _Room extends Component {
   }
 
   onToggleUserList=()=>{
-    if(window.screen.height>415&&window.screen.width<415){
+    if(window.innerHeight>415&&window.innerWidth<415){
       this.setState({isVisible:true})
-    }else if(this.state.stopToggleUserList||window.screen.height>415||this.state.disableToggleUserList){
+    }else if(this.state.stopToggleUserList||window.innerHeight>415||this.state.disableToggleUserList){
        return
     }else{
       this.setState({isVisible:!this.state.isVisible})
     }
+  }
+
+  onChangeUserListAndChatToVisible=()=>{
+    this.setState({isVisible:true})
+    this.setState({isChatVisible:true})
   }
 
 
@@ -392,6 +397,7 @@ export class _Room extends Component {
             onDisableToggleUserList={this.onDisableToggleUserList}
             onAnabelToggleUserList={this.onAnabelToggleUserList}
             stopMovie = {this.stopMovie}
+            onChangeUserListAndChatToVisible={this.onChangeUserListAndChatToVisible}
           />
      
           <section className={`frame ${this.fullScreenFrame()}`} >
