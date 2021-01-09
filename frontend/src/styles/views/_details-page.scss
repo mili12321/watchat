@@ -496,7 +496,7 @@ button:focus {
     position: fixed;
     flex-direction: column;
     justify-content: center;
-    z-index: 10;
+    z-index: 999;
   }
   .search-input-container {
     position: absolute;
