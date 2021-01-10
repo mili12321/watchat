@@ -853,3 +853,9 @@
 .ScrollbarsCustom> .ScrollbarsCustom-Wrapper >.ScrollbarsCustom-Scroller{
   overflow: hidden;
 }
+
+@media screen and (max-width:414px) and (max-height:740px) {
+  .chat .chat-window .chat-input {
+    margin-bottom: 23px;
+  }
+}
