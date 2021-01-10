@@ -59,11 +59,14 @@
     flex-direction: column;
     justify-content: center;
 
-    height: 264px;
-    min-width: 111px;
-    width: 111px;
+    height: 251px;
+    min-width: 116px;
+    width: 116px;
     margin: 0px;
   } 
+  .btns-container {
+    margin: 0;
+  }
 }
 
 @media screen and (max-height:414px) {
@@ -100,5 +103,23 @@
   .nav-filter-style{
     padding: 0px;
     padding-top: 50px;
+  }
+  .filtered-movie-list{
+    .category-movies{
+      grid-gap:12px
+    }
+    .movie-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      height: 251px;
+      min-width: 111px;
+      width: 111px;
+      margin: 0px;
+    } 
+    .btns-container {
+      margin: 0;
+    }
   }
 }

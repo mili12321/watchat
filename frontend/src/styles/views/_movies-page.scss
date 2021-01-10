@@ -209,44 +209,32 @@
     overflow-x: hidden;
     height: 100%;
     position: relative;
-    .slick-arrow{
-        display: none;
+    .slick-prev{
+      display: none;
     }
-    // .slick-prev{
-    //     left: -1px;
-    // }
-    // .slick-next{
-    //     right: -1px;
-    // }
-    // .slick-prev:before {
-    //     position: relative;
-    //     top: 50%;
-    //     color: #d2d2d2;
-    //     transform: translateY(-50%);
-    //     // content:"\f053";
-    //     content:"\f0d9";
-    //     font-family: FontAwesome;
-    //     font-style: normal;
-    //     font-weight: normal;
-    //     text-decoration: inherit;
-    //     text-transform: capitalize;
-    //     font-size: 30px;
-    // }
-      
-    // .slick-next:before {
-    //     position: relative;
-    //     color: #d2d2d2;
-    //     top: 50%;
-    //     transform: translateY(-50%);
-    //     content:"\f0da";
-    //     // content:"\f054";
-    //     font-family: FontAwesome;
-    //     font-style: normal;
-    //     font-weight: normal;
-    //     text-decoration: inherit;
-    //     text-transform: capitalize;
-    //     font-size: 30px;
-    // }
+    .slick-next{
+        right: -1px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.699);
+        text-align: center;
+        width: 30px;
+        height: 90%;
+    }
+    .slick-next:before {
+        position: relative;
+        color: #d2d2d2;
+        top: 50%;
+        transform: translateY(-50%);
+        content:"\f054";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        text-transform: capitalize;
+        font-size: 15px;
+    }
     .slick-list{
         display: flex;
         justify-content: start;
@@ -288,24 +276,29 @@
     }
   }
   .movies-page .movie-container{
-    height: 264px;
+    height: 251px;
     min-width: 111px;
     width: 111px;
   }
 }
 @media screen and (min-width: 414px){
   .movie-list .slick-list .slick-track {
-    height:291px;
+    height: 261px;
   }
   .movie-list .slick-list .slick-track .slick-slide {
     min-width: 122px;
-    height: 264px;
+    height: 100%;
     padding:0;
     padding-right: 10px;
   }
   .movies-page .movie-container{
-    height: 272px;
+    height: 251px;
     min-width: 116px;
     width: 116px;
+  }
+  .movie-list .slick-slider .slick-next {
+    width: 40px;
+    height: 98%;
+    background-color: rgba(0, 0, 0, 0.699);
   }
 }

@@ -25,7 +25,8 @@ class _Home extends Component {
       type: 'All',
     },
     showComponent: false,
-    innerWidth:null
+    innerWidth:null,
+    desktopExample: null
   }
   componentDidMount() {
     this.props.loadMovies(this.state.filterBy)
@@ -35,6 +36,11 @@ class _Home extends Component {
     })
     window.scrollTo(0, 0);
     window.addEventListener('resize', this.handleResize)
+    if(window.innerWidth>414){
+      this.setState({desktopExample:true})
+    }else{
+      this.setState({desktopExample:false})
+    }
   }
 
   componentWillUnmount() {
@@ -137,6 +143,11 @@ class _Home extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.innerWidth !== this.state.innerWidth) {
       this.setState({innerWidth:window.innerWidth})
+      if(window.innerWidth>414){
+        this.setState({desktopExample:true})
+      }else{
+        this.setState({desktopExample:false})
+      }
     }
   }
 
@@ -186,7 +197,7 @@ class _Home extends Component {
             </div>
 
             <div className='live-cinema-section'>
-         {this.state.innerWidth>414&&<div className='live-movie-example'>
+         {this.state.desktopExample&&<div className='live-movie-example'>
                 <div className='img-example'>
                   <img
                     className='laptop-blank'
@@ -217,7 +228,7 @@ class _Home extends Component {
                   </div>
                 </div>
               </div>}
-               {this.state.innerWidth<414&&<div className='live-section-title'>
+               {!this.state.desktopExample&&<div className='live-section-title'>
                     <i> Streaming Live Now</i>
               </div>}
               <div className='live-rooms-container'>
@@ -532,7 +543,7 @@ class _Home extends Component {
 
 
 
-           { this.state.innerWidth<414&&<div className='live-movie-example'>
+           { !this.state.desktopExample&&<div className='live-movie-example'>
                 <div className='img-example'>
                   <img
                     className='laptop-blank'

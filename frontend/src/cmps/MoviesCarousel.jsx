@@ -31,57 +31,53 @@ export class MoviesCarousel extends Component{
       const settings = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        infinite: true,
         speed: 500,
         slidesToShow: 13,
-        // slidesToScroll: 3,
+        slidesToScroll: 10,
         initialSlide: 0,
+        variableWidth: true,
+        swipeToSlide: true,
         responsive: [
           {
             breakpoint: 1600,
             settings: {
-              slidesToShow: 11,
-              // slidesToScroll: 3,
-              infinite: true,
+              slidesToShow: 9,
+              slidesToScroll: 9,
             }
           },
           {
             breakpoint: 1288,
             settings: {
-              slidesToShow: 10,
-              // slidesToScroll: 3,
-              infinite: true,
+              slidesToShow: 8,
+              slidesToScroll: 8,
             }
           },
             {
                 breakpoint: 1160,
                 settings: {
                   slidesToShow: 8,
-                  // slidesToScroll: 3,
-                  infinite: true,
+                  slidesToScroll: 8,
                 }
             },
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 7,
-              // slidesToScroll: 3,
-              infinite: true,
+              slidesToScroll: 7,
             }
           },
           {
             breakpoint: 990,
             settings: {
               slidesToShow: 6,
-              // slidesToScroll: 2,
-              infinite: true,
+              slidesToScroll: 6,
             }
           },
           {
             breakpoint: 870,
             settings: {
               slidesToShow: 5,
-              // slidesToScroll: 2,
+              slidesToScroll: 5,
               initialSlide: 0
             }
           },
@@ -89,7 +85,7 @@ export class MoviesCarousel extends Component{
             breakpoint: 730,
             settings: {
               slidesToShow: 4,
-              // slidesToScroll: 1,
+              slidesToScroll: 4,
               initialSlide: 0
             }
           },
@@ -97,7 +93,7 @@ export class MoviesCarousel extends Component{
             breakpoint: 600,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 1,
+              slidesToScroll: 3,
               initialSlide: 0
             }
           },
@@ -105,7 +101,8 @@ export class MoviesCarousel extends Component{
             breakpoint: 420,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 1,
+              slidesToScroll: 2,
+              swipeToSlide: true,
             }
           }
         ]

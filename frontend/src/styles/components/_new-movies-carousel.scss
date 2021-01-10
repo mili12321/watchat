@@ -4,7 +4,7 @@
         width: 100%;
         margin-top: 0;
         overflow-x: hidden;
-        height: 100%;
+        height: 86%;
         position: relative;
         .slick-arrow{
             position: absolute;
@@ -32,7 +32,7 @@
             font-weight: normal;
             text-decoration: inherit;
             text-transform: capitalize;
-            font-size: 30px;
+            font-size: 20px;
         }
           
         .slick-next:before {
@@ -47,7 +47,7 @@
             font-weight: normal;
             text-decoration: inherit;
             text-transform: capitalize;
-            font-size: 30px;
+            font-size: 20px;
         }
         .slick-list{
             display: flex;
@@ -92,27 +92,27 @@
     }
     .slick-arrow{
         width: 25px;
-        height: 88%;
+        height: 84%;
     }
     .slick-next-btn-style, .slick-prev-btn-style{
-        background-color:#1a1a1ac4 ;
+        background-color: rgba(0, 0, 0, 0.699);
 
     }
-    .slick-list 
+    .new-movies .slick-list 
     .slick-track {
         place-items: center;
         height: 277px;
         .slick-slide{  
         min-width: 129px;
-        height: 259px;
+        height: 230px;
         padding:0 10px;
         >div{
             .home-new-movie-container{
                 .new-movie-img-container {
-                    height: 64%;
+                    height: 63%;
                 }
                 .info-continer-movie-card{
-                    height: 36%;
+                    height: 37%;
                     .title {
                         font-size: 14px;
                     }
@@ -129,17 +129,21 @@
         height: 434px;
         .slick-slider {
             margin:20px auto;
+            .slick-next:before , .slick-prev:before {
+                font-size: 25px;
+            }
         }
     }
     .slick-arrow{
         width: 50px;
-        height: 100%;
+        height: 86%;
+        background-color: rgba(0, 0, 0, 0.699);
     }
     .slick-next-btn-style{
-        background-image: linear-gradient(to left, rgb(26, 26, 26), rgba(26, 26, 26, 0.95) ,#1a1a1a60);
+        // background-image: linear-gradient(to left, rgb(26, 26, 26), rgba(26, 26, 26, 0.95) ,#1a1a1a60);
     }
     .slick-prev-btn-style{
-        background-image: linear-gradient(to right, rgb(26, 26, 26), rgba(26, 26, 26, 0.95) ,#1a1a1a60);
+        // background-image: linear-gradient(to right, rgb(26, 26, 26), rgba(26, 26, 26, 0.95) ,#1a1a1a60);
     }
     .slick-list 
     .slick-track { 
@@ -155,10 +159,10 @@
                     transform: scale(1.12);
                 }
                 .new-movie-img-container {
-                    height: 69%;
+                    height: 67%;
                 }
                 .info-continer-movie-card{
-                    height: 31%;
+                    height: 33%;
                     .title {
                         font-size: 16px;
                     }
@@ -169,7 +173,4 @@
             }
         }
     }}
-}
-@media screen and (max-height: 415px){
-    
 }

@@ -31,18 +31,19 @@ export class NewMoviesCarousel extends Component{
       const settings = {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        infinite: true,
+        // infinite: true,
         speed: 500,
         slidesToShow: 8,
         slidesToScroll: 3,
         initialSlide: 0,
+        swipeToSlide: true,
         responsive: [
             {
                 breakpoint: 1160,
                 settings: {
                   slidesToShow: 8,
                   slidesToScroll: 3,
-                  infinite: true,
+                  // infinite: true,
                 }
             },
           {
@@ -50,7 +51,7 @@ export class NewMoviesCarousel extends Component{
             settings: {
               slidesToShow: 7,
               slidesToScroll: 3,
-              infinite: true,
+              // infinite: true,
             }
           },
           {
@@ -58,7 +59,7 @@ export class NewMoviesCarousel extends Component{
             settings: {
               slidesToShow: 6,
               slidesToScroll: 2,
-              infinite: true,
+              // infinite: true,
             }
           },
           {
