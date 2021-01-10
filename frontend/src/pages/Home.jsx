@@ -585,7 +585,7 @@ class _Home extends Component {
                   <div className='example-img' style={{
                         backgroundImage: `url(assets/img/example/choose-movie.jpg)`,
                       }}></div>
-                  <div>choose a movie to stream or live cinema</div>
+                  <div>choose a movie to stream</div>
                 </div>
                 <div className='example-img2'>
                 <div className='example-img' style={{
