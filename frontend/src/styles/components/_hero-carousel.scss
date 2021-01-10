@@ -78,10 +78,16 @@
             right: 0px;
         }
         .alice-carousel__prev-btn, .alice-carousel__next-btn{
-            font-size: 20px;
+            // font-size: 20px;
+            display: none;
         }
     }
     
+}
+@media screen and (max-height:414px) {
+    .alice-carousel__prev-btn, .alice-carousel__next-btn{
+        display: none;
+    }
 }
 @media screen and (min-width:414px) {
     .hero-slider>.alice-carousel{ 

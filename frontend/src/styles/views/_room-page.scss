@@ -667,6 +667,9 @@
       transform: scale(1);
     }
   }
+  .watch-room .room-window {
+    background: rgb(0, 0, 0);
+  }
 }
 
 @media screen and (min-height:415px) {
