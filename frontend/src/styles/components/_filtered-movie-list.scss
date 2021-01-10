@@ -51,6 +51,7 @@
 .nav-filter-style{
   padding: 20px;
   padding-top: 50px;
+  margin-bottom: 50px;
 }
 .filtered-movie-list{
   .category-movies{
@@ -96,11 +97,6 @@
   }
   .movies-page .genres-container > .genre, .info-continer-movie-card .genres-container > .genre {
     font-size: 6px;
-  }
-  .filtered-movie-list{
-    .category-movies{
-      grid-gap:8px
-    }
   }
   .nav-filter-style{
     padding: 0px;
