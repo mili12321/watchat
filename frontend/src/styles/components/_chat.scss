@@ -416,6 +416,7 @@
   .user-list-container{
     z-index: 700;
     background: black;
+    height: 130px;
     .toolbar, .user-list{
       display: none;
     }
@@ -429,7 +430,8 @@
   
     .chat-window {
       width: 100%;
-      height: 76%;
+      flex-grow: 1;
+      // height: 76%;
       display: flex;
       flex-direction: column;
       align-items: center;
