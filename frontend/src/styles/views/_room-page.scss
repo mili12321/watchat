@@ -73,7 +73,10 @@
     display: none;
   }
   .watch-room .room-window .frame {
-    z-index: 1;
+    height: 200px;
+    top: 10%;
+    position: absolute;
+    z-index: 2;
   }
 }
 @media screen and (min-width:414px) and (max-width:813px) {
@@ -619,7 +622,7 @@
 
 @media screen and (max-width:414px) {
   .msgForUser{
-    top: 270px;
+    top: 400px;
     right: -84px;
   }
   .old-msg{
@@ -641,9 +644,26 @@
   .middle-play-btn{
     width: 74px;
     height: 54px;
-    top: 13vh;
+    top: 20vh;
     left: 50%;
     transform: translateX(-50%);
+  }
+  @keyframes recived-gift {
+    0% {
+      transform: scale(5);
+      opacity: 30%;
+      top: 100%;
+      right: 5px;
+    }
+  
+    50% {
+      opacity: 100%;
+    }
+    100% {
+      top: 60%;
+      right: 30px;
+      transform: scale(1);
+    }
   }
 }
 @media screen and (min-height:415px) {
