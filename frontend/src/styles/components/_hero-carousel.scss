@@ -34,6 +34,12 @@
     height: 86vh;
 }
 
+@media only screen and (max-width: 414px) {
+    .hero-slider .alice-carousel .alice-carousel__wrapper > .alice-carousel__stage > .alice-carousel__stage-item {
+      height: 70vh;
+    }
+}
+
 .alice-carousel__wrapper {
     position: relative;
     overflow-x: hidden;

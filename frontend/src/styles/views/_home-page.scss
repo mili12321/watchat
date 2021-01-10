@@ -575,3 +575,12 @@
   }
 
 }
+
+@media only screen and (max-width: 414px) {
+  .hero-slider{
+    height: 70vh;
+  }
+  .main-header-container {
+    height: 73vh;
+  }
+}
