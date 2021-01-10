@@ -90,7 +90,7 @@ export class NewMoviesCarousel extends Component{
             breakpoint: 420,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 1,
+              slidesToScroll: 2,
             }
           }
         ]
