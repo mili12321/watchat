@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 35px;
+  font-family: 'Fraunces', serif;
 }
 .explantion-btn {
   background: linear-gradient(111deg, rgb(230, 47, 108), rgb(243, 61, 29));
@@ -135,6 +136,7 @@
 }
 
 .example-imgs {
+  font-family: 'Fraunces', serif;
   margin-top: 120px;
   margin-bottom: 40px;
   width: 90vw;
@@ -392,6 +394,7 @@
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
+    font-family: 'Fraunces', serif;
   }
   .live-movie-example > .movie-example > .main-title{
     margin: 10px 0;
@@ -604,11 +607,12 @@
 }
 
 .movies-title {
-  font-family: 'PT Sans Narrow', sans-serif;
+  // font-family: 'PT Sans Narrow', sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: rgb(230, 230, 230);
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-family: 'Fraunces', serif;
 }
 .new-movies {
   max-width: 1400px;
