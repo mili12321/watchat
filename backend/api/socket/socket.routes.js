@@ -147,8 +147,8 @@ function connectSockets(io) {
     })
 
 
-    socket.on('toggle-play-btn', (isPlaying) => {
-      io.to(socket.roomId).emit('toggle-play-btn', isPlaying)
+    socket.on('toggle-play-btn', (data) => {
+      io.to(socket.roomId).emit('toggle-play-btn', data)
     })
 
 
