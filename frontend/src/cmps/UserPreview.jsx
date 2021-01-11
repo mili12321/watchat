@@ -29,7 +29,9 @@ export class UserPreview extends Component {
           className={`user-menu-icons ${
             this.state.isSelected ? '' : 'hidden'
           }`}>
-          <span className='user-icon follow'></span>
+          <span className='user-icon tag-user' onClick={() => {
+            this.props.onUsernameSelect(this.props.user)
+          }}> </span>
           <span
             onClick={() => this.props.sendGift('drink', this.state.posX,this.props.user)}
             className='user-icon drink'></span>
