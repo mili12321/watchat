@@ -130,8 +130,20 @@
   text-shadow: 0 0 2px #000000;
   font-weight: 600;
 }
-.slide-upper-text-container .slide-title {
-  font-size: 25px;
+
+@media screen and (max-width: 415px) {
+  .slide-upper-text-container{
+    position: relative;
+    top: 29px;
+  }
+  
+  .slide-upper-text-container{ 
+    .slide-title {
+      font-size: 25px;
+    }
+
+}
+  
 }
 
 .slide-genres {
