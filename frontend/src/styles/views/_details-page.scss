@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: Cinzel;
 }
 
 .details-hero-title {
@@ -207,7 +208,7 @@
 .overview-txt {
   font-size: clamp(13px, 1vw, 15px);
   color: gray;
-  font-family: 'Fraunces', serif;
+  font-family: Fraunces;
 }
 .cast-continer {
   width: 100%;
@@ -391,6 +392,7 @@
   text-align: start;
   justify-content: center;
   width: 60vw;
+  font-family: Cinzel;
 }
 .form-container {
   width: 100%;
@@ -426,6 +428,7 @@
   background-color: rgba(255, 255, 255, 0.705);
   background-position: bottom right;
   background-repeat: no-repeat;
+  font-family: Fraunces;
 }
 .review-submit-btn {
   align-self: center;

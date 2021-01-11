@@ -36,8 +36,7 @@
     color: #818181;
     display: block;
     transition: 0.3s;
-    // font-weight: bold;
-    font-family: 'Fraunces', serif;
+    font-family: Cinzel;
     font-weight: 800;
     &:hover {
       color: #f1f1f1;
@@ -62,6 +61,7 @@
     }
     .side-nav-main{
         color: rgb(216, 216, 216);
+        font-family: Cinzel;
         div{
             padding:5px 10px ;
         }
@@ -91,7 +91,7 @@
   .category-name {
     color: white;
     margin: 0;
-    font-family: 'Fraunces', serif;
+    font-family: Cinzel;
   }
   .all-btn {
     color: white;
@@ -142,7 +142,7 @@
   }
   .movies-page .side-nav-main div {
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 10px;
   }
   .side-btn {
     padding: 4px 4px 4px 15px;
