@@ -233,3 +233,8 @@ background: linear-gradient(315deg , #d57c3a, #d53a9d);
     }
   }
 }
+@media screen and (max-width:414px) and (max-height:430px){
+  .user-preview .user-menu-icons {
+    width: 24vw;
+  }
+}

@@ -799,3 +799,13 @@
     font-size: 25px;
   }
 }
+@media screen and (max-width:414px) and (max-height:430px){
+  .room-window .chat {
+    height: 84%;
+  }
+}
+@media screen and (max-width:414px) and (max-height:430px){
+  .frame {
+    display: none;
+  }
+}

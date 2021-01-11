@@ -76,3 +76,9 @@
         top: -27.5vh;
     }
 }
+
+@media screen and (max-width:414px) and (max-height:430px){
+    .mobile-toolbar {
+      top: -20.5vh;
+    }
+}
