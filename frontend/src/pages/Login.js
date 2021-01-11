@@ -106,6 +106,7 @@ class Test extends Component {
           value={this.state.signupCred.username}
           onChange={this.signupHandleChange}
           placeholder='Username'
+          maxlength="10"
         />
         <br />
         <button className='login-btn'>Signup</button>

@@ -54,7 +54,7 @@ class _Search extends Component {
                 {this.props.searchingValue==="user"&&
                     <form className="navlink-search" >
                         <div className="search-input-container">
-                            <input onChange={this.props.handleInput} type="search"  name="name" autocomplete="off" placeholder="Search user" ref={input => this.inputField = input}
+                            <input onChange={this.props.handleInput} type="text"  name="name" autocomplete="off" placeholder="Search user" ref={input => this.inputField = input}
                             onFocus = {() =>  this.inputField.value = ""}
                             />
                         <div className="search" onClick={()=>{this.props.onClearInput('')}}></div>

@@ -40,7 +40,8 @@ export class _Room extends Component {
     isPlaying:true,
     disableToggleUserList:false,
     stopToggleUserList:false,
-    newUserFromBackend:{}
+    newUserFromBackend:{},
+    playBtnMsg:null
   }
 
   playerRef = React.createRef()
@@ -55,8 +56,17 @@ export class _Room extends Component {
     socketService.on('sending-request-for-approval', (data) => {
       socketService.emit('sending-currTime-to-user',{newUser:data.newUser,currTime:this.state.currTime})
     })
-    socketService.on('toggle-play-btn', (isPlaying) => {
-      this.setState({isPlaying})
+    socketService.on('toggle-play-btn', (data) => {
+      // console.log('currUser121121212',data.currUser.username)
+      this.setState({isPlaying:data.isPlaying},()=>{
+        if(!data.isPlaying){
+          // this.setState({playBtnMsg:`pause the movie`})
+          this.setState({playBtnMsg:`${data.currUserName} pause the movie`})
+        }else{
+          // this.setState({playBtnMsg:`resume the movie`})
+          this.setState({playBtnMsg:`${data.currUserName} resume the movie`})
+        }
+      })
     })
     if (!this.state.showVideo) {
       setTimeout(() => {
@@ -67,8 +77,16 @@ export class _Room extends Component {
 
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
-      socketService.emit('toggle-play-btn', this.state.isPlaying) 
+      // console.log("currUser",this.state.currUser.username)
+      socketService.emit('toggle-play-btn', {isPlaying:this.state.isPlaying,currUserName:this.state.currUser?this.state.currUser.username:'guest'}) 
     })
+  }
+
+  playBtnMsg=()=>{
+    setTimeout(() => {
+      this.setState({ playBtnMsg: null })
+    }, 2000)
+    return this.state.playBtnMsg 
   }
 
 
@@ -440,6 +458,10 @@ export class _Room extends Component {
       {(!this.state.isPlaying||!this.state.currTime)&&<div onClick={this.onTogglePlay} className="middle-play-btn">
         <i className="fas fa-play"></i>
       </div>}
+
+      {this.state.playBtnMsg&&
+      <div className={`play-btn-msg ${this.state.isPlaying?'palying':''}`}>{this.playBtnMsg()}</div>
+      }
       </React.Fragment>
     )
   }

@@ -622,6 +622,22 @@
   display: none;
 }
 
+
+.play-btn-msg{
+  color: #fb447a;
+  background-color: #ffffff28;
+  border-radius: 14px;
+  padding:3px 5px;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+.palying{
+  color: #7bfbdb;
+}
+
 @media screen and (max-width:414px) {
   .msgForUser{
     top: 400px;
@@ -670,6 +686,10 @@
   .watch-room .room-window {
     background: rgb(0, 0, 0);
   }
+  .play-btn-msg{
+    font-size: 10px;
+    top: 80px;
+  }
 }
 
 @media screen and (min-height:415px) {
@@ -711,6 +731,9 @@
   }
   .middle-play-btn{
     display: none;
+  }
+  .play-btn-msg{
+    top: 15px;
   }
 }
 @media screen and (max-height:415px){
@@ -776,4 +799,3 @@
     font-size: 25px;
   }
 }
-
