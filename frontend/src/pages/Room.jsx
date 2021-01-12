@@ -430,7 +430,6 @@ export class _Room extends Component {
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
                 onProgress={this.onProgress}
-                playsinline={true}
               />
             </div>
             {this.state.newUserFromBackend&&<VideoControls

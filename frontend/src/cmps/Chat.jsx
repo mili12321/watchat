@@ -97,6 +97,8 @@ class _Chat extends Component {
 
   componentWillUnmount() {
     this.cleanUp()
+    console.log("componentWillUnmount ")
+    console.log("users:WillUnmount ",this.state.users)
     window.removeEventListener('beforeunload', this.cleanUp)
   }
 
@@ -111,6 +113,7 @@ class _Chat extends Component {
     })
     socketService.on('chat room', (users, newUser, firstUser) => {
       console.log("firstUser: ",firstUser)
+      console.log("users: ",users)
       this.setState({ users })
       if (!this.state.currUser) {
         this.setState({ currUser: newUser },()=>{
