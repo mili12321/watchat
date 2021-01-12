@@ -126,6 +126,7 @@ class _Chat extends Component {
       this.setState({ msgList: [...this.state.msgList, msg] })
     })
     socketService.on('remove-user', (users, firstUser) => {
+      console.log('removing user',users)
       this.setState({ users })
     })
     socketService.on('receive-gift', (_gift) => {
