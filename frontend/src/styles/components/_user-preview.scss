@@ -13,7 +13,6 @@
     position: absolute;
     transition: 0.4s;
     top: -30%;
-    width: calc(100% + 10px);
     display: flex;
     justify-content: space-evenly;
     z-index: 150;
@@ -74,6 +73,7 @@
   .tag-user{
     background: url('../../img/tag-user.png') center/cover no-repeat;
     position: relative;
+    background-color: #303030;
   }
 
   .default-avatar {

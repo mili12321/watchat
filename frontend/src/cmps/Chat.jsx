@@ -301,8 +301,8 @@ class _Chat extends Component {
     this.state.users.forEach((user) => {
       const tagname = `<span className='name-tag'>${user.username}</span>`
       const searchStr = user.username
-      result = result.replace(searchStr, tagname)
-      // result = result.replace('@', '')
+        result = result.replace(searchStr, tagname)
+        // result = result.replace('@', '')
     })
     return result
   }

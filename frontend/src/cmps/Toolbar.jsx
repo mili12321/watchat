@@ -16,7 +16,8 @@ export class Toolbar extends Component {
           <a
             href={`whatsapp://send?text=${window.location.href} Watch ${this.props.movie.title} Together With Friends!`}
             data-action='share/whatsapp/share'
-            // target='_blank'
+            target='_blank'
+            rel="noopener noreferrer"
             >
             <IoMdShare size='20px' />
           </a>

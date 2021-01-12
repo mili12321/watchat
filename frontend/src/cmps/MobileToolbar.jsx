@@ -43,9 +43,9 @@ export class _MobileToolbar extends Component {
             <div className='add-user toolbar-icon'>
                 <a
                 // href={'https://wa.me/?text='+encodeURIComponent(window.location.href)
-                href={'whatsapp://send?text='+encodeURIComponent(window.location.href)
-                } 
-                
+                href={'whatsapp://send?text='+encodeURIComponent(window.location.href)} 
+                target="_blank"
+                rel="noopener noreferrer"
                 >
                     <IoMdShare size='25px' />
                 </a>
