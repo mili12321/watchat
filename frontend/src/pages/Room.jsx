@@ -173,7 +173,6 @@ export class _Room extends Component {
   }
 
   componentWillUnmount() {
-    // this.setState({ currTime: 1 })
     this.setState({ isPlaying: true })
   }
 
@@ -431,6 +430,7 @@ export class _Room extends Component {
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
                 onProgress={this.onProgress}
+                playsinline={true}
               />
             </div>
             {this.state.newUserFromBackend&&<VideoControls
