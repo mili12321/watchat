@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoIosVolumeLow, IoIosThumbsUp } from 'react-icons/io'
+import { IoIosVolumeLow, IoIosThumbsUp, IoIosVolumeOff } from 'react-icons/io'
 import uuid from 'react-uuid'
 import { ReactionPicker } from './ReactionPicker'
 import { socketService } from '../services/socketService'
@@ -74,6 +74,10 @@ export class VideoControls extends React.Component {
 
   changeVolume = (ev) => {
     this.props.onVolumeChange(ev.target.value)
+   
+     setTimeout(() => {
+      this.setState({ clickedOutsideVolume:false });
+    }, 2500) 
   }
 
   onVolumeToggle = () => {
@@ -126,7 +130,7 @@ export class VideoControls extends React.Component {
             step='0.01'
             value={this.props.volume}
             onChange={this.changeVolume}></input>}
-          <IoIosVolumeLow style={{ width: '100%', height: '100%' }} />
+          {this.props.volume<0.01?<IoIosVolumeOff style={{ width: '100%', height: '100%' }} />:<IoIosVolumeLow style={{ width: '100%', height: '100%' }} />}
         </div>
         
         <div onClick={this.props.toggleFullScreen} className="full-sceen-btn">

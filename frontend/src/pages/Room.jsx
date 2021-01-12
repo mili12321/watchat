@@ -174,11 +174,6 @@ export class _Room extends Component {
 
   componentWillUnmount() {
     this.setState({ currTime: 1 })
-    this.setState({ timeSet: false,})
-    this.setState({ duration: null, })
-    this.setState({ played: null })
-    this.setState({ secondsElapsed: null })
-    this.setState({ isPlaying: true})
   }
 
   async loadMovie() {
@@ -432,7 +427,8 @@ export class _Room extends Component {
                 height='100%'
                 // muted={!this.state.showVideo}
                 volume={this.state.volume}
-                playing={this.onPlaying&&this.state.isPlaying}
+                playing={this.state.isPlaying}
+                // playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
                 onProgress={this.onProgress}
               />

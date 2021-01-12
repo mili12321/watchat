@@ -660,12 +660,27 @@
     font-size: 12px;
   }
   .middle-play-btn{
+    position: absolute;
+    z-index: 998;
+    background-color: #ff003f;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    .fa-play{
+      color: white;
+      font-size: 25px;
+    }
+  }
+  .middle-play-btn{
     width: 74px;
     height: 54px;
     top: 20vh;
     left: 50%;
     transform: translateX(-50%);
   }
+  
   @keyframes recived-gift {
     0% {
       transform: scale(5);
@@ -703,6 +718,8 @@
     top: 0;
     left: 0;
   }
+}
+@media screen and (min-width:414px){
   .middle-play-btn{
     display: none;
   }
@@ -738,9 +755,22 @@
 }
 @media screen and (max-height:415px){
   .middle-play-btn{
+    position: absolute;
+    z-index: 998;
+    background-color: #ff003f;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    .fa-play{
+      color: white;
+      font-size: 25px;
+    }
+  }
+  .middle-play-btn{
     width: 84px;
     height: 64px;
-    // top: 50%;
     top: 48%;
     left: 50%;
     transform: translate(-50% , -50%);
@@ -783,22 +813,6 @@
     color: white;
 }
 
-.middle-play-btn{
-  position: absolute;
-  z-index: 998;
-  background-color: #ff003f;
-  // background-color: rgb(196, 0, 26);
-  // background: -webkit-linear-gradient(0deg, #d1009d, #d10000);
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  cursor: pointer;
-  .fa-play{
-    color: white;
-    font-size: 25px;
-  }
-}
 @media screen and (max-width:414px) and (max-height:430px){
   .room-window .chat {
     height: 84%;
@@ -806,6 +820,9 @@
 }
 @media screen and (max-width:414px) and (max-height:430px){
   .frame {
+    display: none;
+  }
+  .middle-play-btn{
     display: none;
   }
 }
