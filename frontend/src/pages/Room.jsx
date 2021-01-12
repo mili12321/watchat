@@ -427,8 +427,7 @@ export class _Room extends Component {
                 height='100%'
                 // muted={!this.state.showVideo}
                 volume={this.state.volume}
-                playing={this.state.isPlaying}
-                // playing={this.onPlaying&&this.state.isPlaying}
+                playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
                 onProgress={this.onProgress}
               />

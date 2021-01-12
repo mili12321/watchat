@@ -46,6 +46,9 @@
     width: 30px;
     height: 30px;
     transition: 0.3s;
+    display: flex;
+    place-items: center;
+    justify-content: center;
 
     #volume {
       background: maroon;
