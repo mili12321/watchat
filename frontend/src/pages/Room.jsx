@@ -14,8 +14,7 @@ export class _Room extends Component {
   state = {
     movie: null,
     showVideo: false,
-    volume: 0,
-    // volume: 0.2,
+    volume: 0.2,
     currTime: 1,
     timeSet: false,
     currUser: null,
@@ -57,13 +56,10 @@ export class _Room extends Component {
       socketService.emit('sending-currTime-to-user',{newUser:data.newUser,currTime:this.state.currTime})
     })
     socketService.on('toggle-play-btn', (data) => {
-      // console.log('currUser121121212',data.currUser.username)
       this.setState({isPlaying:data.isPlaying},()=>{
         if(!data.isPlaying){
-          // this.setState({playBtnMsg:`pause the movie`})
           this.setState({playBtnMsg:`${data.currUserName} pause the movie`})
         }else{
-          // this.setState({playBtnMsg:`resume the movie`})
           this.setState({playBtnMsg:`${data.currUserName} resume the movie`})
         }
       })
@@ -78,7 +74,6 @@ export class _Room extends Component {
 
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
-      // console.log("currUser",this.state.currUser.username)
       socketService.emit('toggle-play-btn', {isPlaying:this.state.isPlaying,currUserName:this.state.currUser?this.state.currUser.username:'guest'}) 
     })
   }
@@ -99,12 +94,10 @@ export class _Room extends Component {
 
       this.setState({newUserFromBackend:newUser})
       this.setState({currUser:newUser},()=>{
-        console.log("newUserInRoom/:",newUser)
       })
     }else{
       this.setState({isFirstUser:false})
       this.setState({ allowedToJoin: false })
-      console.log("bbbbbbbbbbbbbbbbbb",firstUser)
       firstUser&&socketService.emit('get-first-user', firstUser)
       firstUser&&socketService.emit('sending-request-for-approval', {newUser,firstUser})
       socketService.on('sending-currTime-to-user', (data) => {
@@ -115,19 +108,12 @@ export class _Room extends Component {
   }
 
   onDuration = (duration) =>{
-    console.log("onDuration:",duration)
     this.setState({duration})
   }
 
   onProgress=(progress)=>{
     if(!this.state.isPlaying)return
-    // if (!this.state.showVideo) {
-    //       setTimeout(() => {
-    //         this.setState({ showVideo: true })
-    //       }, 6500)
-    //     }
     if(this.state.isFirstUser){
-      console.log("this.state.currTime",this.state.currTime)
       let player = this.playerRef.current
         if (player && !this.state.timeSet&&this.state.allowedToJoin ) {
           if(this.state.currTime===0){
@@ -140,7 +126,6 @@ export class _Room extends Component {
       const secondsElapsed = progress.played * this.state.duration
       if(secondsElapsed!==this.state.secondsElapsed){
         this.setState({ currTime:secondsElapsed })
-        console.log("currTime",secondsElapsed)
       }
     }else{
       this.onGetCurrTime()
@@ -148,14 +133,12 @@ export class _Room extends Component {
       const secondsElapsed = progress.played * this.state.duration
       if(secondsElapsed!==this.state.secondsElapsed){
         this.setState({ currTime:secondsElapsed })
-        console.log("currTime",secondsElapsed)
       }
     }
   } 
 
 
   onGetCurrTime=()=>{
-    console.log("this.state.currTime",this.state.currTime)
     let player = this.playerRef.current
       if (player && !this.state.timeSet&&this.state.allowedToJoin ) {
         player.seekTo(this.state.currTime, 'seconds')

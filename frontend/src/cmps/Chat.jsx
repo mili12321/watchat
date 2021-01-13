@@ -96,8 +96,6 @@ class _Chat extends Component {
 
   componentWillUnmount() {
     this.cleanUp()
-    console.log("componentWillUnmount ")
-    console.log("users:WillUnmount ",this.state.users)
     window.removeEventListener('beforeunload', this.cleanUp)
   }
 
@@ -111,12 +109,9 @@ class _Chat extends Component {
       user: this.props.currUser,
     })
     socketService.on('chat room', (users, newUser, firstUser) => {
-      console.log("firstUser: ",firstUser)
-      console.log("users: ",users)
       this.setState({ users })
       if (!this.state.currUser) {
         this.setState({ currUser: newUser },()=>{
-          console.log("this.state.currUser123:",this.state.currUser)
         })
       }
       this.props.onAddNewUser(users, newUser, firstUser)
@@ -133,8 +128,6 @@ class _Chat extends Component {
       }
     })
     socketService.on('receive-gift', (_gift) => {
-      console.log('RECEIVING NEW gift FROM SOCKET: ', _gift.name)
-
       this.setState({ gift:{_gift,showRecivedGift:true }})
       let gift={
         ..._gift,
@@ -151,7 +144,6 @@ class _Chat extends Component {
 
 
     socketService.on('receive-msg', (msg) => {
-      console.log('RECEIVING NEW msg FROM SOCKET: ', msg)
       const currMsg = {
         txt:msg.txt,
         from:msg.from,
@@ -173,7 +165,6 @@ class _Chat extends Component {
 
   cleanUp = () => {
     if (this.state.currUser)
-    console.log("this.state.currUser to remove",this.state.currUser)
       socketService.emit('remove-user', {
         userId: this.state.currUser._id,
         userRoom: this.props.roomId,
@@ -197,9 +188,6 @@ class _Chat extends Component {
     socketService.emit('chat', msg)
     this.props.onUpdateMovieMsgList(msg)
     if(this.state.msg.txt.charAt(0)==="@"){
-      console.log('receive-msg')
-      console.log('receive-msg from',this.state.currUser)
-      console.log('receive-msg to',this.state.msg.user)
       socketService.emit('receive-msg',{from:this.state.currUser, user:this.state.msg.user, txt: this.state.msg.txt, sendedMsg: this.state.msg.sendedMsg, to:this.state.msg.to })
     }
     this.removeMsg()
@@ -253,8 +241,6 @@ class _Chat extends Component {
 
   sendGift = (giftName, giftPosition, user) => {
     this.setState({ giftName, showGift: true, giftPosition})
-    console.log('GIFT POSITION: ', giftPosition)
-    console.log('user that recived gift: ', user)
     let gift={
       user,
       giftName,
