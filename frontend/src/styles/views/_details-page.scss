@@ -31,7 +31,7 @@
 }
 
 .details-hero-title {
-  width: 70%;
+  width: 100%;
   align-self: start;
   text-align: start;
   font-size: 5vw;
@@ -45,7 +45,7 @@
 }
 .dark-info-on-background {
   font-weight: bold;
-  color: rgb(44, 44, 44);
+  color: #0c0c0c;
 }
 .light-info-on-background {
   color: white;
@@ -206,8 +206,8 @@
 }
 .genres-txt,
 .overview-txt {
-  font-size: clamp(13px, 1vw, 15px);
-  color: gray;
+  font-size: clamp(15px, 1vw, 17px);
+  color: rgb(165, 165, 165);
   font-family: Fraunces;
 }
 .cast-continer {
@@ -334,6 +334,9 @@
   .td-txt{
     margin-left: 10px;
   }
+}
+.word-break{
+  word-break: break-all;
 }
 .reviews-th {
   background-color: transparent;
@@ -1066,7 +1069,102 @@ html {
     box-sizing: inherit;
   }
 }
+
+@keyframes open {
+  from {
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+  }
+  to {
+    line-clamp: initial;
+    -webkit-line-clamp: initial;
+  }
+}
+@keyframes close {
+  from {
+    line-clamp: initial;
+    -webkit-line-clamp: initial;
+  }
+  to {
+    line-clamp: 3;
+    -webkit-line-clamp: initial;
+  }
+}
+
+@media screen and (min-width:414px){
+  .toggle-long-description{
+    display: none;
+  }
+}
+
+@media screen and (max-height:414px){
+  .ellipsis-description{
+    max-height: 197px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0,1,0,1);
+  }  
+  .overview-description{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    animation: close linear 0.1s forwards;
+  }
+  .overview-description.open{
+    animation: open linear 0s forwards;
+   }
+  .long-description{
+    max-height: 197px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0,1,0,1);
+    max-height: 100rem;
+    transition: max-height 0.3s cubic-bezier(0.9, 0, 0.8, 0.2);
+  }
+  .toggle-long-description{
+    position: relative;
+    font-size: 13px;
+    top: -23px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(184, 184, 184);
+  }
+}
+
 @media screen and (max-width:414px){
+  .ellipsis-description{
+    max-height:205px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0,1,0,1);
+  }
+  .overview-description{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    animation: close linear 0.1s forwards;
+  } 
+  .overview-description.open{
+   animation: open linear 0s forwards;
+  }
+  .long-description{
+    max-height: 205px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0,1,0,1);
+    max-height: 100rem;
+    transition: max-height 0.3s cubic-bezier(0.9, 0, 0.8, 0.2);
+  }
+  .toggle-long-description{
+    position: relative;
+    font-size: 13px;
+    top: -23px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(184, 184, 184);
+  }
+  
   .my-list-btn, .details-hero-btn{
     height: 20px;
     place-items: center;
@@ -1075,7 +1173,7 @@ html {
     max-height: 38px;
   }
   .details-hero-title{
-    font-size: 20px;
+    font-size: 23px;
   }
 }
 @media screen and (max-width:463px){
@@ -1133,7 +1231,10 @@ html {
   }
 }
 
-.img-position{
+.ice-age-img-position{
   background-position-y: 16%;
 }
-
+.bridges-img-position{
+  background-position-y: 0px;
+  background-position-x: 100%;
+}

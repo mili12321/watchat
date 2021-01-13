@@ -22,12 +22,23 @@ class _MovieDetails extends Component {
     isRate:false,
     activeRateCount:0,
     prevActiveRateCount:0,
+    fullDescription:false,
+    innerHeight:null,
+    innerWidth:null
   }
 
   componentDidMount() {
     this.loadMovie()
     window.scrollTo(0, 0);
+    window.addEventListener('resize', this.updateDimensions);
+    this.setState({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
   }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+  updateDimensions = () => {
+    this.setState({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
+  };
 
   async loadMovie() {
     const movieId = this.props.match.params.id
@@ -70,6 +81,8 @@ class _MovieDetails extends Component {
     switch(title) {
       case "The Equalizer":
         return 'dark-title-on-background';
+      case "The last stand":
+        return 'dark-title-on-background';
       default:
         return 'light-title-on-background';
     }
@@ -79,7 +92,9 @@ class _MovieDetails extends Component {
     switch(title) {
       case "The Equalizer":
         return 'dark-info-on-background';
-      case "Kill Switch":
+      case "The last stand":
+        return 'dark-info-on-background';
+      case "X-Men: Apocalypse":
         return 'dark-info-on-background';
       case "Hellboy":
         return 'dark-info-on-background';
@@ -171,14 +186,41 @@ class _MovieDetails extends Component {
 
 
   backgroundImagePosition=(movie)=>{
-    if(movie.title==="Ice Age 3"){
-      return 'img-position'
+    if(movie.title.includes("Ice Age 3")){
+      return 'ice-age-img-position'
+    }if(movie.title.includes("21 Bridges")){
+      return 'bridges-img-position'
     }else{
       return
     }
   }
   
+  onGetReviewTxt=(word)=>{
+    if(word.length > 22){
+      return 'word-break'
+    }
+  }
  
+  longDescription=(desc)=>{
+    if((desc.length>225&&this.state.innerWidth<415)||(desc.length>378&&this.state.innerHeight<415)){
+      if(!this.state.fullDescription){
+        return 'ellipsis-description'
+      }else{
+        return 'long-description'
+      }
+    }
+  }
+
+  overviewRef = React.createRef()
+
+  toggleDescription=()=>{
+    this.setState({fullDescription:!this.state.fullDescription},()=>{
+      if(!this.state.fullDescription){
+        this.overviewRef.current.scrollIntoView() 
+      }
+    })
+  }
+
 
 
   render() {
@@ -225,15 +267,22 @@ class _MovieDetails extends Component {
           </div>
           <section className='details-more-info-section'>
             <div className='description-container'>
-              <div className='overview-title'>Overview</div>
+              <div className='overview-title' ref={this.overviewRef}>Overview</div>
               <div className='genres-title'>Genres</div>
-              <div className='overview-txt'>{movie.description}</div>
+              <div className={`overview-txt ${this.longDescription(movie.description)}`}>
+                <p className={`overview-description ${this.state.fullDescription?'open':''}`}>{movie.description}</p>
+              </div>
               <div className='genres-txt'>
                 {movie.genres.map((genre) => (
                   <div>{genre}</div>
                 ))}
               </div>
             </div>
+
+          {
+         ((this.state.innerWidth<414&&movie.description.length>225)||(movie.description.length>378&&this.state.innerHeight<415))&&
+          <div className="toggle-long-description" onClick={(this.toggleDescription)}>{!this.state.fullDescription?'Read More':'Read Less'}
+          </div>}
 
             <div className='cast-continer'>
               <div className='cast-title'>Cast</div>
@@ -325,7 +374,17 @@ class _MovieDetails extends Component {
                   </tr>
                   <tr className="reviews-tr">
                     <td className="reviews-td"></td>
-                    <td className="reviews-td"><div className="td-txt">{review.txt}</div></td>
+                    <td className="reviews-td">
+                      <div className={`td-txt`}>
+                        {/* {review.txt} */}
+                        {review.txt.split(' ').map(word=>
+                          <span className={this.onGetReviewTxt(word)}>
+                            {word}
+                            <span> </span>
+                          </span>
+                        )}
+                      </div>
+                    </td>
                   </tr>
                 </table>
                 ))}

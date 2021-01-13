@@ -247,12 +247,12 @@ class _Home extends Component {
                           <div>{movie.title}</div>
                         </div>
                         <div className='details'>
-                          {movie.genres.splice(2).map((genre,idx) => (
+                          {
                             <span 
-                            key={idx}className='details-genre'>
-                              <i>{genre}</i>
+                            className='details-genre'>
+                              <i>{movie.genres[2]}</i>
                             </span>
-                          ))}
+                          }
                         </div>
                         <div>
                           <Link to={`/movie/${movie._id}`}>
