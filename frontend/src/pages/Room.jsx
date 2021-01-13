@@ -75,6 +75,7 @@ export class _Room extends Component {
     }
   }
 
+
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
       // console.log("currUser",this.state.currUser.username)
@@ -100,7 +101,6 @@ export class _Room extends Component {
       this.setState({currUser:newUser},()=>{
         console.log("newUserInRoom/:",newUser)
       })
-      
     }else{
       this.setState({isFirstUser:false})
       this.setState({ allowedToJoin: false })
@@ -415,7 +415,7 @@ export class _Room extends Component {
             onAnabelToggleUserList={this.onAnabelToggleUserList}
             stopMovie = {this.stopMovie}
             onChangeUserListAndChatToVisible={this.onChangeUserListAndChatToVisible}
-            // updateMovie={this.props.updateMovie}
+            updateMovie={this.props.updateMovie}
             onUpdateMovieMsgList={this.onUpdateMovieMsgList}
           />
      

@@ -90,8 +90,7 @@ class _Chat extends Component {
     window.addEventListener('beforeunload', this.cleanUp)
     if (this.props.currUser) this.setState({ currUser: this.props.currUser })
     this.setupSockets()
-    this.setState({ msgList: msgList1 })
-    this.props.movie.msgList&&this.setState({ msgList:[...this.state.msgList, ...this.props.movie.msgList]})
+    this.setState({ msgList:[...msgList1, ...this.props.movie.msgList]})
     this.scrollDown()
   }
 
@@ -126,8 +125,12 @@ class _Chat extends Component {
       this.setState({ msgList: [...this.state.msgList, msg] })
     })
     socketService.on('remove-user', (users, firstUser) => {
-      console.log('removing user',users)
       this.setState({ users })
+      if(users.length<1){
+        const movie= this.props.movie
+        movie.msgList = []
+        this.props.updateMovie(movie)
+      }
     })
     socketService.on('receive-gift', (_gift) => {
       console.log('RECEIVING NEW gift FROM SOCKET: ', _gift.name)
@@ -170,9 +173,11 @@ class _Chat extends Component {
 
   cleanUp = () => {
     if (this.state.currUser)
+    console.log("this.state.currUser to remove",this.state.currUser)
       socketService.emit('remove-user', {
         userId: this.state.currUser._id,
         userRoom: this.props.roomId,
+        movie:this.props.movie
       })
     socketService.terminate()
   }
