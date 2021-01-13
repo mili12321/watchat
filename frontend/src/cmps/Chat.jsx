@@ -91,8 +91,8 @@ class _Chat extends Component {
     if (this.props.currUser) this.setState({ currUser: this.props.currUser })
     this.setupSockets()
     this.setState({ msgList: msgList1 })
+    this.props.movie.msgList&&this.setState({ msgList:[...this.state.msgList, ...this.props.movie.msgList]})
     this.scrollDown()
-    
   }
 
   componentWillUnmount() {
@@ -190,6 +190,7 @@ class _Chat extends Component {
     msg.from = this.state.currUser.username
     msg.senderId = this.state.currUser._id
     socketService.emit('chat', msg)
+    this.props.onUpdateMovieMsgList(msg)
     if(this.state.msg.txt.charAt(0)==="@"){
       console.log('receive-msg')
       console.log('receive-msg from',this.state.currUser)

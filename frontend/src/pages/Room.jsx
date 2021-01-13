@@ -7,7 +7,7 @@ import { VideoControls } from '../cmps/VideoControls'
 import { MovieLoader } from '../cmps/MovieLoader'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
-
+import {updateMovie} from '../store/actions/movieActions.js'
 
 // let lastPress = 0;
 export class _Room extends Component {
@@ -368,6 +368,10 @@ export class _Room extends Component {
     this.setState({isChatVisible:true})
   }
 
+  onUpdateMovieMsgList=(msg)=>{
+    this.state.movie.msgList.push(msg)
+    this.props.updateMovie(this.state.movie)
+  }
 
 
   render() {
@@ -411,6 +415,8 @@ export class _Room extends Component {
             onAnabelToggleUserList={this.onAnabelToggleUserList}
             stopMovie = {this.stopMovie}
             onChangeUserListAndChatToVisible={this.onChangeUserListAndChatToVisible}
+            // updateMovie={this.props.updateMovie}
+            onUpdateMovieMsgList={this.onUpdateMovieMsgList}
           />
      
           <section className={`frame ${this.fullScreenFrame()}`} >
@@ -468,4 +474,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-export const Room = connect(mapStateToProps)(withRouter(_Room))
+const mapDispatchToProps = {
+  updateMovie,
+};
+
+
+export const Room = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Room))
