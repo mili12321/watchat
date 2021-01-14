@@ -80,7 +80,6 @@ export class VideoControls extends React.Component {
 
   changeVolume = (ev) => {
     this.props.onVolumeChange(ev.target.value)
-   
     if(window.innerHeight<415||window.innerWidth<415){
       setTimeout(() => {
         this.setState({ clickedOutsideVolume:false });

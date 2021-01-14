@@ -41,7 +41,8 @@ export class _Room extends Component {
     stopToggleUserList:false,
     newUserFromBackend:{},
     playBtnMsg:null,
-    loadedSeconds:null
+    loadedSeconds:null,
+    isMuted:true
   }
 
   playerRef = React.createRef()
@@ -178,7 +179,7 @@ export class _Room extends Component {
   }
 
   onVolumeChange = (newVolume) => {
-    this.setState({ volume: newVolume })
+    this.setState({ volume: newVolume, isMuted:false })
   }
 
   onMovieReady = () => {
@@ -427,6 +428,7 @@ export class _Room extends Component {
                 width='100%'
                 height='100%'
                 // muted={true}
+                muted={this.state.isMuted}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
