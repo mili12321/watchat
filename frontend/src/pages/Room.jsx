@@ -120,11 +120,19 @@ export class _Room extends Component {
   
   onProgress=(progress)=>{
     if(progress.loadedSeconds===0){
-      console.log("progress1",progress)
+      console.log("inside loadedSeconds",progress)
+      // this.setState({isPlaying:false},()=>{
+      //   setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
+      // })
       this.setState({isPlaying:false},()=>{
-        setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
+        this.setState({isPlaying:true},()=>{
+          this.setState({isPlaying:false},()=>{
+            this.setState({isPlaying:true})
+          })
+        })
       })
     }
+    console.log("isPlaying",this.state.isPlaying)
     // else{
     //   this.setState({loadedSeconds:true})
     // }
