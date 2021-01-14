@@ -110,7 +110,7 @@ export class VideoControls extends React.Component {
             />
           </div>
 
-          <IoIosThumbsUp style={{ width: '70%', height: '70%' }} 
+          <IoIosThumbsUp className="IoIosThumbsUp" style={{ width: '70%', height: '70%' }} 
           onClick={this.onToggleReactions}
           />
         </div>
@@ -138,7 +138,7 @@ export class VideoControls extends React.Component {
             step='0.01'
             value={this.props.volume}
             onChange={this.changeVolume}></input>}
-          {this.props.volume<0.01?<BsVolumeMuteFill style={{ width: '80%', height: '80%' }} />:<IoIosVolumeLow style={{ width: '100%', height: '100%' }} />}
+          {this.props.volume<0.01?<BsVolumeMuteFill  className="BsVolumeMuteFill" style={{ width: '80%', height: '80%' }} />:<IoIosVolumeLow  className="IoIosVolumeLow" style={{ width: '100%', height: '100%' }} />}
         </div>
         
         <div onClick={this.props.toggleFullScreen} className="full-sceen-btn">

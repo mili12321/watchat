@@ -117,11 +117,16 @@ export class _Room extends Component {
     console.log("duration",duration)
   }
 
+  
   onProgress=(progress)=>{
-    this.setState({loadedSeconds:progress.loadedSeconds})
-    console.log("progress1",progress)
+    // if(!progress.loadedSeconds){
+    //   this.setState({loadedSeconds:false})
+    // }else{
+    //   this.setState({loadedSeconds:true})
+    // }
+    // console.log("progress1",progress)
     if(!this.state.isPlaying)return
-    console.log("progress2",progress)
+    // console.log("progress2",progress)
     if(this.state.isFirstUser){
       let player = this.playerRef.current
         if (player && !this.state.timeSet&&this.state.allowedToJoin ) {

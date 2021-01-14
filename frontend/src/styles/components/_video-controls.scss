@@ -27,7 +27,14 @@
     pointer-events: auto;
     transition: 0.3s;
 
-
+    .IoIosThumbsUp{
+      &:hover {
+        color: rgb(255, 255, 255);
+        -webkit-filter: drop-shadow( 0em 0em 0.5em #fff);
+        filter: drop-shadow( 0em 0em 0.5em #fff);
+        cursor: pointer;
+      }
+    }
     &:hover {
       // color: maroon;
       // cursor: pointer;
@@ -36,8 +43,6 @@
       //   rgba(238, 174, 202, 1) 0%,
       //   rgba(89, 89, 89, 1) 100%
       // );
-      color: rgb(255, 255, 255);
-      text-shadow: 0em 0em 1em #fff, 0em 0em 0.5em #fff;
       cursor: pointer;
     }
   }
@@ -63,9 +68,16 @@
       z-index: 999;
     }
 
+    .IoIosVolumeLow,.BsVolumeMuteFill{
+      &:hover {
+        color: rgb(255, 255, 255);
+        -webkit-filter: drop-shadow( 0em 0em 0.5em #fff);
+        filter: drop-shadow( 0em 0em 0.5em #fff);
+        cursor: pointer;
+      }
+    }
+
     &:hover {
-      color: rgb(255, 255, 255);
-      text-shadow: 0em 0em 1em #fff, 0em 0em 0.5em #fff;
       cursor: pointer;
     }
   }
