@@ -119,12 +119,16 @@ export class _Room extends Component {
 
   
   onProgress=(progress)=>{
-    // if(!progress.loadedSeconds){
-    //   this.setState({loadedSeconds:false})
-    // }else{
+    if(progress.loadedSeconds===0){
+      console.log("loadedSeconds",progress.loadedSeconds)
+      this.setState({isPlaying:false},()=>{
+        setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
+      })
+    }
+    // else{
     //   this.setState({loadedSeconds:true})
     // }
-    // console.log("progress1",progress)
+    console.log("progress1",progress)
     if(!this.state.isPlaying)return
     // console.log("progress2",progress)
     if(this.state.isFirstUser){
@@ -428,7 +432,7 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                muted={!this.state.showVideo}
+                muted={true}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}

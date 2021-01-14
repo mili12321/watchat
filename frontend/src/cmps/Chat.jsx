@@ -307,9 +307,9 @@ class _Chat extends Component {
 
   scrollDown = () => {
     const scrollBar = this.scrollBarRef.current
-    if (scrollBar) {const scroll = scrollBar.scrollHeight - scrollBar.clientHeight;
-    scrollBar.scrollTo(0, scroll);}
-    // if (scrollBar) scrollBar.scrollToBottom()
+    // if (scrollBar) {const scroll = scrollBar.scrollHeight - scrollBar.clientHeight;
+    // scrollBar.scrollTo(0, scroll);}
+    if (scrollBar) scrollBar.scrollToBottom()
   }
 
 

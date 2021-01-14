@@ -98,7 +98,7 @@ export class _UserList extends Component {
     return (
       <div className={`
       user-list-container 
-      ${this.state.innerWidth>813?this.props.fullScreenChatBackground():""}
+      ${this.props.fullScreenChatBackground()}
       ${this.props.isVisible?"show-user-list-animation":"hide-user-list-animation"}
       `}
       >
