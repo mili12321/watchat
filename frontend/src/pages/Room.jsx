@@ -125,11 +125,7 @@ export class _Room extends Component {
       //   setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
       // })
       this.setState({isPlaying:false},()=>{
-        this.setState({isPlaying:true},()=>{
-          this.setState({isPlaying:false},()=>{
-            this.setState({isPlaying:true})
-          })
-        })
+        this.setState({isPlaying:true})
       })
     }
     console.log("isPlaying",this.state.isPlaying)
