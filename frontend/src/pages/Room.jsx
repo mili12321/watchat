@@ -70,6 +70,9 @@ export class _Room extends Component {
         this.setState({ showVideo: true })
       }, 6500)
     }
+    this.setState({isPlaying:false},()=>{
+      setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
+    })
   }
 
 
