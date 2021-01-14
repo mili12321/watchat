@@ -40,7 +40,8 @@ export class _Room extends Component {
     disableToggleUserList:false,
     stopToggleUserList:false,
     newUserFromBackend:{},
-    playBtnMsg:null
+    playBtnMsg:null,
+    loadedSeconds:null
   }
 
   playerRef = React.createRef()
@@ -72,6 +73,10 @@ export class _Room extends Component {
   }
 
 
+  stopVideo=()=>{
+    this.setState({isPlaying:false})
+  }
+
   onTogglePlay=()=>{
     this.setState({isPlaying:!this.state.isPlaying},()=>{
       socketService.emit('toggle-play-btn', {isPlaying:this.state.isPlaying,currUserName:this.state.currUser?this.state.currUser.username:'guest'}) 
@@ -98,8 +103,8 @@ export class _Room extends Component {
     }else{
       this.setState({isFirstUser:false})
       this.setState({ allowedToJoin: false })
-      firstUser&&socketService.emit('get-first-user', firstUser)
-      firstUser&&socketService.emit('sending-request-for-approval', {newUser,firstUser})
+      socketService.emit('get-first-user', firstUser)
+      socketService.emit('sending-request-for-approval', {newUser,firstUser})
       socketService.on('sending-currTime-to-user', (data) => {
         this.setState({currTime:data.currTime})
         this.setState({ allowedToJoin: true })
@@ -109,10 +114,14 @@ export class _Room extends Component {
 
   onDuration = (duration) =>{
     this.setState({duration})
+    console.log("duration",duration)
   }
 
   onProgress=(progress)=>{
+    this.setState({loadedSeconds:progress.loadedSeconds})
+    console.log("progress1",progress)
     if(!this.state.isPlaying)return
+    console.log("progress2",progress)
     if(this.state.isFirstUser){
       let player = this.playerRef.current
         if (player && !this.state.timeSet&&this.state.allowedToJoin ) {
@@ -414,7 +423,7 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                // muted={!this.state.showVideo}
+                muted={!this.state.showVideo}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}

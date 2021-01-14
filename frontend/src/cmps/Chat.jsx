@@ -96,6 +96,7 @@ class _Chat extends Component {
 
   componentWillUnmount() {
     this.cleanUp()
+    socketService.terminate()
     window.removeEventListener('beforeunload', this.cleanUp)
   }
 
@@ -121,6 +122,7 @@ class _Chat extends Component {
     })
     socketService.on('remove-user', (users, firstUser) => {
       this.setState({ users })
+      console.log("users remain",users)
       if(users.length<1){
         const movie= this.props.movie
         movie.msgList = []
@@ -305,7 +307,9 @@ class _Chat extends Component {
 
   scrollDown = () => {
     const scrollBar = this.scrollBarRef.current
-    if (scrollBar) scrollBar.scrollToBottom()
+    if (scrollBar) {const scroll = scrollBar.scrollHeight - scrollBar.clientHeight;
+    scrollBar.scrollTo(0, scroll);}
+    // if (scrollBar) scrollBar.scrollToBottom()
   }
 
 
