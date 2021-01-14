@@ -120,7 +120,7 @@ export class _Room extends Component {
   
   onProgress=(progress)=>{
     if(progress.loadedSeconds===0){
-      console.log("loadedSeconds",progress.loadedSeconds)
+      console.log("progress1",progress)
       this.setState({isPlaying:false},()=>{
         setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
       })
@@ -432,8 +432,7 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                muted={!this.state.showVideo}
-                // muted={true}
+                muted={true}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
