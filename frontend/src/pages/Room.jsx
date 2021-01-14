@@ -114,27 +114,17 @@ export class _Room extends Component {
 
   onDuration = (duration) =>{
     this.setState({duration})
-    console.log("duration",duration)
   }
 
   
   onProgress=(progress)=>{
     if(progress.loadedSeconds===0){
-      console.log("inside loadedSeconds",progress)
-      // this.setState({isPlaying:false},()=>{
-      //   setTimeout(()=>{this.setState({isPlaying:true}) }, 100);
-      // })
       this.setState({isPlaying:false},()=>{
         this.setState({isPlaying:true})
       })
     }
-    console.log("isPlaying",this.state.isPlaying)
-    // else{
-    //   this.setState({loadedSeconds:true})
-    // }
-    console.log("progress1",progress)
+
     if(!this.state.isPlaying)return
-    // console.log("progress2",progress)
     if(this.state.isFirstUser){
       let player = this.playerRef.current
         if (player && !this.state.timeSet&&this.state.allowedToJoin ) {
@@ -436,7 +426,8 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                muted={true}
+                muted={!this.state.showVideo}
+                // muted={true}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
                 onDuration={this.onDuration}
