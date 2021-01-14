@@ -432,7 +432,7 @@ export class _Room extends Component {
                 url={this.state.movie.videoUrl}
                 width='100%'
                 height='100%'
-                // muted={!this.state.showVideo}
+                muted={!this.state.showVideo}
                 // muted={true}
                 volume={this.state.volume}
                 playing={this.onPlaying&&this.state.isPlaying}
