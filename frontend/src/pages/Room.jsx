@@ -14,7 +14,7 @@ export class _Room extends Component {
   state = {
     movie: null,
     showVideo: false,
-    volume: 0.2,
+    volume: 0,
     currTime: 1,
     timeSet: false,
     currUser: null,
