@@ -137,7 +137,7 @@ export class VideoControls extends React.Component {
             step='0.01'
             value={this.props.volume}
             onChange={this.changeVolume}></input>}
-          {this.props.volume<0.01?<BsVolumeMuteFill  className="BsVolumeMuteFill" style={{ width: '80%', height: '80%' }} />:<IoIosVolumeLow  className="IoIosVolumeLow" style={{ width: '100%', height: '100%' }} />}
+          {this.props.volume<0.01||this.props.isMuted?<BsVolumeMuteFill  className="BsVolumeMuteFill" style={{ width: '80%', height: '80%' }} />:<IoIosVolumeLow  className="IoIosVolumeLow" style={{ width: '100%', height: '100%' }} />}
         </div>
         
         <div onClick={this.props.toggleFullScreen} className="full-sceen-btn">

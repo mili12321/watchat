@@ -447,6 +447,7 @@ export class _Room extends Component {
               onChangeDisableToggleUserList={this.onChangeDisableToggleUserList}
               onToggleDisableToggleUserList={this.onToggleDisableToggleUserList}
               newUser={this.state.newUserFromBackend}
+              isMuted={this.state.isMuted}
             />}
             <div className='reaction'></div>
           </section>
