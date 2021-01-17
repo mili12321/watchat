@@ -1,4 +1,6 @@
 # watchat
+<!-- ![alt text](http://url/to/img.png) -->
+<!-- ![Alt text](relative/path/to/img.jpg?raw=true "Title") -->
 An website for watching videos together.
 ## Description
 ## Quick Start
@@ -23,9 +25,9 @@ Navigate to
 $ http://localhost:3000/
 ```
 ## Tech
-React</br>
-Javascript</br>
-SCSS</br>
-Redux</br>
-Node.js</br>
-Socket.io
+* React
+* Javascript
+* SCSS
+* Redux
+* Node.js
+* Socket.io
