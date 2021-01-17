@@ -8,62 +8,62 @@ let currTime = 0
 let firstUser
 var intervalObj
 let users = [
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'George',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818545/1_xmvpmp.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'David123',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818596/2_lxx9no.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'Angela',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610819285/16_xwjjqi.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'Jackson',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818691/9_pyotcl.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'Tom',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818720/6_jivtrc.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'Christy',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818795/11_cg7xjs.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'David',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818744/5_dgsmrt.png',
-  },
-  {
-    _id: getRandomNumber(100, 999999).toString(),
-    username: 'Rachel',
-    room: '5fff514c1b5e0fcaaf31c449',
-    avatar:
-      'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818865/13_y1wyun.png',
-  },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'George',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818545/1_xmvpmp.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'David123',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818596/2_lxx9no.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'Angela',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610819285/16_xwjjqi.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'Jackson',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818691/9_pyotcl.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'Tom',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818720/6_jivtrc.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'Christy',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818795/11_cg7xjs.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'David',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818744/5_dgsmrt.png',
+  // },
+  // {
+  //   _id: getRandomNumber(100, 999999).toString(),
+  //   username: 'Rachel',
+  //   room: '5fff514c1b5e0fcaaf31c449',
+  //   avatar:
+  //     'https://res.cloudinary.com/dzvebcsrp/image/upload/v1610818865/13_y1wyun.png',
+  // },
 ]
 const reactions = ['sad', 'like', 'lol', 'angry', 'heart', 'wow']
 
