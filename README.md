@@ -1,9 +1,9 @@
 # watchat
-<!-- ![alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png) -->
-![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png "Desktop view")
-![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906166/movies-p_lk3pua.png "Movies page")
-![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png "Movie-details page")
-![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906476/3_nkac9p.jpg "Mobile view")
+<!-- ![alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png ) -->
+![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png "Desktop view" | width=100)
+![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906166/movies-p_lk3pua.png "Movies page" | width=100)
+![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png "Movie-details page" | width=100)
+![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png "Mobile view" | width=100)
 An website for watching videos together.
 ## Description
 
