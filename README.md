@@ -1,9 +1,9 @@
 # watchat
 <!-- ![alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png ) -->
-<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png" alt="alt text" width="100px">
-<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906166/movies-p_lk3pua.png" alt="alt text" width="100px">
-<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png" alt="alt text" width="100px" >
-<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png" alt="alt text" width="100px">
+<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png" alt="alt text" width="400px">
+<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906166/movies-p_lk3pua.png" alt="alt text" width="400px">
+<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png" alt="alt text" width="400px" >
+<img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png" alt="alt text" width="400px">
 <!-- ![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png "Desktop view")
 ![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906166/movies-p_lk3pua.png "Movies page")
 ![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png "Movie-details page")
