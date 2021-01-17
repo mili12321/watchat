@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 
 export class About extends Component {
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
     render() {
         return (
             <React.Fragment>
@@ -33,7 +36,7 @@ export class About extends Component {
                 <div>
                    <div className="phone-container">
                         <img class="blank-phone" src="assets/img/screenshots/blank-screen-device/phone.png" alt=""></img> 
-                        <img className="img2" alt=''  src="../assets/img/screenshots/from mobile/3.jpg"></img> 
+                        <img className="img2" alt=''  src="../assets/img/screenshots/from mobile/3.png"></img> 
                    </div>
                 </div> 
                <div className="computer-container">
