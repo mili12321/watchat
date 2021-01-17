@@ -11,9 +11,9 @@ Setup
 Install the project dependencies and packages
 
 $ npm install
-Run the app in a development mode
+Run the app in a development mode from the Backend
 
-$ npm start
+$ npm run dev
 Navigate to
 
 $ http://localhost:3000/
