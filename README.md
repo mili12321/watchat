@@ -1,6 +1,6 @@
 # watchat
-![alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png)
-![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png "Title")
+<!-- ![alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png) -->
+![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png "Desktop view")
 An website for watching videos together.
 ## Description
 
