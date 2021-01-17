@@ -1,6 +1,6 @@
-# watchat
+# WatChat 📽️
 
-An website for watching videos together.
+An website for watching videos together 📽️.
 
 
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png" alt="alt text" title="Desktop view">
@@ -30,7 +30,7 @@ An website for watching videos together.
 ```bash
 $ npm install
 ```
-> Run the app in a development mode from the Backend
+> Run the app in a development mode from Backend
 
 ```bash
 $ npm run dev
