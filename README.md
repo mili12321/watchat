@@ -8,11 +8,12 @@ An website for watching movies together.
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png" alt="alt text" width="500px" title="Movie details">
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png" alt="alt text" width="200px" title="Mobile view">
 
-</br>
-WatChat is a virtual movie theater where you and your friends can watch movies and chat together.
-You can tag, send gifts to each other and play/pause movie are synchronized to everyone.
+
+WatChat is a virtual movie theater where you and your friends can watch movies and chat together.</br>
+You can tag, send gifts to each other and play/pause movie are synchronized to everyone.</br>
+
 Choose a movie and send a link to your friends.
-</br>
+
 
 [**Try the app here 😃**](https://watchatapp.herokuapp.com/)
 
