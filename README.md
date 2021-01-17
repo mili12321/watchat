@@ -6,7 +6,7 @@ An website for watching videos together.
 
 <!-- * Main features:
     * Registration via email or Google account -->
-* Synchronizes the video being watched with all users.
+* video is synced for everyone.
 * Plays, pauses are synced to all watchers.
 * Sending and receiving real-time messages
 
