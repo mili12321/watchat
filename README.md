@@ -3,9 +3,9 @@ An website for watching videos together.
 # Description
 # Quick Start
 # Tech
-React
-Javascript 
-SCSS
-Redux
-Node.js
-Socket.io
+React</br>
+Javascript</br>
+SCSS</br>
+Redux</br>
+Node.js</br>
+Socket.io</br>
