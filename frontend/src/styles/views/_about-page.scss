@@ -1,19 +1,235 @@
-.about {
-  height: 100vh;
+.about-page {
+  min-height: 100vh;
+  padding-top: 60px;
+  margin-bottom: 50px;
+  width: 95vw;
+  margin: auto;
+  color: rgb(219, 219, 219);
+  font-family: 'Cinzel Decorative', cursive;
+  >div{
+    margin: 30px auto;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
 }
-.map-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.description-section{
+  font-family: montserrat;
+  font-family: 'Montserrat', sans-serif;
+// font-family: 'Montserrat Alternates', sans-serif;
 }
-.fa-store {
-  font-size: rem(30px);
-  align-self: center;
-  color: $clr1;
+.tools-section{
+  >div{
+    &:not(:first-child){
+      margin-left: 20px;
+      font-family: Fraunces;
+    }
+    &:first-child{
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
 }
-.store-InfoWindow {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.developer-section{
+  div{
+    &:first-child{
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    &:not(:first-child){
+      // margin-left: 20px;
+      font-family: Fraunces;
+    }
+  }
+}
+.gradient-text{
+  font-weight: bold;
+  background: -webkit-linear-gradient(0deg, #d1009d, #d10000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.linkdin-link{
+  cursor: pointer;
+}
+.fa-github{
+  font-size: 20px;
+  margin-left: 5px;
+  &:hover{
+    background: -webkit-linear-gradient(0deg, #d1009d, #d10000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+}
+.sceenshots{
+  width: 100%;
+  >div{
+    &:first-child{
+      display: flex;
+      width: 100%;
+    }
+  }
+  // background-color: whitesmoke;
+}
+.img1{
+  width: 100%;
+  max-width: 560px;
+  height: 240px;
+}
+.img2{
+  width: 200px;
+  height: 400px;
+}
+.msgForUser-example{
+  top: 144px;
+  left: 564px;
+  min-width: 220px;
+}
+.gift-example{
+  top: 270px;
+  left: 406px;
+
+}
+.ipad-container, .phone-container, .computer-container{
+    width: fit-content;
+    position: relative;
+}
+.ipad-container, .phone-container{
+  align-self: flex-end;
+}
+.blank-comp, .blank-ipad, .blank-phone{
+  position: relative;
+}
+.blank-comp {
+  width: 624px;
+  height: 412px;
+}
+.blank-phone {
+  width: 270px;
+  height: 624px;
+}
+.img1 {
+  width: 100%;
+  position: absolute;
+  bottom: 149px;
+  left: 32px;
+}
+.img2{
+  width: 86%;
+  height: 68%;
+  position: absolute;
+  top: 84px;
+  left: 19px;
+}
+.img3{
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 0px;
+  z-index: -1;
+  opacity: .4;
+}
+
+
+@media screen and (min-width:414px){
+  .about-page {  
+    overflow: hidden;
+    >div{
+      margin: 50px auto;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    .sceenshots{
+      display: flex;
+      margin: 0;
+    }
+  }
+  .ipad-container, .phone-container, .computer-container{
+    display: flex;
+  }
+  .blank-comp {
+    align-self:flex-end ;
+  }
+  .img3{
+    display: none;
+  }
+  .sceenshots > div:first-child {
+    display: flex;
+    width: fit-content;
+    margin-right: 20px;
+  }
+  .img4 {
+    width: 100%;
+    position: absolute;
+    top: 14%;
+    left: 228px;
+    z-index: -2;
+    opacity: .4;
+  }
+  .sceenshots {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    z-index: -1;
+    left: 0%;
+    top: 13%;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width:414px){
+  .about-page {  
+    font-size: 14px;
+  }
+  .img1 {
+    width: 94%;
+    height: 148px;
+    position: absolute;
+    top: 14px;
+    left: 10px;
+  }
+  .img2{
+    width: 41%;
+    height: 66%;
+    position: absolute;
+    top: 49px;
+    left: 11.5px;
+  }
+  .img3{
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 0px;
+    z-index: -1;
+    opacity: .4;
+  }
+  .img4{
+    width: 100%;
+    position: absolute;
+    top: 78%;
+    left: 0px;
+    z-index: -1;
+    opacity: .4;
+  }
+  .blank-comp{
+    width: 90vw;
+    height: 253px;
+  }
+  .blank-phone{
+    width: 48%;
+    height: 327px;
+  }
+  .about-page {
+    width: 90vw;
+  }
+  .msgForUser-example{
+    top:350px;
+    left: 36%;
+    min-width: 220px;
+  }
+  .gift-example{
+    top: 39%;
+    left: 61%;
+  
+  }
 }
