@@ -42,7 +42,9 @@ export class _Room extends Component {
     newUserFromBackend:{},
     playBtnMsg:null,
     loadedSeconds:null,
-    isMuted:true
+    isMuted:false,
+    innerHeight:null,
+    innerWidth:null
   }
 
   playerRef = React.createRef()
@@ -50,6 +52,10 @@ export class _Room extends Component {
   componentDidMount() {
     this.loadMovie()
     this.setState({ currUser: this.props.loggedInUser })
+    this.setState({innerWidth:window.innerWidth})
+    if(window.innerWidth<415||window.innerHeight<415){
+        this.setState({ isMuted:true,})
+    }
     socketService.setup()
     socketService.on('get-first-user', (data) => {
       this.setState({isFirstUser:data.isFirstUser})
@@ -70,6 +76,15 @@ export class _Room extends Component {
       setTimeout(() => {
         this.setState({ showVideo: true })
       }, 6500)
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.innerWidth !== this.state.innerWidth) {
+      this.setState({innerWidth:window.innerWidth})
+    }
+    if (prevState.innerHeight !== this.state.innerHeight) {
+      this.setState({innerHeight:window.innerHeight})
     }
   }
 
@@ -119,7 +134,7 @@ export class _Room extends Component {
 
   
   onProgress=(progress)=>{
-    if(progress.loadedSeconds===0){
+    if((window.innerWidth<415||window.innerHeight<415)&&progress.loadedSeconds===0){
       this.setState({isPlaying:false},()=>{
         this.setState({isPlaying:true})
       })
