@@ -9,11 +9,14 @@
 ![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png "Movie-details page")
 ![Alt text](https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png "Mobile view") -->
 An website for watching videos together.
+
+[**Try the app here 😃**](https://watchatapp.herokuapp.com/)
+
 ## Description
 
-* Video is synced for everyone.
-* Plays, pauses are synced to all watchers.
-* Sending and receiving real-time messages.
+✔️ Video is synced for everyone.</br>
+✔️ Plays, pauses are synced to all watchers.</br>
+✔️ Sending and receiving real-time messages.</br>
 
 ## Quick Start
 * You will need a [**Node.js**](https://nodejs.org/en/download/) installed in your environement.
