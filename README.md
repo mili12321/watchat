@@ -13,7 +13,8 @@ An website for watching videos together.
 
 ✔️ Video is synced for everyone.</br>
 ✔️ Plays, pauses are synced to all watchers.</br>
-✔️ Sending and receiving real-time messages.</br>
+✔️ Sending and receiving real-time messages and animations.</br>
+✔️ Sending real-time reactions and tagging users.</br>
 
 ## Quick Start
 * You will need a [**Node.js**](https://nodejs.org/en/download/) installed in your environement.
