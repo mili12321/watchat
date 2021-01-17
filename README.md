@@ -2,11 +2,9 @@
 An website for watching videos together.
 ## Description
 ## Quick Start
-This project was bootstrapped with Create React App.
-
-You will need a Node.js installed in your environement.
+You will need a [Node.js](https://nodejs.org/en/download/) installed in your environement.
 ### Clone
-Clone this repo to your local machine using git clone https://github.com/mili12321/watchat.git
+Clone this repo to your local machine using ```bash git clone https://github.com/mili12321/watchat.git```
 
 ### Setup
 Install the project dependencies and packages
