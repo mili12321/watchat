@@ -4,7 +4,7 @@
 An website for watching videos together.
 ## Description
 ## Quick Start
-You will need a **[Node.js]**(https://nodejs.org/en/download/) installed in your environement.
+You will need a [**Node.js**](https://nodejs.org/en/download/) installed in your environement.
 ### Clone
 Clone this repo to your local machine using ```git clone https://github.com/mili12321/watchat.git```
 
