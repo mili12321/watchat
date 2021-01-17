@@ -1,4 +1,4 @@
-# WatChat 📽️
+# WatChat
 
 An website for watching videos together 📽️.
 
