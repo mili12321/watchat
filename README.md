@@ -10,7 +10,7 @@ An website for watching movies together.
 
 
 WatChat is a virtual movie theater where you and your friends can watch movies and chat together.</br>
-You can tag, send gifts to each other and play/pause movie are synchronized to everyone.</br>
+You can tag, send animations to each other and play/pause movie are synchronized to everyone.</br>
 
 Choose a movie and send a link to your friends.
 
