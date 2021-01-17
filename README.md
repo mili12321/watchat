@@ -1,6 +1,6 @@
 # WatChat
 
-An website for watching videos together 📽️.
+An website for watching videos together.
 
 
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610905796/cap21-d_t66bua.png" alt="alt text" title="Desktop view">
