@@ -177,6 +177,21 @@
     overflow: hidden;
   }
 }
+@media screen and (max-height:414px){
+  .blank-comp {
+    width: 438px;
+    height: 298px;
+  }
+
+  .img1 {
+      width: 90%;
+      position: absolute;
+      bottom: 107px;
+      left: 22px;
+      height: 28%;
+  }
+
+}
 @media screen and (max-width:414px){
   .about-page {  
     font-size: 14px;
