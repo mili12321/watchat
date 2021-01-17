@@ -8,8 +8,8 @@ An website for watching videos together.
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906218/details-p2_hdmaxc.png" alt="alt text" width="500px" title="Movie details">
 <img src="https://res.cloudinary.com/dzvebcsrp/image/upload/v1610906644/3_u6lvwt.png" alt="alt text" width="200px" title="Mobile view">
 
-
 </br>
+
 [**Try the app here 😃**](https://watchatapp.herokuapp.com/)
 
 ## Description
